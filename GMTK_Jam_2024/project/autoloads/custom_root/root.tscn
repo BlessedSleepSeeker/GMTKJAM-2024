@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmywmdt0bmod4"]
+[gd_scene load_steps=8 format=3 uid="uid://bmywmdt0bmod4"]
 
 [ext_resource type="Script" path="res://autoloads/custom_root/root.gd" id="1_0ggjb"]
 [ext_resource type="PackedScene" uid="uid://s46wqxnh4dnl" path="res://autoloads/settings/settings.tscn" id="2_022ww"]
+[ext_resource type="PackedScene" uid="uid://lmroqngrlqbv" path="res://assets/3D_Models/Hand_low_001.fbx" id="3_3lsdq"]
 
 [sub_resource type="Animation" id="Animation_43y50"]
 length = 0.001
@@ -92,3 +93,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.133333, 0.129412, 0.14902, 1)
+
+[node name="Hand_low_001" parent="." instance=ExtResource("3_3lsdq")]
+transform = Transform3D(0.89929, -0.423907, -0.10761, -0.167528, -0.561166, 0.810572, -0.403994, -0.710912, -0.575668, 0.0226593, 0.148625, -0.0762696)

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://wcdxpgcgwsb6"
+path="res://.godot/imported/Hand_low_Outline.obj-4725df52925a115fd03fdd15e90a730d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hand_low_Outline.obj-4725df52925a115fd03fdd15e90a730d.mesh"]
+
+source_file="res://assets/3D_Models/Hand_low_Outline.obj"
+dest_files=["res://.godot/imported/Hand_low_Outline.obj-4725df52925a115fd03fdd15e90a730d.mesh", "res://.godot/imported/Hand_low_Outline.obj-4725df52925a115fd03fdd15e90a730d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
