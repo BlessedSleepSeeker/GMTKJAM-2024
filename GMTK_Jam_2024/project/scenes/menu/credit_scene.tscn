@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://vd1entiph7b0"]
 
+[ext_resource type="Theme" uid="uid://dc4471fdfa1ix" path="res://assets/ui/default_theme.theme" id="2_5pxf4"]
 [ext_resource type="Script" path="res://scenes/menu/credit_scene.gd" id="3_fjgl6"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wkm6w"]
-load_path = "res://.godot/imported/credits.png-b28382cdaeaa59d6b94a18531ab315f1.ctex"
 
 [node name="CreditsScene" type="Control"]
 layout_mode = 3
@@ -14,22 +12,61 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_fjgl6")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CompressedTexture2D_wkm6w")
+color = Color(0.133333, 0.129412, 0.14902, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_5pxf4")
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "A game made by :
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "BlessedSleepSeeker : Game Dev
+Eindall : UI/UX Dev
+Satantamere : 3D and Animations"
+horizontal_alignment = 1
 
 [node name="M" type="MarginContainer" parent="."]
 layout_mode = 1
-offset_right = 107.0
-offset_bottom = 47.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.5
+offset_top = -31.0
+offset_right = 30.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 10
 
 [node name="Button" type="Button" parent="M"]
 layout_mode = 2
-text = "Return"
+text = "Back"
 
 [connection signal="pressed" from="M/Button" to="." method="_on_button_pressed"]
