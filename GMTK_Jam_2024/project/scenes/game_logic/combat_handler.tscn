@@ -1,0 +1,656 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbcs6qnmohsgm"]
+
+[ext_resource type="Script" path="res://scenes/game_logic/combat_handler.gd" id="1_5o82g"]
+
+[node name="CombatHandler" type="Node"]
+script = ExtResource("1_5o82g")
+
+[node name="Gun" type="Node" parent="."]
+
+[node name="Rock" type="Node" parent="Gun"]
+
+[node name="Sun" type="Node" parent="Gun"]
+
+[node name="Fire" type="Node" parent="Gun"]
+
+[node name="Scissors" type="Node" parent="Gun"]
+
+[node name="Axe" type="Node" parent="Gun"]
+
+[node name="Snake" type="Node" parent="Gun"]
+
+[node name="Monkey" type="Node" parent="Gun"]
+
+[node name="Woman" type="Node" parent="Gun"]
+
+[node name="Man" type="Node" parent="Gun"]
+
+[node name="Tree" type="Node" parent="Gun"]
+
+[node name="Cockroach" type="Node" parent="Gun"]
+
+[node name="Wolf" type="Node" parent="Gun"]
+
+[node name="Dynamite" type="Node" parent="."]
+
+[node name="Gun" type="Node" parent="Dynamite"]
+
+[node name="Rock" type="Node" parent="Dynamite"]
+
+[node name="Sun" type="Node" parent="Dynamite"]
+
+[node name="Fire" type="Node" parent="Dynamite"]
+
+[node name="Scissors" type="Node" parent="Dynamite"]
+
+[node name="Axe" type="Node" parent="Dynamite"]
+
+[node name="Snake" type="Node" parent="Dynamite"]
+
+[node name="Monkey" type="Node" parent="Dynamite"]
+
+[node name="Woman" type="Node" parent="Dynamite"]
+
+[node name="Man" type="Node" parent="Dynamite"]
+
+[node name="Tree" type="Node" parent="Dynamite"]
+
+[node name="Cockroach" type="Node" parent="Dynamite"]
+
+[node name="Nuke" type="Node" parent="."]
+
+[node name="Dynamite" type="Node" parent="Nuke"]
+
+[node name="Gun" type="Node" parent="Nuke"]
+
+[node name="Rock" type="Node" parent="Nuke"]
+
+[node name="Sun" type="Node" parent="Nuke"]
+
+[node name="Fire" type="Node" parent="Nuke"]
+
+[node name="Scissors" type="Node" parent="Nuke"]
+
+[node name="Snake" type="Node" parent="Nuke"]
+
+[node name="Axe" type="Node" parent="Nuke"]
+
+[node name="Monkey" type="Node" parent="Nuke"]
+
+[node name="Woman" type="Node" parent="Nuke"]
+
+[node name="Man" type="Node" parent="Nuke"]
+
+[node name="Tree" type="Node" parent="Nuke"]
+
+[node name="Lightning" type="Node" parent="."]
+
+[node name="Nuke" type="Node" parent="Lightning"]
+
+[node name="Dynamite" type="Node" parent="Lightning"]
+
+[node name="Gun" type="Node" parent="Lightning"]
+
+[node name="Rock" type="Node" parent="Lightning"]
+
+[node name="Sun" type="Node" parent="Lightning"]
+
+[node name="Fire" type="Node" parent="Lightning"]
+
+[node name="Scissors" type="Node" parent="Lightning"]
+
+[node name="Axe" type="Node" parent="Lightning"]
+
+[node name="Snake" type="Node" parent="Lightning"]
+
+[node name="Monkey" type="Node" parent="Lightning"]
+
+[node name="Woman" type="Node" parent="Lightning"]
+
+[node name="Man" type="Node" parent="Lightning"]
+
+[node name="Devil" type="Node" parent="."]
+
+[node name="Lightning" type="Node" parent="Devil"]
+
+[node name="Nuke" type="Node" parent="Devil"]
+
+[node name="Dynamite" type="Node" parent="Devil"]
+
+[node name="Gun" type="Node" parent="Devil"]
+
+[node name="Rock" type="Node" parent="Devil"]
+
+[node name="Sun" type="Node" parent="Devil"]
+
+[node name="Fire" type="Node" parent="Devil"]
+
+[node name="Scissors" type="Node" parent="Devil"]
+
+[node name="Axe" type="Node" parent="Devil"]
+
+[node name="Snake" type="Node" parent="Devil"]
+
+[node name="Monkey" type="Node" parent="Devil"]
+
+[node name="Woman" type="Node" parent="Devil"]
+
+[node name="Dragon" type="Node" parent="."]
+
+[node name="Devil" type="Node" parent="Dragon"]
+
+[node name="Lightning" type="Node" parent="Dragon"]
+
+[node name="Nuke" type="Node" parent="Dragon"]
+
+[node name="Dynamite" type="Node" parent="Dragon"]
+
+[node name="Gun" type="Node" parent="Dragon"]
+
+[node name="Rock" type="Node" parent="Dragon"]
+
+[node name="Sun" type="Node" parent="Dragon"]
+
+[node name="Fire" type="Node" parent="Dragon"]
+
+[node name="Scissors" type="Node" parent="Dragon"]
+
+[node name="Axe" type="Node" parent="Dragon"]
+
+[node name="Snake" type="Node" parent="Dragon"]
+
+[node name="Monkey" type="Node" parent="Dragon"]
+
+[node name="Alien" type="Node" parent="."]
+
+[node name="Dragon" type="Node" parent="Alien"]
+
+[node name="Devil" type="Node" parent="Alien"]
+
+[node name="Lightning" type="Node" parent="Alien"]
+
+[node name="Nuke" type="Node" parent="Alien"]
+
+[node name="Dynamite" type="Node" parent="Alien"]
+
+[node name="Gun" type="Node" parent="Alien"]
+
+[node name="Rock" type="Node" parent="Alien"]
+
+[node name="Sun" type="Node" parent="Alien"]
+
+[node name="Fire" type="Node" parent="Alien"]
+
+[node name="Scissors" type="Node" parent="Alien"]
+
+[node name="Axe" type="Node" parent="Alien"]
+
+[node name="Snake" type="Node" parent="Alien"]
+
+[node name="Water" type="Node" parent="."]
+
+[node name="Alien" type="Node" parent="Water"]
+
+[node name="Dragon" type="Node" parent="Water"]
+
+[node name="Devil" type="Node" parent="Water"]
+
+[node name="Lightning" type="Node" parent="Water"]
+
+[node name="Nuke" type="Node" parent="Water"]
+
+[node name="Dynamite" type="Node" parent="Water"]
+
+[node name="Gun" type="Node" parent="Water"]
+
+[node name="Rock" type="Node" parent="Water"]
+
+[node name="Sun" type="Node" parent="Water"]
+
+[node name="Fire" type="Node" parent="Water"]
+
+[node name="Scissors" type="Node" parent="Water"]
+
+[node name="Axe" type="Node" parent="Water"]
+
+[node name="Bowl" type="Node" parent="."]
+
+[node name="Water" type="Node" parent="Bowl"]
+
+[node name="Alien" type="Node" parent="Bowl"]
+
+[node name="Dragon" type="Node" parent="Bowl"]
+
+[node name="Devil" type="Node" parent="Bowl"]
+
+[node name="Lightning" type="Node" parent="Bowl"]
+
+[node name="Nuke" type="Node" parent="Bowl"]
+
+[node name="Dynamite" type="Node" parent="Bowl"]
+
+[node name="Gun" type="Node" parent="Bowl"]
+
+[node name="Rock" type="Node" parent="Bowl"]
+
+[node name="Sun" type="Node" parent="Bowl"]
+
+[node name="Fire" type="Node" parent="Bowl"]
+
+[node name="Scissors" type="Node" parent="Bowl"]
+
+[node name="Air" type="Node" parent="."]
+
+[node name="Bowl" type="Node" parent="Air"]
+
+[node name="Water" type="Node" parent="Air"]
+
+[node name="Alien" type="Node" parent="Air"]
+
+[node name="Dragon" type="Node" parent="Air"]
+
+[node name="Devil" type="Node" parent="Air"]
+
+[node name="Lightning" type="Node" parent="Air"]
+
+[node name="Nuke" type="Node" parent="Air"]
+
+[node name="Dynamite" type="Node" parent="Air"]
+
+[node name="Gun" type="Node" parent="Air"]
+
+[node name="Rock" type="Node" parent="Air"]
+
+[node name="Sun" type="Node" parent="Air"]
+
+[node name="Fire" type="Node" parent="Air"]
+
+[node name="Moon" type="Node" parent="."]
+
+[node name="Air" type="Node" parent="Moon"]
+
+[node name="Bowl" type="Node" parent="Moon"]
+
+[node name="Water" type="Node" parent="Moon"]
+
+[node name="Alien" type="Node" parent="Moon"]
+
+[node name="Dragon" type="Node" parent="Moon"]
+
+[node name="Devil" type="Node" parent="Moon"]
+
+[node name="Lightning" type="Node" parent="Moon"]
+
+[node name="Nuke" type="Node" parent="Moon"]
+
+[node name="Dynamite" type="Node" parent="Moon"]
+
+[node name="Gun" type="Node" parent="Moon"]
+
+[node name="Rock" type="Node" parent="Moon"]
+
+[node name="Sun" type="Node" parent="Moon"]
+
+[node name="Paper" type="Node" parent="."]
+
+[node name="Moon" type="Node" parent="Paper"]
+
+[node name="Air" type="Node" parent="Paper"]
+
+[node name="Bowl" type="Node" parent="Paper"]
+
+[node name="Water" type="Node" parent="Paper"]
+
+[node name="Alien" type="Node" parent="Paper"]
+
+[node name="Dragon" type="Node" parent="Paper"]
+
+[node name="Devil" type="Node" parent="Paper"]
+
+[node name="Lightning" type="Node" parent="Paper"]
+
+[node name="Nuke" type="Node" parent="Paper"]
+
+[node name="Dynamite" type="Node" parent="Paper"]
+
+[node name="Gun" type="Node" parent="Paper"]
+
+[node name="Rock" type="Node" parent="Paper"]
+
+[node name="Sponge" type="Node" parent="."]
+
+[node name="Paper" type="Node" parent="Sponge"]
+
+[node name="Moon" type="Node" parent="Sponge"]
+
+[node name="Air" type="Node" parent="Sponge"]
+
+[node name="Bowl" type="Node" parent="Sponge"]
+
+[node name="Water" type="Node" parent="Sponge"]
+
+[node name="Alien" type="Node" parent="Sponge"]
+
+[node name="Dragon" type="Node" parent="Sponge"]
+
+[node name="Devil" type="Node" parent="Sponge"]
+
+[node name="Lightning" type="Node" parent="Sponge"]
+
+[node name="Nuke" type="Node" parent="Sponge"]
+
+[node name="Dynamite" type="Node" parent="Sponge"]
+
+[node name="Gun" type="Node" parent="Sponge"]
+
+[node name="Wolf" type="Node" parent="."]
+
+[node name="Sponge" type="Node" parent="Wolf"]
+
+[node name="Paper" type="Node" parent="Wolf"]
+
+[node name="Moon" type="Node" parent="Wolf"]
+
+[node name="Air" type="Node" parent="Wolf"]
+
+[node name="Bowl" type="Node" parent="Wolf"]
+
+[node name="Water" type="Node" parent="Wolf"]
+
+[node name="Alien" type="Node" parent="Wolf"]
+
+[node name="Dragon" type="Node" parent="Wolf"]
+
+[node name="Devil" type="Node" parent="Wolf"]
+
+[node name="Lightning" type="Node" parent="Wolf"]
+
+[node name="Nuke" type="Node" parent="Wolf"]
+
+[node name="Dynamite" type="Node" parent="Wolf"]
+
+[node name="Cockroach" type="Node" parent="."]
+
+[node name="Wolf" type="Node" parent="Cockroach"]
+
+[node name="Sponge" type="Node" parent="Cockroach"]
+
+[node name="Paper" type="Node" parent="Cockroach"]
+
+[node name="Moon" type="Node" parent="Cockroach"]
+
+[node name="Air" type="Node" parent="Cockroach"]
+
+[node name="Bowl" type="Node" parent="Cockroach"]
+
+[node name="Water" type="Node" parent="Cockroach"]
+
+[node name="Alien" type="Node" parent="Cockroach"]
+
+[node name="Dragon" type="Node" parent="Cockroach"]
+
+[node name="Devil" type="Node" parent="Cockroach"]
+
+[node name="Lightning" type="Node" parent="Cockroach"]
+
+[node name="Nuke" type="Node" parent="Cockroach"]
+
+[node name="Tree" type="Node" parent="."]
+
+[node name="Cockroach" type="Node" parent="Tree"]
+
+[node name="Wolf" type="Node" parent="Tree"]
+
+[node name="Sponge" type="Node" parent="Tree"]
+
+[node name="Paper" type="Node" parent="Tree"]
+
+[node name="Moon" type="Node" parent="Tree"]
+
+[node name="Air" type="Node" parent="Tree"]
+
+[node name="Bowl" type="Node" parent="Tree"]
+
+[node name="Water" type="Node" parent="Tree"]
+
+[node name="Alien" type="Node" parent="Tree"]
+
+[node name="Dragon" type="Node" parent="Tree"]
+
+[node name="Devil" type="Node" parent="Tree"]
+
+[node name="Lightning" type="Node" parent="Tree"]
+
+[node name="Man" type="Node" parent="."]
+
+[node name="Tree" type="Node" parent="Man"]
+
+[node name="Cockroach" type="Node" parent="Man"]
+
+[node name="Wolf" type="Node" parent="Man"]
+
+[node name="Sponge" type="Node" parent="Man"]
+
+[node name="Paper" type="Node" parent="Man"]
+
+[node name="Moon" type="Node" parent="Man"]
+
+[node name="Air" type="Node" parent="Man"]
+
+[node name="Bowl" type="Node" parent="Man"]
+
+[node name="Water" type="Node" parent="Man"]
+
+[node name="Alien" type="Node" parent="Man"]
+
+[node name="Dragon" type="Node" parent="Man"]
+
+[node name="Devil" type="Node" parent="Man"]
+
+[node name="Woman" type="Node" parent="."]
+
+[node name="Man" type="Node" parent="Woman"]
+
+[node name="Tree" type="Node" parent="Woman"]
+
+[node name="Cockroach" type="Node" parent="Woman"]
+
+[node name="Wolf" type="Node" parent="Woman"]
+
+[node name="Sponge" type="Node" parent="Woman"]
+
+[node name="Paper" type="Node" parent="Woman"]
+
+[node name="Moon" type="Node" parent="Woman"]
+
+[node name="Air" type="Node" parent="Woman"]
+
+[node name="Bowl" type="Node" parent="Woman"]
+
+[node name="Water" type="Node" parent="Woman"]
+
+[node name="Alien" type="Node" parent="Woman"]
+
+[node name="Dragon" type="Node" parent="Woman"]
+
+[node name="Monkey" type="Node" parent="."]
+
+[node name="Woman" type="Node" parent="Monkey"]
+
+[node name="Man" type="Node" parent="Monkey"]
+
+[node name="Tree" type="Node" parent="Monkey"]
+
+[node name="Cockroach" type="Node" parent="Monkey"]
+
+[node name="Wolf" type="Node" parent="Monkey"]
+
+[node name="Sponge" type="Node" parent="Monkey"]
+
+[node name="Paper" type="Node" parent="Monkey"]
+
+[node name="Moon" type="Node" parent="Monkey"]
+
+[node name="Air" type="Node" parent="Monkey"]
+
+[node name="Bowl" type="Node" parent="Monkey"]
+
+[node name="Water" type="Node" parent="Monkey"]
+
+[node name="Alien" type="Node" parent="Monkey"]
+
+[node name="Snake" type="Node" parent="."]
+
+[node name="Monkey" type="Node" parent="Snake"]
+
+[node name="Woman" type="Node" parent="Snake"]
+
+[node name="Man" type="Node" parent="Snake"]
+
+[node name="Tree" type="Node" parent="Snake"]
+
+[node name="Cockroach" type="Node" parent="Snake"]
+
+[node name="Wolf" type="Node" parent="Snake"]
+
+[node name="Sponge" type="Node" parent="Snake"]
+
+[node name="Paper" type="Node" parent="Snake"]
+
+[node name="Moon" type="Node" parent="Snake"]
+
+[node name="Air" type="Node" parent="Snake"]
+
+[node name="Bowl" type="Node" parent="Snake"]
+
+[node name="Water" type="Node" parent="Snake"]
+
+[node name="Axe" type="Node" parent="."]
+
+[node name="Snake" type="Node" parent="Axe"]
+
+[node name="Monkey" type="Node" parent="Axe"]
+
+[node name="Woman" type="Node" parent="Axe"]
+
+[node name="Man" type="Node" parent="Axe"]
+
+[node name="Tree" type="Node" parent="Axe"]
+
+[node name="Cockroach" type="Node" parent="Axe"]
+
+[node name="Wolf" type="Node" parent="Axe"]
+
+[node name="Sponge" type="Node" parent="Axe"]
+
+[node name="Paper" type="Node" parent="Axe"]
+
+[node name="Moon" type="Node" parent="Axe"]
+
+[node name="Air" type="Node" parent="Axe"]
+
+[node name="Bowl" type="Node" parent="Axe"]
+
+[node name="Scissors" type="Node" parent="."]
+
+[node name="Axe" type="Node" parent="Scissors"]
+
+[node name="Snake" type="Node" parent="Scissors"]
+
+[node name="Monkey" type="Node" parent="Scissors"]
+
+[node name="Woman" type="Node" parent="Scissors"]
+
+[node name="Man" type="Node" parent="Scissors"]
+
+[node name="Tree" type="Node" parent="Scissors"]
+
+[node name="Cockroach" type="Node" parent="Scissors"]
+
+[node name="Wolf" type="Node" parent="Scissors"]
+
+[node name="Sponge" type="Node" parent="Scissors"]
+
+[node name="Paper" type="Node" parent="Scissors"]
+
+[node name="Moon" type="Node" parent="Scissors"]
+
+[node name="Air" type="Node" parent="Scissors"]
+
+[node name="Fire" type="Node" parent="."]
+
+[node name="Scissors" type="Node" parent="Fire"]
+
+[node name="Axe" type="Node" parent="Fire"]
+
+[node name="Snake" type="Node" parent="Fire"]
+
+[node name="Monkey" type="Node" parent="Fire"]
+
+[node name="Woman" type="Node" parent="Fire"]
+
+[node name="Man" type="Node" parent="Fire"]
+
+[node name="Tree" type="Node" parent="Fire"]
+
+[node name="Cockroach" type="Node" parent="Fire"]
+
+[node name="Wolf" type="Node" parent="Fire"]
+
+[node name="Sponge" type="Node" parent="Fire"]
+
+[node name="Paper" type="Node" parent="Fire"]
+
+[node name="Moon" type="Node" parent="Fire"]
+
+[node name="Sun" type="Node" parent="."]
+
+[node name="Fire" type="Node" parent="Sun"]
+
+[node name="Scissors" type="Node" parent="Sun"]
+
+[node name="Axe" type="Node" parent="Sun"]
+
+[node name="Snake" type="Node" parent="Sun"]
+
+[node name="Monkey" type="Node" parent="Sun"]
+
+[node name="Woman" type="Node" parent="Sun"]
+
+[node name="Man" type="Node" parent="Sun"]
+
+[node name="Tree" type="Node" parent="Sun"]
+
+[node name="Cockroach" type="Node" parent="Sun"]
+
+[node name="Wolf" type="Node" parent="Sun"]
+
+[node name="Sponge" type="Node" parent="Sun"]
+
+[node name="Paper" type="Node" parent="Sun"]
+
+[node name="Rock" type="Node" parent="."]
+
+[node name="Sun" type="Node" parent="Rock"]
+
+[node name="Fire" type="Node" parent="Rock"]
+
+[node name="Scissors" type="Node" parent="Rock"]
+
+[node name="Axe" type="Node" parent="Rock"]
+
+[node name="Snake" type="Node" parent="Rock"]
+
+[node name="Monkey" type="Node" parent="Rock"]
+
+[node name="Woman" type="Node" parent="Rock"]
+
+[node name="Man" type="Node" parent="Rock"]
+
+[node name="Tree" type="Node" parent="Rock"]
+
+[node name="Cockroach" type="Node" parent="Rock"]
+
+[node name="Wolf" type="Node" parent="Rock"]
+
+[node name="Sponge" type="Node" parent="Rock"]
