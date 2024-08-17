@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmywmdt0bmod4"]
+[gd_scene load_steps=8 format=3 uid="uid://bmywmdt0bmod4"]
 
 [ext_resource type="Script" path="res://autoloads/custom_root/root.gd" id="1_0ggjb"]
 [ext_resource type="PackedScene" uid="uid://s46wqxnh4dnl" path="res://autoloads/settings/settings.tscn" id="2_022ww"]
+[ext_resource type="Texture2D" uid="uid://elfi8vxvcu48" path="res://assets/ui/transition_image.png" id="3_etvdo"]
 
 [sub_resource type="Animation" id="Animation_43y50"]
 length = 0.001
@@ -81,11 +82,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="ColorRect" parent="TransitionLayer/TransitionSprite"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0568717, 0.0545221, 0.0662647, 1)
+[node name="TextureRect" type="TextureRect" parent="TransitionLayer/TransitionSprite"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_etvdo")
