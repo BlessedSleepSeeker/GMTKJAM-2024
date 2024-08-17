@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckipeway2odv1"]
+[gd_scene load_steps=6 format=3 uid="uid://ckipeway2odv1"]
 
 [ext_resource type="FontFile" uid="uid://bl5lv5dwweupt" path="res://assets/font/font.ttf" id="1_qu8cq"]
 [ext_resource type="Script" path="res://scenes/game_scene/ui/ui_viewport.gd" id="1_wt7mx"]
@@ -9,6 +9,12 @@ Label/colors/font_outline_color = Color(1, 1, 1, 1)
 Label/constants/outline_size = 2
 Label/font_sizes/font_size = 36
 Label/fonts/font = ExtResource("1_qu8cq")
+
+[sub_resource type="Theme" id="Theme_84g0t"]
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/constants/outline_size = 2
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_qu8cq")
 
 [node name="UiViewport" type="CanvasLayer"]
 script = ExtResource("1_wt7mx")
@@ -101,3 +107,13 @@ layout_mode = 2
 
 [node name="ButtonPath" type="Path2D" parent="CenterContainer/Control"]
 script = ExtResource("4_ncdc0")
+
+[node name="ValidateButton" type="Button" parent="CenterContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 35)
+layout_mode = 2
+theme = SubResource("Theme_84g0t")
+disabled = true
+text = "Validate"
+
+[connection signal="pressed" from="CenterContainer/ValidateButton" to="." method="_on_validate_button_pressed"]
