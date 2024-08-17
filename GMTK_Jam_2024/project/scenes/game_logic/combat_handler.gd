@@ -21,20 +21,17 @@ func _ready():
 		#for j in range(0, 3):
 			#print_debug(resolve_fight(get_options().pick_random()))
 	#for i in range(0, 3):
-	#	increment_round()
-
+		#increment_round()
 
 func load_all_options() -> void:
 	for option: ShifumiOption in get_children():
 		remaining_options.append(option)
 	remaining_options.reverse()
-	
 
 func set_big_three_to_current() -> void:
 	for option: ShifumiOption in remaining_options:
 		if option.name == "Rock" or option.name == "Paper" or option.name == "Scissors":
 			current_options.append(remaining_options.pop_at(remaining_options.find(option)))
-
 
 func get_options() -> Array[String]:
 	var string_options: Array[String] = []
@@ -42,11 +39,9 @@ func get_options() -> Array[String]:
 		string_options.append(option.name)
 	return string_options
 
-
 func increment_round():
 	current_round += 1
 	add_option_for_round()
-
 
 func add_option_for_round():
 	remaining_options.shuffle()
@@ -54,7 +49,6 @@ func add_option_for_round():
 		if remaining_options.is_empty():
 			return
 		current_options.append(remaining_options.pop_at(remaining_options.find(remaining_options.pick_random())))
-
 
 func resolve_fight(player_option_name: String) -> String:
 	var p1_play: ShifumiOption
@@ -76,10 +70,8 @@ func resolve_fight(player_option_name: String) -> String:
 			return winquote_template % [p2_play.name, p2_play.get_win_quote(p1_play.name), p1_play.name, p2_play.name]
 	return bugquote_template
 
-
 func pick_cpu_option() -> ShifumiOption:
 	return current_options.pick_random()
-
 
 func get_wins_for(option_name: String) -> Array[String]:
 	var wins: Array[String]
