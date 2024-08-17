@@ -1653,23 +1653,27 @@ theme_override_constants/separation = 16
 [node name="Play" type="Button" parent="CanvasLayer/MainMenu/VBox"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_gkw5p")
 text = "Play"
 
 [node name="Credits" type="Button" parent="CanvasLayer/MainMenu/VBox"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 text = "Credits"
 
 [node name="Settings" type="Button" parent="CanvasLayer/MainMenu/VBox"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 tooltip_text = "Todo"
+mouse_default_cursor_shape = 2
 text = "Settings"
 
 [node name="Exit" type="Button" parent="CanvasLayer/MainMenu/VBox"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 text = "Exit"
 
 [node name="Node3D" type="Node3D" parent="."]
