@@ -69,7 +69,7 @@ func resolve_fight(player_option_name: String) -> String:
 	for p1_beat: ShifumiBeatenOption in p1_play.get_children():
 		if p1_beat.name == p2_play.name:
 			p1_play.unlock_relation(p1_beat)
-			p1_score =+ 1
+			p1_score += 1
 			return winquote_template % [p1_play.name, p1_play.get_win_quote(p2_play.name), p2_play.name, p1_play.name]
 	for p2_beat: ShifumiBeatenOption in p2_play.get_children():
 		if p2_beat.name == p1_play.name:
