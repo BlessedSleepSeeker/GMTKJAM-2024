@@ -10,12 +10,14 @@ script = ExtResource("1_jy5kf")
 
 [node name="CombatHandler" parent="." instance=ExtResource("2_heai2")]
 
-[node name="3DWorld" type="Node3D" parent="."]
+[node name="World" type="Node3D" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="3DWorld"]
-transform = Transform3D(0.519832, 0, -0.854268, 0, 1, 0, 0.854268, 0, 0.519832, -15.0812, 83.4343, 152)
+[node name="Camera3D" type="Camera3D" parent="World"]
+transform = Transform3D(0.445167, 0, -0.895448, 0, 1, 0, 0.895448, 0, 0.445167, -61.2039, 92.2586, 122.126)
 current = true
 
-[node name="JoannaScene" parent="3DWorld" instance=ExtResource("3_nqdeu")]
+[node name="JoannaScene" parent="World" instance=ExtResource("3_nqdeu")]
 
-[node name="UI" parent="." instance=ExtResource("3_1t86n")]
+[node name="UiViewport" parent="." instance=ExtResource("3_1t86n")]
+
+[connection signal="trigger_new_round" from="CombatHandler" to="." method="_on_combat_handler_trigger_new_round"]

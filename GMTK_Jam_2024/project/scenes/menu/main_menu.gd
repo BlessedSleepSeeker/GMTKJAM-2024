@@ -3,6 +3,8 @@ extends Control
 @export var creditsScenePath := "res://scenes/menu/credit_scene.tscn"
 @export var gameSettingPath := "res://scenes/game_scene/game.tscn"
 @export var settings_screen_path := "res://scenes/menu/settings/settings_screen.tscn"
+@export var camera_speed: float = 0.00001
+@onready var camera: Camera3D = $Node3D/Camera3D
 
 signal transition(new_scene: PackedScene, animation: String)
 
@@ -24,3 +26,6 @@ func _on_play_button_pressed():
 func _on_settings_pressed():
 	var settings_scene = load(settings_screen_path)
 	transition.emit(settings_scene, "scene_transition")
+
+func _process(delta):
+	camera.rotate_y(camera_speed)
