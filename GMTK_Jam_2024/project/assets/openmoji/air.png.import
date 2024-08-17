@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8nmgjvcx2kh5"
-path="res://.godot/imported/cloud.png-d277fb0d3a8cfbdd5503125f4528e3be.ctex"
+path="res://.godot/imported/air.png-bf873372604f57352ed65495e2b5fbae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/openmoji/cloud.png"
-dest_files=["res://.godot/imported/cloud.png-d277fb0d3a8cfbdd5503125f4528e3be.ctex"]
+source_file="res://assets/openmoji/air.png"
+dest_files=["res://.godot/imported/air.png-bf873372604f57352ed65495e2b5fbae.ctex"]
 
 [params]
 
