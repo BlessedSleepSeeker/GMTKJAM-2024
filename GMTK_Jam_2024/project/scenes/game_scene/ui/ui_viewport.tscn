@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckipeway2odv1"]
+
+[ext_resource type="FontFile" uid="uid://bl5lv5dwweupt" path="res://assets/font/font.ttf" id="1_qu8cq"]
+[ext_resource type="Script" path="res://scenes/game_scene/ui/ui_viewport.gd" id="1_wt7mx"]
+[ext_resource type="PackedScene" uid="uid://68ywvraguo68" path="res://scenes/game_scene/ui/option_hexa.tscn" id="2_bh8i0"]
+
+[sub_resource type="Theme" id="Theme_l8q1i"]
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/constants/outline_size = 2
+Label/font_sizes/font_size = 36
+Label/fonts/font = ExtResource("1_qu8cq")
+
+[sub_resource type="Curve2D" id="Curve2D_lijqv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 384, 256, 0, 0, 0, 0, 896, 256, 0, 0, 0, 0, 896, 576, 0, 0, 0, 0, 384, 576, 0, 0, 0, 0, 384, 256)
+}
+point_count = 5
+
+[node name="UiViewport" type="SubViewportContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+script = ExtResource("1_wt7mx")
+option_button = ExtResource("2_bh8i0")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+handle_input_locally = false
+gui_disable_input = true
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_l8q1i")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+metadata/_edit_use_anchors_ = true
+
+[node name="Turns" type="VBoxContainer" parent="SubViewport/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewport/MarginContainer/Turns"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="SubViewport/MarginContainer/Turns/HBoxContainer"]
+layout_mode = 2
+text = "TURN"
+horizontal_alignment = 1
+
+[node name="Turn_counter" type="Label" parent="SubViewport/MarginContainer/Turns/HBoxContainer"]
+layout_mode = 2
+text = "X"
+
+[node name="ButtonPath" type="Path2D" parent="SubViewport"]
+curve = SubResource("Curve2D_lijqv")
+
+[node name="ButtonSpawnLocation" type="PathFollow2D" parent="SubViewport/ButtonPath"]
+position = Vector2(384, 256)
