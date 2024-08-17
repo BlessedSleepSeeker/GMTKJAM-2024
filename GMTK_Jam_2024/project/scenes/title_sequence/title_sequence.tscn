@@ -245,10 +245,12 @@ color = Color(0.133333, 0.129412, 0.14902, 1)
 script = ExtResource("3_hwnuc")
 
 [node name="LogoAnimation" type="AnimatedSprite2D" parent="."]
-position = Vector2(320, 180)
-scale = Vector2(10, 10)
+position = Vector2(640, 350)
+scale = Vector2(24.25, 24.25)
 sprite_frames = SubResource("SpriteFrames_5aghq")
 animation = &"logo"
+frame = 25
+frame_progress = 1.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -266,6 +268,7 @@ alignment = 1
 
 [node name="agameby" type="Label" parent="MarginContainer/VB"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "A Game By"
 horizontal_alignment = 1
 
@@ -275,5 +278,6 @@ size_flags_vertical = 3
 
 [node name="bss" type="Label" parent="MarginContainer/VB"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Blessed Sleep Studio"
 horizontal_alignment = 1
