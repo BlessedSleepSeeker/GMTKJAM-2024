@@ -19,10 +19,9 @@ func start_turn() -> void:
 	print(combat_handler.current_subround)
 	turn_counter.set_text(str(combat_handler.current_round))
 	round_counter.set_text(str(combat_handler.current_subround))
+	ui.i_need_win_for.connect(get_wins)
 	for option: String in current_options:
 		ui.create_option(option)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func get_wins(option: String):
+	ui.send_win_info(option, combat_handler.get_wins_for(option))

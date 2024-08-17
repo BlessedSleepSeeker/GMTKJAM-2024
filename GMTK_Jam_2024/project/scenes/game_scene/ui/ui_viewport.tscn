@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckipeway2odv1"]
+[gd_scene load_steps=5 format=3 uid="uid://ckipeway2odv1"]
 
 [ext_resource type="FontFile" uid="uid://bl5lv5dwweupt" path="res://assets/font/font.ttf" id="1_qu8cq"]
 [ext_resource type="Script" path="res://scenes/game_scene/ui/ui_viewport.gd" id="1_wt7mx"]
-[ext_resource type="PackedScene" uid="uid://clq4evykogynm" path="res://scenes/game_scene/ui/choice_buttons/shifumi_option_button.tscn" id="2_vqjld"]
 [ext_resource type="Script" path="res://scenes/game_scene/ui/choice_buttons/button_path.gd" id="4_ncdc0"]
 
 [sub_resource type="Theme" id="Theme_l8q1i"]
@@ -19,7 +18,6 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 script = ExtResource("1_wt7mx")
-option_button = ExtResource("2_vqjld")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 disable_3d = true

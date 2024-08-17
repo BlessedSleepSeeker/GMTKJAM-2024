@@ -20,8 +20,8 @@ func _ready():
 	#for i in range(0, 6):
 		#for j in range(0, 3):
 			#print_debug(resolve_fight(get_options().pick_random()))
-	for i in range(0, 3):
-		increment_round()
+	#for i in range(0, 3):
+	#	increment_round()
 
 
 func load_all_options() -> void:

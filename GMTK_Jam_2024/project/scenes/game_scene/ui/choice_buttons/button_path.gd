@@ -4,6 +4,7 @@ const SIZE = 250
 const NUM_POINTS = 1000000
 
 @export var speed: float = 0.001
+@onready var uiViewport = get_parent().get_parent().get_parent().get_parent()
 
 func _ready() -> void:
 	curve = Curve2D.new()
