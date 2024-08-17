@@ -20,18 +20,16 @@ func start_turn() -> void:
 	current_options = combat_handler.get_options()
 	print(combat_handler.current_round)
 	print(combat_handler.current_subround)
-	turn_counter.set_text(str(combat_handler.current_round))
-	round_counter.set_text(str(combat_handler.current_subround))
-	ui.i_need_win_for.connect(get_wins)
-	for option: String in current_options:
-		ui.create_option(option)
-
-func get_wins(option: String):
-	ui.send_win_info(option, combat_handler.get_wins_for(option))
 	update_turns()
 	update_rounds()
 	for option_name: String in current_options:
 		ui.create_option(option_name)
+	ui.i_need_win_for.connect(get_wins)
+
+
+func get_wins(option: String):
+	ui.send_win_info(option, combat_handler.get_wins_for(option))
+	
 
 func update_turns() -> void:
 	turn_counter.set_text(str(combat_handler.current_round))
