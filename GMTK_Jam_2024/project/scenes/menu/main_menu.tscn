@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://chgfq0kn0onbo"]
+[gd_scene load_steps=11 format=4 uid="uid://chgfq0kn0onbo"]
 
 [ext_resource type="PackedScene" uid="uid://dg2lu8hd15uey" path="res://scenes/menu/main_menu_background.tscn" id="2_0xe1w"]
 [ext_resource type="Script" path="res://scenes/menu/main_menu.gd" id="2_20ujx"]
 [ext_resource type="FontFile" uid="uid://bl5lv5dwweupt" path="res://assets/font/font.ttf" id="3_gkw5p"]
+[ext_resource type="PackedScene" uid="uid://bqem1raji7acu" path="res://scenes/3D/Joanna_scene.tscn" id="4_05hb6"]
 
 [sub_resource type="Image" id="Image_4agj1"]
 data = {
@@ -1630,12 +1631,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_20ujx")
 
-[node name="MainMenuBg" parent="." instance=ExtResource("2_0xe1w")]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="MainMenu" type="CenterContainer" parent="."]
+[node name="MainMenuBg" parent="CanvasLayer" instance=ExtResource("2_0xe1w")]
+visible = false
+
+[node name="MainMenu" type="CenterContainer" parent="CanvasLayer"]
 texture_filter = 1
-layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.25
 anchor_right = 1.0
@@ -1644,34 +1646,42 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_b8xuv")
 
-[node name="VBox" type="VBoxContainer" parent="MainMenu"]
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/MainMenu"]
 custom_minimum_size = Vector2(200, 300)
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Play" type="Button" parent="MainMenu/VBox"]
+[node name="Play" type="Button" parent="CanvasLayer/MainMenu/VBox"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_gkw5p")
 text = "Play"
 
-[node name="Credits" type="Button" parent="MainMenu/VBox"]
+[node name="Credits" type="Button" parent="CanvasLayer/MainMenu/VBox"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Credits"
 
-[node name="Settings" type="Button" parent="MainMenu/VBox"]
+[node name="Settings" type="Button" parent="CanvasLayer/MainMenu/VBox"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 tooltip_text = "Todo"
 text = "Settings"
 
-[node name="Exit" type="Button" parent="MainMenu/VBox"]
+[node name="Exit" type="Button" parent="CanvasLayer/MainMenu/VBox"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Exit"
 
-[connection signal="pressed" from="MainMenu/VBox/Play" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="MainMenu/VBox/Credits" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="MainMenu/VBox/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MainMenu/VBox/Exit" to="." method="_on_quit_button_pressed"]
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="JoannaScene" parent="Node3D" instance=ExtResource("4_05hb6")]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(-0.111469, 0, -0.993768, 0, 1, 0, 0.993768, 0, -0.111469, 0, 96.431, 0)
+current = true
+
+[connection signal="pressed" from="CanvasLayer/MainMenu/VBox/Play" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/VBox/Credits" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/VBox/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/VBox/Exit" to="." method="_on_quit_button_pressed"]
