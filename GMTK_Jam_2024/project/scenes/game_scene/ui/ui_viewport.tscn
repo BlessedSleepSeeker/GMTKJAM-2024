@@ -10,22 +10,10 @@ Label/constants/outline_size = 2
 Label/font_sizes/font_size = 36
 Label/fonts/font = ExtResource("1_qu8cq")
 
-[node name="UiViewport" type="SubViewportContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
+[node name="UiViewport" type="CanvasLayer"]
 script = ExtResource("1_wt7mx")
 
-[node name="SubViewport" type="SubViewport" parent="."]
-disable_3d = true
-handle_input_locally = false
-size = Vector2i(1280, 720)
-render_target_update_mode = 4
-
-[node name="MarginContainer" type="MarginContainer" parent="SubViewport"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -37,79 +25,79 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 metadata/_edit_use_anchors_ = true
 
-[node name="Turns" type="VBoxContainer" parent="SubViewport/MarginContainer"]
+[node name="Turns" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SubViewport/MarginContainer/Turns"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Turns"]
 layout_mode = 2
 theme_override_constants/separation = 8
 alignment = 2
 
-[node name="Label" type="Label" parent="SubViewport/MarginContainer/Turns/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/Turns/HBoxContainer"]
 layout_mode = 2
 text = "TURN"
 horizontal_alignment = 1
 
-[node name="Turn_counter" type="Label" parent="SubViewport/MarginContainer/Turns/HBoxContainer"]
+[node name="Turn_counter" type="Label" parent="MarginContainer/Turns/HBoxContainer"]
 layout_mode = 2
 text = "X"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="SubViewport/MarginContainer/Turns"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Turns"]
 layout_mode = 2
 theme_override_constants/separation = 8
 alignment = 2
 
-[node name="Label" type="Label" parent="SubViewport/MarginContainer/Turns/HBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/Turns/HBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Round"
 horizontal_alignment = 1
 
-[node name="Round_counter" type="Label" parent="SubViewport/MarginContainer/Turns/HBoxContainer2"]
+[node name="Round_counter" type="Label" parent="MarginContainer/Turns/HBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "X / 3"
 
-[node name="Score" type="VBoxContainer" parent="SubViewport/MarginContainer"]
+[node name="Score" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SubViewport/MarginContainer/Score"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Score"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="SubViewport/MarginContainer/Score/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/Score/HBoxContainer"]
 layout_mode = 2
 text = "SCORE"
 horizontal_alignment = 1
 
-[node name="Score_counter" type="Label" parent="SubViewport/MarginContainer/Score/HBoxContainer"]
+[node name="Score_counter" type="Label" parent="MarginContainer/Score/HBoxContainer"]
 layout_mode = 2
 text = "X"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="SubViewport/MarginContainer/Score"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Score"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="SubViewport/MarginContainer/Score/HBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/Score/HBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "CPU Score"
 horizontal_alignment = 1
 
-[node name="Cpu_score_counter" type="Label" parent="SubViewport/MarginContainer/Score/HBoxContainer2"]
+[node name="Cpu_score_counter" type="Label" parent="MarginContainer/Score/HBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "X"
 
-[node name="CenterContainer" type="CenterContainer" parent="SubViewport"]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="SubViewport/CenterContainer"]
+[node name="Control" type="Control" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="ButtonPath" type="Path2D" parent="SubViewport/CenterContainer/Control"]
+[node name="ButtonPath" type="Path2D" parent="CenterContainer/Control"]
 script = ExtResource("4_ncdc0")
