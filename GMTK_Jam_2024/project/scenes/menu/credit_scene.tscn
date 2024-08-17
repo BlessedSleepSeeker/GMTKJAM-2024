@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://vd1entiph7b0"]
+[gd_scene load_steps=6 format=3 uid="uid://vd1entiph7b0"]
 
-[ext_resource type="Theme" uid="uid://dc4471fdfa1ix" path="res://assets/ui/default_theme.theme" id="2_5pxf4"]
+[ext_resource type="FontFile" uid="uid://bl5lv5dwweupt" path="res://assets/font/font.ttf" id="2_ilksx"]
+[ext_resource type="Texture2D" uid="uid://xhkxct8d4b88" path="res://assets/icons/gmtk2024-logo.png" id="3_1ahyq"]
 [ext_resource type="Script" path="res://scenes/menu/credit_scene.gd" id="3_fjgl6"]
+[ext_resource type="Texture2D" uid="uid://c7j6xlxsneugk" path="res://assets/icons/bsstudio_logo.png" id="4_rbfsg"]
+
+[sub_resource type="Theme" id="Theme_acquv"]
+Label/font_sizes/font_size = 36
+Label/fonts/font = ExtResource("2_ilksx")
 
 [node name="CreditsScene" type="Control"]
 layout_mode = 3
@@ -28,19 +34,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_5pxf4")
+theme = SubResource("Theme_acquv")
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 96
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "A game made by :
-
-
-
 "
 horizontal_alignment = 1
 
@@ -50,6 +54,45 @@ text = "BlessedSleepSeeker : Game Dev
 Eindall : UI/UX Dev
 Satantamere : 3D and Animations"
 horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Control"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -100.0
+offset_right = 25.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_rbfsg")
+expand_mode = 3
+
+[node name="Container" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Container"]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 1
+offset_right = 364.672
+offset_bottom = 200.0
+texture = ExtResource("3_1ahyq")
+expand_mode = 3
 
 [node name="M" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -66,7 +109,10 @@ grow_vertical = 0
 theme_override_constants/margin_bottom = 10
 
 [node name="Button" type="Button" parent="M"]
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ilksx")
+theme_override_font_sizes/font_size = 36
 text = "Back"
 
 [connection signal="pressed" from="M/Button" to="." method="_on_button_pressed"]

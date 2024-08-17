@@ -10,7 +10,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_scene(first_scene)
-	transition_sprite.position = Vector2(-640, 0)
+	transition_sprite.position = Vector2(-1280, 0)
 
 func flush_scenes():
 	for child in scene_root.get_children():
