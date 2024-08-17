@@ -5,7 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bblok7tf425k4" path="res://assets/openmoji/Rock.png" id="3_enkf6"]
 
 [node name="ShifumiOptionButton" type="PathFollow2D"]
+rotates = false
 script = ExtResource("1_4vpcw")
+
+[node name="LineHolder" type="Node2D" parent="."]
+z_index = -1
 
 [node name="Button" type="Button" parent="."]
 offset_left = -40.0

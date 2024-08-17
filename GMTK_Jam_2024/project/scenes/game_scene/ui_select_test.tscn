@@ -34,64 +34,13 @@ script = ExtResource("1_l610o")
 
 [node name="ShifumiOptionButton" parent="CenterContainer/CenterScreen/PickContainer" instance=ExtResource("1_so1hq")]
 position = Vector2(0, -250)
-rotation = 0.0313955
 
 [node name="ShifumiOptionButton2" parent="CenterContainer/CenterScreen/PickContainer" instance=ExtResource("1_so1hq")]
 position = Vector2(195.364, -155.829)
-rotation = 0.911072
 progress = 224.363
 option_name = "Paper"
 
 [node name="ShifumiOptionButton3" parent="CenterContainer/CenterScreen/PickContainer" instance=ExtResource("1_so1hq")]
 position = Vector2(243.61, 55.621)
-rotation = 1.79071
 progress = 448.726
 option_name = "Scissors"
-
-[node name="ShifumiOptionButton4" parent="CenterContainer/CenterScreen/PickContainer" instance=ExtResource("1_so1hq")]
-position = Vector2(108.442, 225.19)
-rotation = 2.67034
-progress = 673.089
-option_name = "Snake"
-
-[node name="ShifumiOptionButton5" parent="CenterContainer/CenterScreen/PickContainer" instance=ExtResource("1_so1hq")]
-position = Vector2(-108.443, 225.19)
-rotation = -2.67571
-progress = 897.452
-option_name = "Dragon"
-
-[node name="ShifumiOptionButton6" parent="CenterContainer/CenterScreen/PickContainer" instance=ExtResource("1_so1hq")]
-position = Vector2(-108.443, 225.19)
-rotation = -2.67571
-progress = 897.452
-option_name = "Dragon"
-
-[node name="ShifumiOptionButton7" parent="CenterContainer/CenterScreen/PickContainer" instance=ExtResource("1_so1hq")]
-position = Vector2(-108.443, 225.19)
-rotation = -2.67571
-progress = 897.452
-option_name = "Dragon"
-
-[node name="ShifumiOptionButton8" parent="CenterContainer/CenterScreen/PickContainer" instance=ExtResource("1_so1hq")]
-position = Vector2(-108.443, 225.19)
-rotation = -2.67571
-progress = 897.452
-option_name = "Dragon"
-
-[node name="ShifumiOptionButton9" parent="CenterContainer/CenterScreen/PickContainer" instance=ExtResource("1_so1hq")]
-position = Vector2(-108.443, 225.19)
-rotation = -2.67571
-progress = 897.452
-option_name = "Dragon"
-
-[node name="ShifumiOptionButton10" parent="CenterContainer/CenterScreen/PickContainer" instance=ExtResource("1_so1hq")]
-position = Vector2(-108.443, 225.19)
-rotation = -2.67571
-progress = 897.452
-option_name = "Dragon"
-
-[node name="ShifumiOptionButton11" parent="CenterContainer/CenterScreen/PickContainer" instance=ExtResource("1_so1hq")]
-position = Vector2(-108.443, 225.19)
-rotation = -2.67571
-progress = 897.452
-option_name = "Dragon"
