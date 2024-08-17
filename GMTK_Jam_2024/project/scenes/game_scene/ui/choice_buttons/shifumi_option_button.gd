@@ -7,7 +7,7 @@ extends PathFollow2D
 @onready var icon_filepath: String = icons_path_template % option_name
 @onready var button = $Button
 @onready var lineHolder = $LineHolder
-@onready var winLineScene = preload("res://scenes/UI/win_against_line.tscn")
+@onready var winLineScene = preload("res://scenes/game_scene/ui/choice_buttons/win_against_line.tscn")
 
 var endPosForLine = [Vector2(100, 100), Vector2(42, 562), Vector2(-241, -279)]
 
