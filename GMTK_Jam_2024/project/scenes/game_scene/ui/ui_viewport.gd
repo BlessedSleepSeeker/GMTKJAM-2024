@@ -5,6 +5,8 @@ class_name UiViewport
 @onready var turn_counter = $SubViewport/MarginContainer/Turns/HBoxContainer/Turn_counter
 @onready var round_counter = $SubViewport/MarginContainer/Turns/HBoxContainer2/Round_counter
 @onready var button_path = $SubViewport/CenterContainer/Control/ButtonPath
+@onready var score_counter = $SubViewport/MarginContainer/Score/HBoxContainer/Score_counter
+@onready var cpu_score_counter = $SubViewport/MarginContainer/Score/HBoxContainer2/Cpu_score_counter
 
 signal i_need_win_for(option: String)
 
