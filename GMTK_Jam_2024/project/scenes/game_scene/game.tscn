@@ -19,3 +19,5 @@ current = true
 [node name="JoannaScene" parent="World" instance=ExtResource("3_nqdeu")]
 
 [node name="UiViewport" parent="." instance=ExtResource("3_1t86n")]
+
+[connection signal="trigger_new_round" from="CombatHandler" to="." method="_on_combat_handler_trigger_new_round"]

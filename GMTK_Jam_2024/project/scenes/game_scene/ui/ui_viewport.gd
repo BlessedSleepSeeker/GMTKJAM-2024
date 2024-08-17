@@ -5,9 +5,11 @@ class_name UiViewport
 
 @onready var turn_counter = $MarginContainer/Turns/HBoxContainer/Turn_counter
 @onready var round_counter = $MarginContainer/Turns/HBoxContainer2/Round_counter
-@onready var button_path = $CenterContainer/Control/ButtonPath
 @onready var score_counter = $MarginContainer/Score/HBoxContainer/Score_counter
 @onready var cpu_score_counter = $MarginContainer/Score/HBoxContainer2/Cpu_score_counter
+@onready var win_phrase = $CenterContainer/WinPhraseContainer/MarginContainer/WinPhrase
+@onready var win_phrase_container = $CenterContainer/WinPhraseContainer
+@onready var button_path = $CenterContainer/Control/ButtonPath
 @onready var validate_button = $CenterContainer/ValidateButton
 
 var toggled_options: Array[String] = []
@@ -65,11 +67,13 @@ func check_validation_button_status() -> void:
 		validate_button.tooltip_text = ''
 
 func _on_validate_button_pressed() -> void:
+	var selected_option = toggled_options[0]
 	for child: PathFollow2D in button_path.get_children():
 		button_path.remove_child(child)
 	validate_button.tooltip_text = ''
 	validate_button.visible = false
-	player_choice.emit(toggled_options[0])
+	toggled_options = []
+	player_choice.emit(selected_option)
 
 func _process(_delta):
 	for opt_btn: ShifumiOptionButton in button_path.get_children():

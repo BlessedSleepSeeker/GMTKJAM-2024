@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://clq4evykogynm"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/ui/choice_buttons/shifumi_option_button.gd" id="1_rv3lt"]
-[ext_resource type="Theme" uid="uid://bvbn4jo24usmb" path="res://assets/ui/shifumi_game_theme.tres" id="2_028cf"]
-[ext_resource type="Texture2D" uid="uid://bblok7tf425k4" path="res://assets/openmoji/Rock.png" id="3_0b2np"]
+[ext_resource type="Theme" path="res://assets/ui/shifumi_game_theme.tres" id="2_028cf"]
+[ext_resource type="Texture2D" uid="uid://bblok7tf425k4" path="res://assets/openmoji/Rock.png" id="4_dgxj4"]
 [ext_resource type="Texture2D" uid="uid://cpe0l0jw1jnqe" path="res://assets/ui/hexagon.png" id="4_sxt1s"]
 
 [node name="ShifumiOptionButton" type="PathFollow2D"]
@@ -28,5 +28,5 @@ tooltip_text = "Rock"
 theme = ExtResource("2_028cf")
 toggle_mode = true
 keep_pressed_outside = true
-icon = ExtResource("3_0b2np")
+icon = ExtResource("4_dgxj4")
 flat = true

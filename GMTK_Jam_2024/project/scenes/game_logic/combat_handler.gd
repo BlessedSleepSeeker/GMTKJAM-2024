@@ -13,6 +13,8 @@ class_name CombatHandler
 @export var winquote_template = "%s %s %s ! It's a win for %s !"
 @export var bugquote_template = "This one was for nothing, let's try again !"
 
+signal trigger_new_round()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_all_options()
@@ -41,7 +43,11 @@ func get_options() -> Array[String]:
 
 func increment_round():
 	current_round += 1
+	current_subround = 0
 	add_option_for_round()
+	
+func increment_subround():
+	current_subround += 1
 
 func add_option_for_round():
 	remaining_options.shuffle()
@@ -63,12 +69,21 @@ func resolve_fight(player_option_name: String) -> String:
 	for p1_beat: ShifumiBeatenOption in p1_play.get_children():
 		if p1_beat.name == p2_play.name:
 			p1_play.unlock_relation(p1_beat)
+			p1_score =+ 1
 			return winquote_template % [p1_play.name, p1_play.get_win_quote(p2_play.name), p2_play.name, p1_play.name]
 	for p2_beat: ShifumiBeatenOption in p2_play.get_children():
 		if p2_beat.name == p1_play.name:
 			p2_play.unlock_relation(p2_beat)
+			p2_score += 1
 			return winquote_template % [p2_play.name, p2_play.get_win_quote(p1_play.name), p1_play.name, p2_play.name]
 	return bugquote_template
+	
+func next() -> void:
+	if current_subround == 3:
+		increment_round()
+	else:
+		increment_subround()
+	trigger_new_round.emit()
 
 func pick_cpu_option() -> ShifumiOption:
 	return current_options.pick_random()
