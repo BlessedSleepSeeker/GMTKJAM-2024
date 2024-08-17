@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://bqem1raji7acu"]
+[gd_scene load_steps=31 format=3 uid="uid://bqem1raji7acu"]
 
 [ext_resource type="ArrayMesh" uid="uid://wcdxpgcgwsb6" path="res://assets/3D_Models/Hand_low_Outline.obj" id="1_gi4wv"]
 [ext_resource type="ArrayMesh" uid="uid://dq6xkt35jrc7e" path="res://assets/3D_Models/HouseAndOutline.obj" id="2_pfs4u"]
+[ext_resource type="Material" uid="uid://bhfhhr3w7gud" path="res://addons/hypercasualGradientShader/shaders/Hand_Shader.tres" id="2_q4ov3"]
 [ext_resource type="Shader" path="res://addons/hypercasualGradientShader/shaders/hypercasual.gdshader" id="2_yj7ie"]
 [ext_resource type="ArrayMesh" uid="uid://c8ro5gjifvsgo" path="res://assets/3D_Models/Plate.obj" id="3_epvii"]
 [ext_resource type="Texture2D" uid="uid://dipgtpgp7omrb" path="res://assets/3D_Models/Textures/lambert8SG_2D_View.png" id="4_eksr0"]
@@ -12,30 +13,12 @@
 [ext_resource type="ArrayMesh" uid="uid://tp7hwo3ucwh2" path="res://assets/3D_Models/Pillow_and_outline.obj" id="7_rcxdx"]
 [ext_resource type="ArrayMesh" uid="uid://eipfsxayc056" path="res://assets/3D_Models/Cup.obj" id="8_71en0"]
 [ext_resource type="ArrayMesh" uid="uid://cf5vr1hwjmryi" path="res://assets/3D_Models/Table_and_outline.obj" id="8_qyf61"]
+[ext_resource type="Material" uid="uid://bdrj5wc882fd2" path="res://addons/hypercasualGradientShader/shaders/Outliner_shader.tres" id="11_bpi8f"]
+[ext_resource type="Material" uid="uid://w0q7lc4pbuja" path="res://addons/hypercasualGradientShader/shaders/TeaPot_shader.tres" id="12_ey283"]
+[ext_resource type="PackedScene" uid="uid://dk5yms4fbq5y3" path="res://scenes/3D/hand_idle.tscn" id="16_ti52s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0roiu"]
 albedo_color = Color(0, 0.0649999, 0.78, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tints"]
-render_priority = 0
-shader = ExtResource("2_yj7ie")
-shader_parameter/useWorldSpace = false
-shader_parameter/gradientOffset = 0.0
-shader_parameter/gradientSize = 1.0
-shader_parameter/blendSmoothness = 0.5
-shader_parameter/colorTop = Color(0.419608, 0.584314, 0.831373, 1)
-shader_parameter/colorBottom = Color(0.419608, 0.584314, 0.831373, 1)
-shader_parameter/colorFrontTop = Color(0.7998, 0.85188, 0.93, 1)
-shader_parameter/colorFrontBottom = Color(0.684104, 0.782758, 0.930186, 1)
-shader_parameter/colorBackTop = Color(0.8, 0.8, 0.8, 1)
-shader_parameter/colorBackBottom = Color(0.419608, 0.584314, 0.831373, 1)
-shader_parameter/colorLeftTop = Color(0.6, 0.6, 0.6, 1)
-shader_parameter/colorLeftBottom = Color(0.419608, 0.584314, 0.831373, 1)
-shader_parameter/colorRightTop = Color(0.6, 0.6, 0.6, 1)
-shader_parameter/colorRightBottom = Color(0.419608, 0.584314, 0.831373, 1)
-shader_parameter/useTexture = false
-shader_parameter/deband = true
-shader_parameter/debandDepth = 256.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tknfi"]
 render_priority = 0
@@ -152,32 +135,6 @@ shader_parameter/debandDepth = 256.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_533m8"]
 albedo_color = Color(0, 0.0649999, 0.78, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqggn"]
-albedo_color = Color(0, 0.0649999, 0.78, 1)
-metallic_specular = 0.0
-roughness = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wk7we"]
-render_priority = 1
-shader = ExtResource("2_yj7ie")
-shader_parameter/useWorldSpace = false
-shader_parameter/gradientOffset = 0.0
-shader_parameter/gradientSize = 1.0
-shader_parameter/blendSmoothness = 0.5
-shader_parameter/colorTop = Color(0, 0.733333, 0.882353, 1)
-shader_parameter/colorBottom = Color(0.121569, 0.176471, 0.611765, 1)
-shader_parameter/colorFrontTop = Color(0, 0.733333, 0.882353, 1)
-shader_parameter/colorFrontBottom = Color(0.121569, 0.176471, 0.611765, 1)
-shader_parameter/colorBackTop = Color(0, 0.733333, 0.882353, 1)
-shader_parameter/colorBackBottom = Color(0.113725, 0.133333, 0.160784, 1)
-shader_parameter/colorLeftTop = Color(0.690196, 0.94902, 0.941176, 1)
-shader_parameter/colorLeftBottom = Color(0.533333, 0.152941, 0.321569, 1)
-shader_parameter/colorRightTop = Color(0.690196, 0.94902, 0.941176, 1)
-shader_parameter/colorRightBottom = Color(0.533333, 0.152941, 0.321569, 1)
-shader_parameter/useTexture = false
-shader_parameter/deband = true
-shader_parameter/debandDepth = 256.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_75g5s"]
 render_priority = 0
 shader = ExtResource("2_yj7ie")
@@ -256,7 +213,7 @@ albedo_color = Color(0, 0.0649999, 0.78, 1)
 transform = Transform3D(-1.76455, 0.412228, -0.846433, -0.935778, -0.570381, 1.67302, 0.103438, 1.87209, 0.696109, 46.1051, 86.0536, 64.1923)
 mesh = ExtResource("1_gi4wv")
 surface_material_override/0 = SubResource("StandardMaterial3D_0roiu")
-surface_material_override/1 = SubResource("ShaderMaterial_tints")
+surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HouseAndOutline" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_pfs4u")
@@ -275,8 +232,8 @@ surface_material_override/1 = SubResource("StandardMaterial3D_533m8")
 [node name="Tpot" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.977309, 0, 0.211819, 0, 1, 0, -0.211819, 0, 0.977309, 22.2581, 49.6608, 50.7644)
 mesh = ExtResource("4_gikm4")
-surface_material_override/0 = SubResource("StandardMaterial3D_lqggn")
-surface_material_override/1 = SubResource("ShaderMaterial_wk7we")
+surface_material_override/0 = ExtResource("11_bpi8f")
+surface_material_override/1 = ExtResource("12_ey283")
 
 [node name="Cup" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8394, 46.7321, 75.8833)
@@ -295,3 +252,6 @@ transform = Transform3D(0.824304, 0, 0.566147, 0, 1, 0, -0.566147, 0, 0.824304, 
 mesh = ExtResource("8_qyf61")
 surface_material_override/0 = SubResource("ShaderMaterial_b12hm")
 surface_material_override/1 = SubResource("StandardMaterial3D_y70u5")
+
+[node name="Hand_Idle_outline" parent="." instance=ExtResource("16_ti52s")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 10.2092, 57.9499, 99.6539)

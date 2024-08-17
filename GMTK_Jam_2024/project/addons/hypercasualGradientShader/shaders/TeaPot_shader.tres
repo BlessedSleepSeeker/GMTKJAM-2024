@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://w0q7lc4pbuja"]
+
+[ext_resource type="Shader" path="res://addons/hypercasualGradientShader/shaders/hypercasual.gdshader" id="1_dw254"]
+
+[resource]
+render_priority = 1
+shader = ExtResource("1_dw254")
+shader_parameter/useWorldSpace = false
+shader_parameter/gradientOffset = 0.0
+shader_parameter/gradientSize = 1.0
+shader_parameter/blendSmoothness = 0.5
+shader_parameter/colorTop = Color(0, 0.733333, 0.882353, 1)
+shader_parameter/colorBottom = Color(0.121569, 0.176471, 0.611765, 1)
+shader_parameter/colorFrontTop = Color(0, 0.733333, 0.882353, 1)
+shader_parameter/colorFrontBottom = Color(0.121569, 0.176471, 0.611765, 1)
+shader_parameter/colorBackTop = Color(0, 0.733333, 0.882353, 1)
+shader_parameter/colorBackBottom = Color(0.113725, 0.133333, 0.160784, 1)
+shader_parameter/colorLeftTop = Color(0.690196, 0.94902, 0.941176, 1)
+shader_parameter/colorLeftBottom = Color(0.533333, 0.152941, 0.321569, 1)
+shader_parameter/colorRightTop = Color(0.690196, 0.94902, 0.941176, 1)
+shader_parameter/colorRightBottom = Color(0.533333, 0.152941, 0.321569, 1)
+shader_parameter/useTexture = false
+shader_parameter/deband = true
+shader_parameter/debandDepth = 256.0
