@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dg2lu8hd15uey"]
 
-[ext_resource type="FontFile" uid="uid://bl5lv5dwweupt" path="res://assets/font/font.ttf" id="1_ksm60"]
+[ext_resource type="FontFile" uid="uid://dsg547mxjx1nn" path="res://assets/font/Matemasie-Regular.ttf" id="1_yffft"]
 
 [node name="MainMenuBg" type="ColorRect"]
 anchors_preset = 15
@@ -23,7 +23,7 @@ custom_minimum_size = Vector2(1280, 161)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_ksm60")
+theme_override_fonts/font = ExtResource("1_yffft")
 theme_override_font_sizes/font_size = 78
 text = "Rock Papers Scissors Gun Dynamite Nuke"
 horizontal_alignment = 1
