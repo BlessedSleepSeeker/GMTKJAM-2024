@@ -9,6 +9,7 @@ class_name ShifumiOptionButton
 @onready var button = $Button
 @onready var lineHolder = $LineHolder
 @onready var winLineScene = preload("res://scenes/game_scene/ui/choice_buttons/win_against_line.tscn")
+@onready var particles: GPUParticles2D = $Particles
 
 signal play_button_toggled(toggled: bool, option_button: ShifumiOptionButton)
 
@@ -18,9 +19,11 @@ func _ready():
 	button.icon = icon_texture
 	button.tooltip_text = option_name
 	button.toggled.connect(_on_button_toggled)
+	particles.texture = icon_texture
 
 func _on_button_toggled(toggled: bool):
 	play_button_toggled.emit(toggled, self)
+	particles.emitting = toggled
 
 func line_toggle(toggled: bool, endPosLine: Array[Vector2]):
 	if toggled:
