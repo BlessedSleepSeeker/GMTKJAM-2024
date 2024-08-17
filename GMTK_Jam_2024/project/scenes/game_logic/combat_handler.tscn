@@ -1,656 +1,1285 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbcs6qnmohsgm"]
+[gd_scene load_steps=4 format=3 uid="uid://dbcs6qnmohsgm"]
 
 [ext_resource type="Script" path="res://scenes/game_logic/combat_handler.gd" id="1_5o82g"]
+[ext_resource type="Script" path="res://scenes/game_logic/shifumi_option.gd" id="2_emimo"]
+[ext_resource type="Script" path="res://scenes/game_logic/shifumi_beaten_option.gd" id="3_tjg0l"]
 
 [node name="CombatHandler" type="Node"]
 script = ExtResource("1_5o82g")
 
 [node name="Gun" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Rock" type="Node" parent="Gun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Targets", "Shoots", "Intimidates"])
 
 [node name="Sun" type="Node" parent="Gun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shoots at"])
 
 [node name="Fire" type="Node" parent="Gun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Out (gun)fires"])
 
 [node name="Scissors" type="Node" parent="Gun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Absolutely Destroy"])
 
 [node name="Axe" type="Node" parent="Gun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shoots"])
 
 [node name="Snake" type="Node" parent="Gun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shoots", "Scares"])
 
 [node name="Monkey" type="Node" parent="Gun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shoots", "Scares"])
 
 [node name="Woman" type="Node" parent="Gun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shoots", "Scares"])
 
 [node name="Man" type="Node" parent="Gun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shoot", "Scares"])
 
 [node name="Tree" type="Node" parent="Gun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Target"])
 
 [node name="Cockroach" type="Node" parent="Gun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shoots"])
 
 [node name="Wolf" type="Node" parent="Gun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shoots", "Scares"])
 
 [node name="Dynamite" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Gun" type="Node" parent="Dynamite"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Outclasses", "Intimidates"])
 
 [node name="Rock" type="Node" parent="Dynamite"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Explodes", "Reduces to ashes"])
 
 [node name="Sun" type="Node" parent="Dynamite"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Smoke blots out"])
 
 [node name="Fire" type="Node" parent="Dynamite"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Starts"])
 
 [node name="Scissors" type="Node" parent="Dynamite"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Explodes"])
 
 [node name="Axe" type="Node" parent="Dynamite"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Explodes"])
 
 [node name="Snake" type="Node" parent="Dynamite"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Explodes"])
 
 [node name="Monkey" type="Node" parent="Dynamite"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Explodes"])
 
 [node name="Woman" type="Node" parent="Dynamite"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Explodes"])
 
 [node name="Man" type="Node" parent="Dynamite"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Explodes"])
 
 [node name="Tree" type="Node" parent="Dynamite"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Explodes"])
 
 [node name="Cockroach" type="Node" parent="Dynamite"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Explodes"])
 
 [node name="Nuke" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Dynamite" type="Node" parent="Nuke"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Outclasses"])
 
 [node name="Gun" type="Node" parent="Nuke"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Outclasses"])
 
 [node name="Rock" type="Node" parent="Nuke"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Incinerates"])
 
 [node name="Sun" type="Node" parent="Nuke"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Has power of"])
 
 [node name="Fire" type="Node" parent="Nuke"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Start Massive"])
 
 [node name="Scissors" type="Node" parent="Nuke"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Incinerates"])
 
 [node name="Snake" type="Node" parent="Nuke"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Incinerates"])
 
 [node name="Axe" type="Node" parent="Nuke"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Incinerates"])
 
 [node name="Monkey" type="Node" parent="Nuke"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Incinerates"])
 
 [node name="Woman" type="Node" parent="Nuke"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Incinerates"])
 
 [node name="Man" type="Node" parent="Nuke"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Incinerates"])
 
 [node name="Tree" type="Node" parent="Nuke"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Incinerates"])
 
 [node name="Lightning" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Nuke" type="Node" parent="Lightning"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Defuses"])
 
 [node name="Dynamite" type="Node" parent="Lightning"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Ignites"])
 
 [node name="Gun" type="Node" parent="Lightning"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Melts"])
 
 [node name="Rock" type="Node" parent="Lightning"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Splits"])
 
 [node name="Sun" type="Node" parent="Lightning"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Storm Blots out"])
 
 [node name="Fire" type="Node" parent="Lightning"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Starts"])
 
 [node name="Scissors" type="Node" parent="Lightning"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Melts"])
 
 [node name="Axe" type="Node" parent="Lightning"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Melts"])
 
 [node name="Snake" type="Node" parent="Lightning"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Strikes", "Scares"])
 
 [node name="Monkey" type="Node" parent="Lightning"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Strikes", "Scares"])
 
 [node name="Woman" type="Node" parent="Lightning"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Strikes"])
 
 [node name="Man" type="Node" parent="Lightning"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Strikes"])
 
 [node name="Devil" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Lightning" type="Node" parent="Devil"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Casts"])
 
 [node name="Nuke" type="Node" parent="Devil"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Inspires"])
 
 [node name="Dynamite" type="Node" parent="Devil"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Inspires"])
 
 [node name="Gun" type="Node" parent="Devil"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Inspires"])
 
 [node name="Rock" type="Node" parent="Devil"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Hurls"])
 
 [node name="Sun" type="Node" parent="Devil"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Curses"])
 
 [node name="Fire" type="Node" parent="Devil"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Breathes"])
 
 [node name="Scissors" type="Node" parent="Devil"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Is Immune To"])
 
 [node name="Axe" type="Node" parent="Devil"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Is Immune To"])
 
 [node name="Snake" type="Node" parent="Devil"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Eats"])
 
 [node name="Monkey" type="Node" parent="Devil"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Enrages"])
 
 [node name="Woman" type="Node" parent="Devil"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Tempts"])
 
 [node name="Dragon" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Devil" type="Node" parent="Dragon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Commands"])
 
 [node name="Lightning" type="Node" parent="Dragon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Breathes"])
 
 [node name="Nuke" type="Node" parent="Dragon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Lived Before", "Resists"])
 
 [node name="Dynamite" type="Node" parent="Dragon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Flosses With", "Laught In The Face Of", "Eats and Farts The"])
 
 [node name="Gun" type="Node" parent="Dragon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Is Immune To"])
 
 [node name="Rock" type="Node" parent="Dragon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Rests Upon", "Laught At The Pathetic Attempt Of"])
 
 [node name="Sun" type="Node" parent="Dragon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Is So Big That It Blots Out The"])
 
 [node name="Fire" type="Node" parent="Dragon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Obviously Breathes", "Resists"])
 
 [node name="Scissors" type="Node" parent="Dragon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Is Immune To", "Laught At The Pathetic Attempt Of", "Scales Can't Be Penetrated By"])
 
 [node name="Axe" type="Node" parent="Dragon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Is Immune To", "Laught At The Pathetic Attempt Of", "Scales Can't Be Penetrated By"])
 
 [node name="Snake" type="Node" parent="Dragon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Spawns", "Is The Ancestor Of"])
 
 [node name="Monkey" type="Node" parent="Dragon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Burns", "Mauls", "Chars", "Incinerates", "Throws", "Eats", "4 Stocks"])
 
 [node name="Alien" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Dragon" type="Node" parent="Alien"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Vaporizes", "Disassembles", "Disintegrates", "Shields Itself Against"])
 
 [node name="Devil" type="Node" parent="Alien"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Do Not Believe In"])
 
 [node name="Lightning" type="Node" parent="Alien"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Uses", "Shoots"])
 
 [node name="Nuke" type="Node" parent="Alien"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Defuses", "Teleports", "Shields Itself Against"])
 
 [node name="Dynamite" type="Node" parent="Alien"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Defuses", "Teleports", "Shields Itself Against"])
 
 [node name="Gun" type="Node" parent="Alien"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shield Itself Against", "Dodges", "Teleports"])
 
 [node name="Rock" type="Node" parent="Alien"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Vaporizes", "Disintegrates", "Affect Gravity To Dodge"])
 
 [node name="Sun" type="Node" parent="Alien"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Destroys"])
 
 [node name="Fire" type="Node" parent="Alien"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Fuses"])
 
 [node name="Scissors" type="Node" parent="Alien"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shields Itself Against"])
 
 [node name="Axe" type="Node" parent="Alien"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shields Itself Against", "Dodges"])
 
 [node name="Snake" type="Node" parent="Alien"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Mutates", "Vaporizes", "Disintegrates"])
 
 [node name="Water" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Alien" type="Node" parent="Water"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Is Toxic To"])
 
 [node name="Dragon" type="Node" parent="Water"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Drowns", "Extinguishs"])
 
 [node name="Devil" type="Node" parent="Water"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Blesses", "Purifies"])
 
 [node name="Lightning" type="Node" parent="Water"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Conducts"])
 
 [node name="Nuke" type="Node" parent="Water"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Short-Circuits"])
 
 [node name="Dynamite" type="Node" parent="Water"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Douses"])
 
 [node name="Gun" type="Node" parent="Water"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Rusts", "Wets"])
 
 [node name="Rock" type="Node" parent="Water"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Erodes"])
 
 [node name="Sun" type="Node" parent="Water"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Reflects"])
 
 [node name="Fire" type="Node" parent="Water"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Extinguishes"])
 
 [node name="Scissors" type="Node" parent="Water"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Rusts"])
 
 [node name="Axe" type="Node" parent="Water"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Rusts"])
 
 [node name="Bowl" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Water" type="Node" parent="Bowl"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Contains"])
 
 [node name="Alien" type="Node" parent="Bowl"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Confuses"])
 
 [node name="Dragon" type="Node" parent="Bowl"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Drowns Tiny"])
 
 [node name="Devil" type="Node" parent="Bowl"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Blesses"])
 
 [node name="Lightning" type="Node" parent="Bowl"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Focuses"])
 
 [node name="Nuke" type="Node" parent="Bowl"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Encases Core Of"])
 
 [node name="Dynamite" type="Node" parent="Bowl"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Splashes"])
 
 [node name="Gun" type="Node" parent="Bowl"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Splashes"])
 
 [node name="Rock" type="Node" parent="Bowl"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Was Once Made Of"])
 
 [node name="Sun" type="Node" parent="Bowl"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Focuses"])
 
 [node name="Fire" type="Node" parent="Bowl"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Snuffs Out"])
 
 [node name="Scissors" type="Node" parent="Bowl"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Covers", "Hides"])
 
 [node name="Air" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Bowl" type="Node" parent="Air"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Tips Over"])
 
 [node name="Water" type="Node" parent="Air"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Evaporates"])
 
 [node name="Alien" type="Node" parent="Air"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Chokes"])
 
 [node name="Dragon" type="Node" parent="Air"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Freezes"])
 
 [node name="Devil" type="Node" parent="Air"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Chokes", "Sends Away"])
 
 [node name="Lightning" type="Node" parent="Air"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Creates"])
 
 [node name="Nuke" type="Node" parent="Air"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Blows Astray"])
 
 [node name="Dynamite" type="Node" parent="Air"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Blows Out"])
 
 [node name="Gun" type="Node" parent="Air"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Tarnishes"])
 
 [node name="Rock" type="Node" parent="Air"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Lifts Tiny", "Erodes"])
 
 [node name="Sun" type="Node" parent="Air"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cools Heat Of"])
 
 [node name="Fire" type="Node" parent="Air"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Blows Out"])
 
 [node name="Moon" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Air" type="Node" parent="Moon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Has No"])
 
 [node name="Bowl" type="Node" parent="Moon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shaped Like"])
 
 [node name="Water" type="Node" parent="Moon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Has No", "Affect Currents Of"])
 
 [node name="Alien" type="Node" parent="Moon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Houses"])
 
 [node name="Dragon" type="Node" parent="Moon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shines On", "Is Older Than Oldest"])
 
 [node name="Devil" type="Node" parent="Moon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Terrifies", "Light Purifies"])
 
 [node name="Lightning" type="Node" parent="Moon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Is Far Above"])
 
 [node name="Nuke" type="Node" parent="Moon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Is Out Of Range Of", "Looks Like It Was Already Nuked, So Don't Care About"])
 
 [node name="Dynamite" type="Node" parent="Moon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Suffocates"])
 
 [node name="Gun" type="Node" parent="Moon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Moonshine On"])
 
 [node name="Rock" type="Node" parent="Moon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Is A Bigger", "Shines On"])
 
 [node name="Sun" type="Node" parent="Moon"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Eclipses"])
 
 [node name="Paper" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Moon" type="Node" parent="Paper"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Imitates"])
 
 [node name="Air" type="Node" parent="Paper"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Fans"])
 
 [node name="Bowl" type="Node" parent="Paper"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Is Simply Better Than"])
 
 [node name="Water" type="Node" parent="Paper"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Boats Floating On A Stream Of "])
 
 [node name="Alien" type="Node" parent="Paper"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Disproves"])
 
 [node name="Dragon" type="Node" parent="Paper"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Rebukes"])
 
 [node name="Devil" type="Node" parent="Paper"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Rebukes"])
 
 [node name="Lightning" type="Node" parent="Paper"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Defines", "Isolates From"])
 
 [node name="Nuke" type="Node" parent="Paper"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Defines"])
 
 [node name="Dynamite" type="Node" parent="Paper"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Encases"])
 
 [node name="Gun" type="Node" parent="Paper"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Outlaws"])
 
 [node name="Rock" type="Node" parent="Paper"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Covers"])
+unlocked_result = true
 
 [node name="Sponge" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Paper" type="Node" parent="Sponge"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Soaks"])
 
 [node name="Moon" type="Node" parent="Sponge"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Looks Like"])
 
 [node name="Air" type="Node" parent="Sponge"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Uses Pockets Of"])
 
 [node name="Bowl" type="Node" parent="Sponge"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cleans"])
 
 [node name="Water" type="Node" parent="Sponge"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Absorbs"])
 
 [node name="Alien" type="Node" parent="Sponge"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Intrigues", "Distracts"])
 
 [node name="Dragon" type="Node" parent="Sponge"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cleanses"])
 
 [node name="Devil" type="Node" parent="Sponge"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Purifies"])
 
 [node name="Lightning" type="Node" parent="Sponge"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Conducts", "Is Immune To"])
 
 [node name="Nuke" type="Node" parent="Sponge"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cleans"])
 
 [node name="Dynamite" type="Node" parent="Sponge"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Soaks"])
 
 [node name="Gun" type="Node" parent="Sponge"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cleans"])
 
 [node name="Wolf" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Sponge" type="Node" parent="Wolf"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Chews Up"])
 
 [node name="Paper" type="Node" parent="Wolf"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Chews Up"])
 
 [node name="Moon" type="Node" parent="Wolf"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Howls At"])
 
 [node name="Air" type="Node" parent="Wolf"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Breathes"])
 
 [node name="Bowl" type="Node" parent="Wolf"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["SCHLORP SCHLORP SCHLORP In The"])
 
 [node name="Water" type="Node" parent="Wolf"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["SCHLORP SCHLORP SCHLORP"])
 
 [node name="Alien" type="Node" parent="Wolf"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Chases", "Scares"])
 
 [node name="Dragon" type="Node" parent="Wolf"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Outruns"])
 
 [node name="Devil" type="Node" parent="Wolf"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Bites Spawns Of"])
 
 [node name="Lightning" type="Node" parent="Wolf"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Outruns (Very Fast)"])
 
 [node name="Nuke" type="Node" parent="Wolf"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["-2 Launches"])
 
 [node name="Dynamite" type="Node" parent="Wolf"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Dodges", "Outruns"])
 
 [node name="Cockroach" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Wolf" type="Node" parent="Cockroach"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Sleeps In Fur Of"])
 
 [node name="Sponge" type="Node" parent="Cockroach"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Nest In"])
 
 [node name="Paper" type="Node" parent="Cockroach"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Nest In Between"])
 
 [node name="Moon" type="Node" parent="Cockroach"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Vibes With"])
 
 [node name="Air" type="Node" parent="Cockroach"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Breathes"])
 
 [node name="Bowl" type="Node" parent="Cockroach"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Hides Under"])
 
 [node name="Water" type="Node" parent="Cockroach"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Drinks"])
 
 [node name="Alien" type="Node" parent="Cockroach"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Lives In Ship Of"])
 
 [node name="Dragon" type="Node" parent="Cockroach"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Eats Egg Of"])
 
 [node name="Devil" type="Node" parent="Cockroach"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Is The Cause Of"])
 
 [node name="Lightning" type="Node" parent="Cockroach"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Hides From"])
 
 [node name="Nuke" type="Node" parent="Cockroach"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Survives", "Do Not Care About"])
 
 [node name="Tree" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Cockroach" type="Node" parent="Tree"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shelters"])
 
 [node name="Wolf" type="Node" parent="Tree"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Provide Shades To Pacified"])
 
 [node name="Sponge" type="Node" parent="Tree"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Outlives"])
 
 [node name="Paper" type="Node" parent="Tree"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Creates"])
 
 [node name="Moon" type="Node" parent="Tree"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Blocks"])
 
 [node name="Air" type="Node" parent="Tree"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Produces"])
 
 [node name="Bowl" type="Node" parent="Tree"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Creates", "Is"])
 
 [node name="Water" type="Node" parent="Tree"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Drinks"])
 
 [node name="Alien" type="Node" parent="Tree"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Ensnares Ship Of"])
 
 [node name="Dragon" type="Node" parent="Tree"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shelters"])
 
 [node name="Devil" type="Node" parent="Tree"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Seals", "Imprisons"])
 
 [node name="Lightning" type="Node" parent="Tree"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Attracts"])
 
 [node name="Man" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Tree" type="Node" parent="Man"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Plants"])
 
 [node name="Cockroach" type="Node" parent="Man"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Steps On"])
 
 [node name="Wolf" type="Node" parent="Man"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Homini Lupus Est, Therefore Win Against"])
 
 [node name="Sponge" type="Node" parent="Man"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cleans With"])
 
 [node name="Paper" type="Node" parent="Man"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Writes On"])
 
 [node name="Moon" type="Node" parent="Man"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Travels To", "Admires"])
 
 [node name="Air" type="Node" parent="Man"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Breathes"])
 
 [node name="Bowl" type="Node" parent="Man"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Eats From"])
 
 [node name="Water" type="Node" parent="Man"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Drinks"])
 
 [node name="Alien" type="Node" parent="Man"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Disproves", "Outsmarts"])
 
 [node name="Dragon" type="Node" parent="Man"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Hero Slays", "Bard Seduces", "Tamer Subdues"])
 
 [node name="Devil" type="Node" parent="Man"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Exorcises"])
 
 [node name="Woman" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Man" type="Node" parent="Woman"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Tempts"])
 
 [node name="Tree" type="Node" parent="Woman"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Plants"])
 
 [node name="Cockroach" type="Node" parent="Woman"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Steps On"])
 
 [node name="Wolf" type="Node" parent="Woman"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Tames (Woof Woof)"])
 
 [node name="Sponge" type="Node" parent="Woman"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cleans With"])
 
 [node name="Paper" type="Node" parent="Woman"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Writes On"])
 
 [node name="Moon" type="Node" parent="Woman"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Admires", "Vibes With"])
 
 [node name="Air" type="Node" parent="Woman"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Breathes"])
 
 [node name="Bowl" type="Node" parent="Woman"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Eats From"])
 
 [node name="Water" type="Node" parent="Woman"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Drinks"])
 
 [node name="Alien" type="Node" parent="Woman"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Disproves", "Outsmarts"])
 
 [node name="Dragon" type="Node" parent="Woman"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Hero Kills", "Bard Seduces", "Tamer Subdues"])
 
 [node name="Monkey" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Woman" type="Node" parent="Monkey"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Flings Poop At"])
 
 [node name="Man" type="Node" parent="Monkey"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Steals Food From"])
 
 [node name="Tree" type="Node" parent="Monkey"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Lives In"])
 
 [node name="Cockroach" type="Node" parent="Monkey"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Eats"])
 
 [node name="Wolf" type="Node" parent="Monkey"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Taunts and Enrages"])
 
 [node name="Sponge" type="Node" parent="Monkey"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Rips Up", "Throws Away"])
 
 [node name="Paper" type="Node" parent="Monkey"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Rips Up", "Prepares Poop Bomb With Toilet"])
 
 [node name="Moon" type="Node" parent="Monkey"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Screeches"])
 
 [node name="Air" type="Node" parent="Monkey"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Breathes"])
 
 [node name="Bowl" type="Node" parent="Monkey"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Smashes", "Throw Away The"])
 
 [node name="Water" type="Node" parent="Monkey"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Drinks"])
 
 [node name="Alien" type="Node" parent="Monkey"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Infuriates"])
 
 [node name="Snake" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Monkey" type="Node" parent="Snake"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Bites"])
 
 [node name="Woman" type="Node" parent="Snake"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Bites"])
 
 [node name="Man" type="Node" parent="Snake"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Bites"])
 
 [node name="Tree" type="Node" parent="Snake"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Lives In"])
 
 [node name="Cockroach" type="Node" parent="Snake"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Eats"])
 
 [node name="Wolf" type="Node" parent="Snake"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Bites"])
 
 [node name="Sponge" type="Node" parent="Snake"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Swallows"])
 
 [node name="Paper" type="Node" parent="Snake"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Nests In"])
 
 [node name="Moon" type="Node" parent="Snake"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Vibes With"])
 
 [node name="Air" type="Node" parent="Snake"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Breathes"])
 
 [node name="Bowl" type="Node" parent="Snake"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Sleeps In"])
 
 [node name="Water" type="Node" parent="Snake"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Drinks"])
 
 [node name="Axe" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Snake" type="Node" parent="Axe"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Chops", "Scares"])
 
 [node name="Monkey" type="Node" parent="Axe"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cleaves"])
 
 [node name="Woman" type="Node" parent="Axe"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cleaves"])
 
 [node name="Man" type="Node" parent="Axe"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cleaves"])
 
 [node name="Tree" type="Node" parent="Axe"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Chops Down"])
 
 [node name="Cockroach" type="Node" parent="Axe"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Crushes"])
 
 [node name="Wolf" type="Node" parent="Axe"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cleaves"])
 
 [node name="Sponge" type="Node" parent="Axe"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Slices"])
 
 [node name="Paper" type="Node" parent="Axe"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Slices"])
 
 [node name="Moon" type="Node" parent="Axe"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Reflects Light Of"])
 
 [node name="Air" type="Node" parent="Axe"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Flies Through"])
 
 [node name="Bowl" type="Node" parent="Axe"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Chops"])
 
 [node name="Scissors" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Axe" type="Node" parent="Scissors"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Are Sharpers Than"])
 
 [node name="Snake" type="Node" parent="Scissors"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Stab"])
 
 [node name="Monkey" type="Node" parent="Scissors"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Stab"])
 
 [node name="Woman" type="Node" parent="Scissors"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cut Hair Of"])
 
 [node name="Man" type="Node" parent="Scissors"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cut Hair Of"])
 
 [node name="Tree" type="Node" parent="Scissors"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Carve"])
 
 [node name="Cockroach" type="Node" parent="Scissors"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Stab"])
 
 [node name="Wolf" type="Node" parent="Scissors"]
+script = ExtResource("3_tjg0l")
 
 [node name="Sponge" type="Node" parent="Scissors"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cut Up"])
 
 [node name="Paper" type="Node" parent="Scissors"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Cut"])
+unlocked_result = true
 
 [node name="Moon" type="Node" parent="Scissors"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Reflects Light Of"])
 
 [node name="Air" type="Node" parent="Scissors"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Swish Through"])
 
 [node name="Fire" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Scissors" type="Node" parent="Fire"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Melts"])
 
 [node name="Axe" type="Node" parent="Fire"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Forges"])
 
 [node name="Snake" type="Node" parent="Fire"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Burns"])
 
 [node name="Monkey" type="Node" parent="Fire"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Burns"])
 
 [node name="Woman" type="Node" parent="Fire"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Burns"])
 
 [node name="Man" type="Node" parent="Fire"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Burns"])
 
 [node name="Tree" type="Node" parent="Fire"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Burns Down"])
 
 [node name="Cockroach" type="Node" parent="Fire"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Burns"])
 
 [node name="Wolf" type="Node" parent="Fire"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Scares"])
 
 [node name="Sponge" type="Node" parent="Fire"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Incinerates"])
 
 [node name="Paper" type="Node" parent="Fire"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Reduce To Ashes"])
 
 [node name="Moon" type="Node" parent="Fire"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Hides Light Of"])
 
 [node name="Sun" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Fire" type="Node" parent="Sun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Is Made Of", "Is A Bigger"])
 
 [node name="Scissors" type="Node" parent="Sun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Melts"])
 
 [node name="Axe" type="Node" parent="Sun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Melts"])
 
 [node name="Snake" type="Node" parent="Sun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Warms"])
 
 [node name="Monkey" type="Node" parent="Sun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Warms"])
 
 [node name="Woman" type="Node" parent="Sun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Warms"])
 
 [node name="Man" type="Node" parent="Sun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Warms"])
 
 [node name="Tree" type="Node" parent="Sun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Feeds"])
 
 [node name="Cockroach" type="Node" parent="Sun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Warms"])
 
 [node name="Wolf" type="Node" parent="Sun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Warms"])
 
 [node name="Sponge" type="Node" parent="Sun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Dries Up"])
 
 [node name="Paper" type="Node" parent="Sun"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shines Through"])
 
 [node name="Rock" type="Node" parent="."]
+script = ExtResource("2_emimo")
 
 [node name="Sun" type="Node" parent="Rock"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Shades"])
 
 [node name="Fire" type="Node" parent="Rock"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Pounds Out"])
 
 [node name="Scissors" type="Node" parent="Rock"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Smashes", "Sharpens"])
+unlocked_result = true
 
 [node name="Axe" type="Node" parent="Rock"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Chips", "Sharpens"])
 
 [node name="Snake" type="Node" parent="Rock"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Crushes"])
 
 [node name="Monkey" type="Node" parent="Rock"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Crushes"])
 
 [node name="Woman" type="Node" parent="Rock"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Kills"])
 
 [node name="Man" type="Node" parent="Rock"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Kills"])
 
 [node name="Tree" type="Node" parent="Rock"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Blocks Roots Of"])
 
 [node name="Cockroach" type="Node" parent="Rock"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Squishes"])
 
 [node name="Wolf" type="Node" parent="Rock"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Slays"])
 
 [node name="Sponge" type="Node" parent="Rock"]
+script = ExtResource("3_tjg0l")
+reasons = Array[String](["Squishes"])

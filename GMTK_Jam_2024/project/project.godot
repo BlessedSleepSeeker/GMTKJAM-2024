@@ -33,7 +33,8 @@ script/icon="res://Assets/Player/portraitNeutral.png"
 
 folder_colors={
 "res://autoloads/": "green",
-"res://scenes/": "yellow"
+"res://scenes/": "yellow",
+"res://script_templates/": "gray"
 }
 
 [layer_names]
