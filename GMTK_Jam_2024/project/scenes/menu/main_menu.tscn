@@ -1634,7 +1634,6 @@ script = ExtResource("2_20ujx")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MainMenuBg" parent="CanvasLayer" instance=ExtResource("2_0xe1w")]
-visible = false
 
 [node name="MainMenu" type="CenterContainer" parent="CanvasLayer"]
 texture_filter = 1
