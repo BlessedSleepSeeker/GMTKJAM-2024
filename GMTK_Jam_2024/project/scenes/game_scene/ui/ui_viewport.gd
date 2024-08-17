@@ -4,6 +4,8 @@ class_name UiViewport
 @export var option_button: PackedScene
 @onready var turn_counter = $SubViewport/MarginContainer/Turns/HBoxContainer/Turn_counter
 @onready var round_counter = $SubViewport/MarginContainer/Turns/HBoxContainer2/Round_counter
+@onready var score_counter = $SubViewport/MarginContainer/Score/HBoxContainer/Score_counter
+@onready var cpu_score_counter = $SubViewport/MarginContainer/Score/HBoxContainer2/Cpu_score_counter
 
 
 func create_option(name: String) -> void:
