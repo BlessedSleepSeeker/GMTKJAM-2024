@@ -1,7 +1,7 @@
 extends Node
 
 @onready var combat_handler: CombatHandler = null
-@onready var ui: UiViewport = find_child('UI')
+@onready var ui: UiViewport = $UiViewport
 
 @onready var turn_counter: Label = ui.turn_counter
 @onready var round_counter: Label = ui.round_counter

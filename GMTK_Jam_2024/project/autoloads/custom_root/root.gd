@@ -5,7 +5,7 @@ extends Node
 @onready var settings = $Settings
 @onready var scene_root = $SceneRoot
 @onready var animator: AnimationPlayer = $Animator
-@onready var transition_sprite: Control = $TransitionSprite
+@onready var transition_sprite: Control = $TransitionLayer/TransitionSprite
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

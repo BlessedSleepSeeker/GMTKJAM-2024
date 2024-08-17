@@ -10,6 +10,7 @@ class_name Settings
 ## Then we load the setting file and change the values of our settings based on the value inside the file.
 ## We then apply the settings and save the settings value to the settings file.
 func _ready():
+	print_debug("LOADING SETTINGS")
 	if load_setting_file() == OK:
 		load_settings_from_file()
 	apply_settings()

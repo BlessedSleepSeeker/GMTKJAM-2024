@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/game_scene/ui/choice_buttons/shifumi_option_button.gd" id="1_rv3lt"]
 [ext_resource type="Theme" uid="uid://bvbn4jo24usmb" path="res://assets/ui/shifumi_game_theme.tres" id="2_028cf"]
-[ext_resource type="Texture2D" uid="uid://bblok7tf425k4" path="res://assets/openmoji/Rock.png" id="3_nlxs8"]
+[ext_resource type="Texture2D" uid="uid://bblok7tf425k4" path="res://assets/openmoji/Rock.png" id="3_0b2np"]
 
 [node name="ShifumiOptionButton" type="PathFollow2D"]
 rotates = false
@@ -20,4 +20,4 @@ tooltip_text = "Rock"
 theme = ExtResource("2_028cf")
 toggle_mode = true
 keep_pressed_outside = true
-icon = ExtResource("3_nlxs8")
+icon = ExtResource("3_0b2np")
