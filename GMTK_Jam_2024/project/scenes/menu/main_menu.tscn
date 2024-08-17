@@ -1659,7 +1659,6 @@ text = "Credits"
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 tooltip_text = "Todo"
-disabled = true
 text = "Settings"
 
 [node name="Exit" type="Button" parent="MainMenu/VBox"]
