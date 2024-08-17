@@ -21,6 +21,8 @@ theme_override_constants/margin_top = 40
 [node name="Label" type="Label" parent="MarginContainer"]
 custom_minimum_size = Vector2(1280, 161)
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("1_ksm60")
 theme_override_font_sizes/font_size = 78
 text = "Rock Papers Scissors Gun Dynamite Nuke"

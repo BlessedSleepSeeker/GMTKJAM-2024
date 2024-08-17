@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4lnw666h84nd"]
+
+[sub_resource type="Gradient" id="Gradient_4do03"]
+offsets = PackedFloat32Array(0.7, 1)
+colors = PackedColorArray(0.12549, 1, 0.219608, 1, 1, 0.219608, 0.211765, 0.34902)
+
+[node name="WinAgainstLine" type="Line2D"]
+gradient = SubResource("Gradient_4do03")
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
