@@ -118,7 +118,7 @@ func get_last_played_p2_option_name() -> String:
 
 func increment_round():
 	current_round += 1
-	current_subround = 0
+	current_subround = 1
 	add_option_for_round()
 	
 

@@ -70,6 +70,30 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(111.773, 90.9344, 164.124)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.610865, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_dhbjk"]
 resource_name = "cutscene_intro"
@@ -101,7 +125,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_dqm51"]
 resource_name = "dramatic_finish"
-length = 3.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -109,7 +133,7 @@ tracks/0/path = NodePath("../CamHolder/FightCam:current")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(1, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -121,7 +145,7 @@ tracks/1/path = NodePath("../CamHolder/FightCam2:current")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(2, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -133,7 +157,7 @@ tracks/2/path = NodePath("../CamHolder/FightCam3:current")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2, 3),
+"times": PackedFloat32Array(3, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -145,7 +169,7 @@ tracks/3/path = NodePath(".:current")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(1, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -157,10 +181,10 @@ tracks/4/path = NodePath("../AudioStreamPlayer3D:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1, 2.03333, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2, 3.03333, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, true, true, true]
+"values": [true, true, true, true, true]
 }
 
 [sub_resource type="Animation" id="Animation_i26i4"]
@@ -262,11 +286,11 @@ transform = Transform3D(0.954761, -0.297375, -1.4227e-08, 0.248833, 0.79891, 0.5
 current = true
 
 [node name="FightCam3" type="Camera3D" parent="World/CamHolder"]
-transform = Transform3D(-0.0488847, -0.161651, 0.985637, -7.46303e-09, 0.986816, 0.161845, -0.998804, 0.00791173, -0.0482402, 263.666, 96.5535, 122.934)
+transform = Transform3D(-0.0488847, -0.161651, 0.985636, -7.46303e-09, 0.986816, 0.161845, -0.998804, 0.00791174, -0.0482402, 173.688, 96.5535, 122.934)
 current = true
 
 [node name="Camera" type="Camera3D" parent="World"]
-transform = Transform3D(-0.173648, 0, 0.984807, 0, 1, 0, -0.984807, 0, -0.173648, -61.2039, 282.579, -193.173)
+transform = Transform3D(0.819152, 0, 0.573576, 0, 1, 0, -0.573576, 0, 0.819152, 111.773, 90.9344, 164.124)
 
 [node name="JoannaScene" parent="World" instance=ExtResource("3_nqdeu")]
 
@@ -274,6 +298,12 @@ transform = Transform3D(-0.173648, 0, 0.984807, 0, 1, 0, -0.984807, 0, -0.173648
 stream = ExtResource("5_cmuwh")
 max_polyphony = 3
 bus = &"Sound Effect"
+
+[node name="ParticleHolder" type="Node3D" parent="World"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="World/ParticleHolder"]
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="World/ParticleHolder"]
 
 [node name="UiViewport" parent="." instance=ExtResource("3_1t86n")]
 
