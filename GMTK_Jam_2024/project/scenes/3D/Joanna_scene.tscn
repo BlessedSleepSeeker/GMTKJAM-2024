@@ -1,8 +1,8 @@
-[gd_scene load_steps=69 format=3 uid="uid://bqem1raji7acu"]
+[gd_scene load_steps=72 format=3 uid="uid://bqem1raji7acu"]
 
 [ext_resource type="Script" path="res://scenes/3D/joanna_scene.gd" id="1_uljkf"]
 [ext_resource type="ArrayMesh" uid="uid://dq6xkt35jrc7e" path="res://assets/3D_Models/HouseAndOutline.obj" id="2_pfs4u"]
-[ext_resource type="Material" uid="uid://bhfhhr3w7gud" path="res://addons/hypercasualGradientShader/shaders/Hand_Shader.tres" id="2_q4ov3"]
+[ext_resource type="Material" path="res://addons/hypercasualGradientShader/shaders/Hand_Shader.tres" id="2_q4ov3"]
 [ext_resource type="Shader" path="res://addons/hypercasualGradientShader/shaders/hypercasual.gdshader" id="2_yj7ie"]
 [ext_resource type="ArrayMesh" uid="uid://c8ro5gjifvsgo" path="res://assets/3D_Models/Plate.obj" id="3_epvii"]
 [ext_resource type="Texture2D" uid="uid://dipgtpgp7omrb" path="res://assets/3D_Models/Textures/lambert8SG_2D_View.png" id="4_eksr0"]
@@ -13,7 +13,7 @@
 [ext_resource type="ArrayMesh" uid="uid://tp7hwo3ucwh2" path="res://assets/3D_Models/Pillow_and_outline.obj" id="7_rcxdx"]
 [ext_resource type="ArrayMesh" uid="uid://eipfsxayc056" path="res://assets/3D_Models/Cup.obj" id="8_71en0"]
 [ext_resource type="ArrayMesh" uid="uid://cf5vr1hwjmryi" path="res://assets/3D_Models/Table_and_outline.obj" id="8_qyf61"]
-[ext_resource type="Material" uid="uid://bdrj5wc882fd2" path="res://addons/hypercasualGradientShader/shaders/Outliner_shader.tres" id="11_bpi8f"]
+[ext_resource type="Material" path="res://addons/hypercasualGradientShader/shaders/Outliner_shader.tres" id="11_bpi8f"]
 [ext_resource type="Material" uid="uid://b8bj0jxwpkumd" path="res://addons/hypercasualGradientShader/shaders/TeaPot_shader.tres" id="12_ey283"]
 [ext_resource type="ArrayMesh" uid="uid://b44otcbdpx01y" path="res://assets/3D_Models/Hand_Pose/Hand_Paper.obj" id="15_3qpcl"]
 [ext_resource type="ArrayMesh" uid="uid://d2yf5mnqcgyct" path="res://assets/3D_Models/Hand_Pose/Hand_Air.obj" id="16_41oka"]
@@ -35,7 +35,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c0tc6dcopyfti" path="res://assets/3D_Models/Hand_Pose/Hand_Sponge.obj" id="31_5tbxe"]
 [ext_resource type="ArrayMesh" uid="uid://b4ggunn06kxd7" path="res://assets/3D_Models/Hand_Pose/Hand_Water.obj" id="32_cnufe"]
 [ext_resource type="ArrayMesh" uid="uid://dbq6hym7vmwfh" path="res://assets/3D_Models/Hand_Pose/Hand_Wolf.obj" id="33_kxkhg"]
-[ext_resource type="PackedScene" path="res://scenes/audio/player_sound_player.tscn" id="36_0ocrs"]
+[ext_resource type="PackedScene" uid="uid://ds3j0t31j5n7b" path="res://scenes/audio/player_sound_player.tscn" id="36_0ocrs"]
 [ext_resource type="ArrayMesh" uid="uid://85kms8ao6l6s" path="res://assets/3D_Models/Sumo.obj" id="37_4yhtt"]
 [ext_resource type="ArrayMesh" uid="uid://cqd6fcqe8hxtn" path="res://assets/3D_Models/Hand_Pose/Hand_Axe.obj" id="37_tsgon"]
 [ext_resource type="ArrayMesh" uid="uid://c5avim7ch4mvr" path="res://assets/3D_Models/Hand_Pose/Hand_Fire.obj" id="38_j4wdp"]
@@ -463,6 +463,19 @@ shader_parameter/useTexture = true
 shader_parameter/textureSource = ExtResource("39_oxavw")
 shader_parameter/deband = true
 shader_parameter/debandDepth = 256.0
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k2ml6"]
+sky_top_color = Color(0.975981, 0.647781, 0.74116, 1)
+sky_horizon_color = Color(0.232854, 0.728342, 0.805746, 1)
+
+[sub_resource type="Sky" id="Sky_asdlp"]
+sky_material = SubResource("ProceduralSkyMaterial_k2ml6")
+
+[sub_resource type="Environment" id="Environment_i0yy8"]
+background_mode = 2
+background_color = Color(0.829681, 0.56983, 0.884639, 1)
+sky = SubResource("Sky_asdlp")
+ambient_light_source = 3
 
 [node name="JoannaScene" type="Node3D"]
 script = ExtResource("1_uljkf")
@@ -965,3 +978,6 @@ surface_material_override/0 = ExtResource("11_bpi8f")
 surface_material_override/1 = ExtResource("11_bpi8f")
 surface_material_override/2 = SubResource("ShaderMaterial_vbw5v")
 surface_material_override/3 = SubResource("ShaderMaterial_cwcap")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i0yy8")
