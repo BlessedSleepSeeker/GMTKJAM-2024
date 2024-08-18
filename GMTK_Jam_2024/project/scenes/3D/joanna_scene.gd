@@ -9,6 +9,10 @@ extends Node3D
 @onready var sound_player2: AudioStreamPlayer = $PlayerSoundPlayer2
 @onready var animator: AnimationPlayer = $Animator
 
+var sound_player_iterator: int = 0
+var option_list_sound: Array[String] = []
+var shifumi_speed: float = 1
+
 signal shifumi_finished
 
 func play_hand_anim(anim_name: String) -> void:
@@ -40,11 +44,20 @@ func hide_idle() -> void:
 func shifumi_anim(option_list: Array[String]):
 	hide_idle()
 	show_hands("Rock", "Rock")
-	var speed: float = 1
-	print_debug(option_list)
+	shifumi_speed = 1
+	sound_player_iterator = 0
+	option_list_sound = option_list
 	for option in option_list:
-		animator.play("shifumi", -1, speed, false)
-		speed += 0.1
+		animator.play("shifumi", -1, shifumi_speed, false)
+		shifumi_speed += 0.1
 		await animator.animation_finished
+		sound_player_iterator += 1
 	hide_hands()
 	shifumi_finished.emit()
+
+
+func play_shifumi_sound() -> void:
+	sound_player1.pitch_scale = shifumi_speed
+	sound_player2.pitch_scale = shifumi_speed
+	sound_player1.load_play_sound(option_list_sound[sound_player_iterator])
+	sound_player2.load_play_sound(option_list_sound[sound_player_iterator])
