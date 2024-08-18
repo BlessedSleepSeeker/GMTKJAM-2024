@@ -93,6 +93,7 @@ _data = {
 }
 
 [node name="Root" type="Node"]
+process_mode = 1
 script = ExtResource("1_0ggjb")
 
 [node name="Settings" parent="." instance=ExtResource("2_022ww")]

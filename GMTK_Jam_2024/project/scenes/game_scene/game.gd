@@ -1,9 +1,12 @@
 extends Node
 
+@export var main_menu_screen_path := "res://scenes/menu/main_menu.tscn"
+
 @onready var combat_handler: CombatHandler = $CombatHandler
 @onready var ui: UiViewport = $UiViewport
 @onready var world_controller: Node3D = $World
 @onready var fader: AnimationPlayer = $Fader
+@onready var pause_modal: CanvasLayer = $PauseModal
 
 @onready var turn_counter: Label = ui.turn_counter
 @onready var round_counter: Label = ui.round_counter
@@ -12,9 +15,8 @@ extends Node
 @onready var win_phrase_container: Panel = ui.win_phrase_container
 @onready var win_phrase: Label = ui.win_phrase
 
-
 var current_options: Array[String] = []
-
+signal transition(new_scene: PackedScene, animation: String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -65,19 +67,29 @@ func process_round(option: String) -> void:
 func get_wins(option: String) -> void:
 	ui.send_win_info(option, combat_handler.get_wins_for(option))
 
-
 func update_turns() -> void:
 	turn_counter.set_text(str(combat_handler.current_round))
 
-
 func update_rounds() -> void:
 	round_counter.set_text(str(combat_handler.current_subround))
-
 
 func update_score() -> void:
 	score_counter.set_text(str(combat_handler.p1_score))
 	cpu_score_counter.set_text(str(combat_handler.p2_score))
 
-
 func _on_combat_handler_trigger_new_round() -> void:
 	start_turn()
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.keycode == KEY_ESCAPE and event.is_released():
+		get_tree().paused = true
+		pause_modal.visible = true
+
+func _on_unpause_button_pressed() -> void:
+	get_tree().paused = false
+	pause_modal.visible = false
+
+func _on_exit_button_pressed() -> void:
+	get_tree().paused = false
+	var main_menu_scene = load(main_menu_screen_path)
+	transition.emit(main_menu_scene, "scene_transition")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bqc4l26ke8xg2"]
+[gd_scene load_steps=18 format=3 uid="uid://bqc4l26ke8xg2"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/game.gd" id="1_jy5kf"]
 [ext_resource type="PackedScene" uid="uid://dbcs6qnmohsgm" path="res://scenes/game_logic/combat_handler.tscn" id="2_heai2"]
@@ -6,37 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ckipeway2odv1" path="res://scenes/game_scene/ui/ui_viewport.tscn" id="3_1t86n"]
 [ext_resource type="PackedScene" uid="uid://bqem1raji7acu" path="res://scenes/3D/Joanna_scene.tscn" id="3_nqdeu"]
 [ext_resource type="AudioStream" uid="uid://dl6jerjryx6la" path="res://assets/sounds/game/cinematic_finish_uh.mp3" id="5_cmuwh"]
-
-[sub_resource type="Animation" id="Animation_dhbjk"]
-resource_name = "cutscene_intro"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5, 5.53333, 8),
-"transitions": PackedFloat32Array(2.07053, 0.574349, 0.574349, 0.0947324),
-"update": 0,
-"values": [Vector3(-61.2039, 282.579, -193.173), Vector3(-19.1588, 140.185, 123.378), Vector3(-19.159, 160, 123.378), Vector3(-19.1588, 140.185, 123.378)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3.36667, 5, 5.53333, 7.1),
-"transitions": PackedFloat32Array(0.466516, 1.93187, 3.605, 3.605, 0.0980729),
-"update": 0,
-"values": [Vector3(0, 1.74533, 0), Vector3(0.513127, -0.872665, -0.172788), Vector3(-0.610865, -0.959931, 0), Vector3(-0.698132, -0.959931, 0), Vector3(-0.610865, -0.959931, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_i26i4"]
-resource_name = "fight"
+[ext_resource type="FontFile" uid="uid://bl5lv5dwweupt" path="res://assets/font/font.ttf" id="6_si56i"]
 
 [sub_resource type="Animation" id="Animation_wj8ev"]
 length = 8.0
@@ -99,6 +69,34 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_dhbjk"]
+resource_name = "cutscene_intro"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 5.53333, 8),
+"transitions": PackedFloat32Array(2.07053, 0.574349, 0.574349, 0.0947324),
+"update": 0,
+"values": [Vector3(-61.2039, 282.579, -193.173), Vector3(-19.1588, 140.185, 123.378), Vector3(-19.159, 160, 123.378), Vector3(-19.1588, 140.185, 123.378)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.36667, 5, 5.53333, 7.1),
+"transitions": PackedFloat32Array(0.466516, 1.93187, 3.605, 3.605, 0.0980729),
+"update": 0,
+"values": [Vector3(0, 1.74533, 0), Vector3(0.513127, -0.872665, -0.172788), Vector3(-0.610865, -0.959931, 0), Vector3(-0.698132, -0.959931, 0), Vector3(-0.610865, -0.959931, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_dqm51"]
@@ -165,6 +163,9 @@ tracks/4/keys = {
 "values": [true, true, true, true]
 }
 
+[sub_resource type="Animation" id="Animation_i26i4"]
+resource_name = "fight"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vx3gf"]
 _data = {
 "RESET": SubResource("Animation_wj8ev"),
@@ -226,6 +227,16 @@ _data = {
 "ui_fade_out": SubResource("Animation_xyifo")
 }
 
+[sub_resource type="Theme" id="Theme_septm"]
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/constants/outline_size = 2
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("6_si56i")
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/constants/outline_size = 4
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("6_si56i")
+
 [node name="Game" type="Node"]
 script = ExtResource("1_jy5kf")
 
@@ -273,4 +284,75 @@ libraries = {
 "": SubResource("AnimationLibrary_vneir")
 }
 
+[node name="PauseModal" type="CanvasLayer" parent="."]
+process_mode = 2
+visible = false
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseModal"]
+process_mode = 2
+z_index = 1000
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_septm")
+
+[node name="Panel" type="Panel" parent="PauseModal/CenterContainer"]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseModal/CenterContainer/Panel"]
+z_index = 1000
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseModal/CenterContainer/Panel/MarginContainer"]
+z_index = 1000
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PauseModal/CenterContainer/Panel/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 24
+text = "Hope you are enjoying this game !"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseModal/CenterContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PauseModal/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PauseModal/CenterContainer/Panel/MarginContainer"]
+z_index = 1100
+layout_mode = 2
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseModal/CenterContainer/Panel/MarginContainer/VBoxContainer2"]
+z_index = 1200
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="ExitButton" type="Button" parent="PauseModal/CenterContainer/Panel/MarginContainer/VBoxContainer2/HBoxContainer"]
+z_index = 1500
+layout_mode = 2
+text = "Exit to menu"
+
+[node name="UnpauseButton" type="Button" parent="PauseModal/CenterContainer/Panel/MarginContainer/VBoxContainer2/HBoxContainer"]
+z_index = 1500
+layout_mode = 2
+text = "Return to game"
+
 [connection signal="trigger_new_round" from="CombatHandler" to="." method="_on_combat_handler_trigger_new_round"]
+[connection signal="pressed" from="PauseModal/CenterContainer/Panel/MarginContainer/VBoxContainer2/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PauseModal/CenterContainer/Panel/MarginContainer/VBoxContainer2/HBoxContainer/UnpauseButton" to="." method="_on_unpause_button_pressed"]
