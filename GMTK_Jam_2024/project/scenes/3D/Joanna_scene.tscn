@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bqem1raji7acu"]
+[gd_scene load_steps=37 format=3 uid="uid://bqem1raji7acu"]
 
 [ext_resource type="Script" path="res://scenes/3D/joanna_scene.gd" id="1_uljkf"]
 [ext_resource type="ArrayMesh" uid="uid://dq6xkt35jrc7e" path="res://assets/3D_Models/HouseAndOutline.obj" id="2_pfs4u"]
@@ -19,6 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://bx7v0e6ufxgl6" path="res://scenes/3D/hand_idle.tscn" id="16_ti52s"]
 [ext_resource type="ArrayMesh" uid="uid://x82jjflygdfb" path="res://assets/3D_Models/Hand_Pose/Hand_Rock.obj" id="17_wx7nt"]
 [ext_resource type="ArrayMesh" uid="uid://cgy5slhlx3egg" path="res://assets/3D_Models/Hand_Pose/Hand_Cisors.obj" id="18_bkwwc"]
+[ext_resource type="ArrayMesh" uid="uid://dyg7jj4sgme5l" path="res://assets/3D_Models/Hand_Pose/Hand_Gun.obj" id="20_c34jk"]
+[ext_resource type="ArrayMesh" uid="uid://drawgv11nu8sx" path="res://assets/3D_Models/Hand_Pose/Hand_Dynamite.obj" id="21_q43g3"]
+[ext_resource type="ArrayMesh" uid="uid://ocekbaj65str" path="res://assets/3D_Models/Hand_Pose/Hand_Lightning.obj" id="22_iruu0"]
+[ext_resource type="ArrayMesh" uid="uid://yw8tnhwksvue" path="res://assets/3D_Models/Hand_Pose/Hand_Nuke.obj" id="23_15urr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tknfi"]
 render_priority = 0
@@ -266,5 +270,29 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 [node name="HandRock" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 8, 151.974)
 mesh = ExtResource("17_wx7nt")
+surface_material_override/0 = ExtResource("2_q4ov3")
+surface_material_override/1 = ExtResource("11_bpi8f")
+
+[node name="HandGun" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 8, 95.6769)
+mesh = ExtResource("20_c34jk")
+surface_material_override/0 = ExtResource("11_bpi8f")
+surface_material_override/1 = ExtResource("2_q4ov3")
+
+[node name="HandDynamite" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 8, 56.8956)
+mesh = ExtResource("21_q43g3")
+surface_material_override/0 = ExtResource("2_q4ov3")
+surface_material_override/1 = ExtResource("11_bpi8f")
+
+[node name="HandLightning" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 8, 36.2468)
+mesh = ExtResource("22_iruu0")
+surface_material_override/0 = ExtResource("11_bpi8f")
+surface_material_override/1 = ExtResource("2_q4ov3")
+
+[node name="HandNuke" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 8, 77.0483)
+mesh = ExtResource("23_15urr")
 surface_material_override/0 = ExtResource("2_q4ov3")
 surface_material_override/1 = ExtResource("11_bpi8f")
