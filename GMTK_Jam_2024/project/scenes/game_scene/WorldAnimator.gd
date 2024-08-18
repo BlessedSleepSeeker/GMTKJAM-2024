@@ -29,8 +29,9 @@ func play_intro():
 	intro_finished.emit()
 
 
-func play_fight(p1_play: String, p2_play: String) -> void:
-	await get_tree().create_timer(0.5).timeout
+func play_fight(p1_play: String, p2_play: String, option_list: Array[String]) -> void:
+	hand_controller.shifumi_anim(option_list)
+	await hand_controller.shifumi_finished
 	hand_controller.hide_idle()
 	hand_controller.show_hands(p1_play, p2_play)
 	dramatic_finish()

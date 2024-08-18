@@ -53,7 +53,7 @@ func process_round(option: String) -> void:
 	var combat_result = combat_handler.resolve_fight(option)
 	win_phrase.set_text(combat_result[0])
 	await fader.animation_finished
-	world_controller.play_fight(combat_result[1], combat_result[2])
+	world_controller.play_fight(combat_result[1], combat_result[2], combat_handler.get_options())
 	await world_controller.fight_finished
 	fader.play("ui_fade_in")
 	await fader.animation_finished

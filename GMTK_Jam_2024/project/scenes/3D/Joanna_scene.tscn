@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bqem1raji7acu"]
+[gd_scene load_steps=53 format=3 uid="uid://bqem1raji7acu"]
 
 [ext_resource type="Script" path="res://scenes/3D/joanna_scene.gd" id="1_uljkf"]
 [ext_resource type="ArrayMesh" uid="uid://dq6xkt35jrc7e" path="res://assets/3D_Models/HouseAndOutline.obj" id="2_pfs4u"]
@@ -35,6 +35,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c0tc6dcopyfti" path="res://assets/3D_Models/Hand_Pose/Hand_Sponge.obj" id="31_5tbxe"]
 [ext_resource type="ArrayMesh" uid="uid://b4ggunn06kxd7" path="res://assets/3D_Models/Hand_Pose/Hand_Water.obj" id="32_cnufe"]
 [ext_resource type="ArrayMesh" uid="uid://dbq6hym7vmwfh" path="res://assets/3D_Models/Hand_Pose/Hand_Wolf.obj" id="33_kxkhg"]
+[ext_resource type="PackedScene" uid="uid://ds3j0t31j5n7b" path="res://scenes/audio/player_sound_player.tscn" id="36_0ocrs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tknfi"]
 render_priority = 0
@@ -223,6 +224,163 @@ shader_parameter/debandDepth = 256.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y70u5"]
 albedo_color = Color(0, 0.0649999, 0.78, 1)
 
+[sub_resource type="Animation" id="Animation_cpi03"]
+resource_name = "shifumi"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("P1HandHolder/HandRock:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.533333, 0.7),
+"transitions": PackedFloat32Array(1.7411, 0.277392, 1, 1.7411),
+"update": 0,
+"values": [Vector3(16.0724, 86.9119, 124.384), Vector3(16.072, 100, 124.384), Vector3(16.072, 80, 124.384), Vector3(16.0724, 86.9119, 124.384)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("P1HandHolder/HandRock:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.533333, 0.7),
+"transitions": PackedFloat32Array(1, 0.574349, 1),
+"update": 0,
+"values": [Vector3(-0.32418, -2.10946, 1.31209), Vector3(-0.324631, -2.1101, 1.13446), Vector3(-0.32418, -2.10946, 1.31209)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("P2HandHolder/HandRock_AI:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.533333, 0.7),
+"transitions": PackedFloat32Array(1.7411, 0.277392, 1, 1.7411),
+"update": 0,
+"values": [Vector3(3.39255, 6.49828, 5.3494), Vector3(-20, 6.498, 5.349), Vector3(3.39255, 6.49828, 5.3494), Vector3(3.39255, 6.49828, 5.3494)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("P2HandHolder/HandRock_AI:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.533333, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.1301, -1.62721, 0.269323), Vector3(0.1309, -1.62665, 0.0872665), Vector3(0.1301, -1.62721, 0.269323)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("P2HandHolder/HandRock_AI:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.999999, 1, 1), Vector3(1.1, 1.1, 1.1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("P1HandHolder/HandRock:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.1, 1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_qagkg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("P1HandHolder/HandRock:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(16.0724, 86.9119, 124.384)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("P1HandHolder/HandRock:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.32418, -2.10946, 1.31209)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("P2HandHolder/HandRock_AI:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.39255, 6.49828, 5.3494)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("P2HandHolder/HandRock_AI:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1301, -1.62721, 0.269323)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("P2HandHolder/HandRock_AI:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.999999, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("P1HandHolder/HandRock:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fj2tf"]
+_data = {
+"RESET": SubResource("Animation_qagkg"),
+"shifumi": SubResource("Animation_cpi03")
+}
+
 [node name="JoannaScene" type="Node3D"]
 script = ExtResource("1_uljkf")
 
@@ -266,10 +424,12 @@ surface_material_override/1 = SubResource("StandardMaterial3D_y70u5")
 
 [node name="Hand_Idle_outline" parent="." instance=ExtResource("16_ti52s")]
 transform = Transform3D(88.8801, 0, -14.1536, 0, 90, 0, 14.1536, 0, 88.8801, 10.1556, 71.7925, 121.594)
+visible = false
 script = ExtResource("16_yckgm")
 
 [node name="Hand_Idle_outline2" parent="." instance=ExtResource("16_ti52s")]
 transform = Transform3D(-59.432, 0, 67.5858, 0, 90, 0, -67.5858, 0, -59.432, 107.245, 71.7925, 64.2922)
+visible = false
 script = ExtResource("16_yckgm")
 
 [node name="P1HandHolder" type="Node3D" parent="."]
@@ -277,6 +437,7 @@ script = ExtResource("16_j65al")
 
 [node name="HandAir" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(0.73154, 0.681534, 0.0190015, -0.423364, 0.432229, 0.796204, 0.534427, -0.5905, 0.60473, 9.0602, 81.2803, 123.173)
+visible = false
 mesh = ExtResource("16_41oka")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -284,6 +445,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandAlien" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(-0.0760655, 0.377912, -0.922712, 0.833841, 0.531528, 0.148957, 0.546739, -0.758064, -0.355549, 12.9754, 81.0093, 126.689)
+visible = false
 mesh = ExtResource("18_70i0y")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -291,6 +453,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandBowl" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(-0.0325793, 0.329284, -0.943669, 0.418345, 0.861974, 0.286335, 0.907704, -0.385451, -0.165837, 13.2219, 73.2168, 119.113)
+visible = false
 mesh = ExtResource("19_2uk64")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -298,6 +461,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandScissors" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(-0.411276, 0.776172, -0.477921, 0.908825, 0.308953, -0.280332, -0.0699309, -0.54964, -0.832469, 9.21078, 80.7151, 123.595)
+visible = false
 mesh = ExtResource("18_bkwwc")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -305,6 +469,7 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandCockroach" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(0.850702, 0.3559, -0.386835, 0.405632, 0.0235786, 0.913732, 0.334318, -0.934227, -0.124306, 10.2367, 84.3653, 124.681)
+visible = false
 mesh = ExtResource("21_ab28c")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -312,6 +477,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandDevil" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(-0.00956112, 0.231192, -0.972861, 0.464608, 0.86254, 0.200409, 0.885465, -0.450083, -0.11566, 8.24656, 77.6475, 120.846)
+visible = false
 mesh = ExtResource("22_cs38i")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -319,6 +485,7 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandDragon" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(0.480591, 0.636234, -0.603523, 0.284313, 0.537994, 0.793554, 0.829578, -0.552964, 0.0776653, 10.39, 82.2554, 118.052)
+visible = false
 mesh = ExtResource("23_36k0o")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -326,6 +493,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandDynamite" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(-0.119566, 0.470636, -0.874189, 0.975526, 0.219348, -0.0153361, 0.184534, -0.854628, -0.485344, 4.1846, 87.133, 120.007)
+visible = false
 mesh = ExtResource("21_q43g3")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -333,6 +501,7 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandGun" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(0.0656898, 0.709256, -0.701884, 0.992725, -0.117584, -0.0259096, -0.100907, -0.695076, -0.71182, 12.4231, 91.3997, 120.076)
+visible = false
 mesh = ExtResource("20_c34jk")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -340,6 +509,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandLightning" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(-0.2166, 0.457861, -0.862234, 0.772778, 0.620117, 0.135165, 0.596573, -0.637039, -0.488142, 8.17485, 78.9913, 119.87)
+visible = false
 mesh = ExtResource("22_iruu0")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -347,6 +517,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandMoon" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(0.970961, 0.189992, -0.145385, -0.154178, 0.961619, 0.226977, 0.182929, -0.197971, 0.962987, 13.2219, 73.2168, 119.113)
+visible = false
 mesh = ExtResource("27_rf7hy")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -354,6 +525,7 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandNuke" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(-0.973173, 0.0786553, -0.216212, 0.216887, 0.627216, -0.748038, 0.0767744, -0.774863, -0.627449, 13.2219, 73.2168, 119.113)
+visible = false
 mesh = ExtResource("23_15urr")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -361,13 +533,14 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandPaper" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(0.500163, 0.494665, 0.710735, -0.597813, -0.396542, 0.696687, 0.626463, -0.773344, 0.0973814, 7.57964, 89.4147, 124.371)
+visible = false
 mesh = ExtResource("15_3qpcl")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
 surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandRock" type="MeshInstance3D" parent="P1HandHolder"]
-transform = Transform3D(0.133088, 0.565868, -0.813684, 0.916367, 0.242505, 0.318531, 0.377569, -0.788026, -0.486268, 16.0724, 86.9119, 124.384)
+transform = Transform3D(0.133088, 0.565868, -0.813684, 0.916367, 0.242505, 0.318531, 0.377569, -0.788026, -0.486269, 16.0724, 86.9119, 124.384)
 mesh = ExtResource("17_wx7nt")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -375,6 +548,7 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandSponge" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(-0.853332, 0.503784, -0.134259, 0.501489, 0.722685, -0.475642, -0.142594, -0.47321, -0.869333, 13.2219, 73.2168, 119.113)
+visible = false
 mesh = ExtResource("31_5tbxe")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -382,6 +556,7 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandWater" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(0.218956, 0.935869, 0.276058, -0.108958, -0.257702, 0.960061, 0.969632, -0.24029, 0.0455447, 6.28868, 98.3121, 118.956)
+visible = false
 mesh = ExtResource("32_cnufe")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -389,6 +564,7 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandWolf" type="MeshInstance3D" parent="P1HandHolder"]
 transform = Transform3D(0.912628, 0.40355, 0.0652523, -0.279682, 0.49997, 0.819639, 0.298141, -0.766275, 0.569152, 13.7226, 79.506, 123.48)
+visible = false
 mesh = ExtResource("33_kxkhg")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -401,6 +577,7 @@ name_convention_hand = "Hand%s_AI"
 
 [node name="HandAir_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(1, 2.98023e-08, -2.98023e-08, 8.9407e-08, 1, 2.98023e-08, -2.98023e-08, 0, 1, 0, 0, 0)
+visible = false
 mesh = ExtResource("16_41oka")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -408,6 +585,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandAlien_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(-0.116471, -0.353702, -0.928078, -0.0142801, 0.934938, -0.354524, 0.993092, -0.0280388, -0.113944, 4.85761, 0.475323, 1.98456)
+visible = false
 mesh = ExtResource("18_70i0y")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -415,6 +593,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandBowl_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(0.284155, -0.33004, -0.900183, -0.377381, 0.824597, -0.421453, 0.881385, 0.45947, 0.109763, 4.28827, 1.74866, -8.79648)
+visible = false
 mesh = ExtResource("19_2uk64")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -422,6 +601,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandScissors_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(-0.723002, 0.143259, -0.67583, 0.153816, 0.987089, 0.0446858, 0.673505, -0.0716456, -0.735702, 0.574993, -0.390888, -0.19194)
+visible = false
 mesh = ExtResource("18_bkwwc")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -429,6 +609,7 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandCockroach_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(0.629261, -0.248903, -0.736259, 0.557693, 0.804409, 0.204703, 0.541302, -0.539419, 0.644995, 0.360073, 1.24517, 3.39024)
+visible = false
 mesh = ExtResource("21_ab28c")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -436,6 +617,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandDevil_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(0.269523, -0.436579, -0.858345, -0.328566, 0.796154, -0.508117, 0.905208, 0.418972, 0.0711374, -0.301022, -0.750423, -4.31531)
+visible = false
 mesh = ExtResource("22_cs38i")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -443,6 +625,7 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandDragon_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(0.674552, -0.0578558, -0.735957, -0.0394384, 0.992676, -0.114185, 0.737173, 0.106049, 0.66733, -2.17691, 4.3518, -2.29526)
+visible = false
 mesh = ExtResource("23_36k0o")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -450,6 +633,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandDynamite_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(-0.40185, -0.205311, -0.892392, 0.231195, 0.92022, -0.315822, 0.886039, -0.33323, -0.322324, -7.73683, 1.0767, 2.6524)
+visible = false
 mesh = ExtResource("21_q43g3")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -457,6 +641,7 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandGun_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(-0.426157, 0.197163, -0.882903, 0.53344, 0.843, -0.069227, 0.730638, -0.500477, -0.464425, -3.47969, 8.49517, 6.2477)
+visible = false
 mesh = ExtResource("20_c34jk")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -464,6 +649,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandLightning_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(-0.166794, -0.268042, -0.948859, -0.165879, 0.956252, -0.240971, 0.971938, 0.117203, -0.203959, -1.44406, 0.357944, -3.83707)
+visible = false
 mesh = ExtResource("22_iruu0")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("11_bpi8f")
@@ -471,6 +657,7 @@ surface_material_override/1 = ExtResource("2_q4ov3")
 
 [node name="HandMoon_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(0.873333, -0.373929, 0.312197, 0.487083, 0.662028, -0.569622, 0.00631506, 0.649536, 0.760305, 4.28827, 1.74866, -8.79648)
+visible = false
 mesh = ExtResource("27_rf7hy")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -478,6 +665,7 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandNuke_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(-0.762707, -0.622109, -0.176801, -0.614841, 0.782264, -0.100171, 0.200622, 0.0323035, -0.979136, 4.28827, 1.74866, -8.79648)
+visible = false
 mesh = ExtResource("23_15urr")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -485,13 +673,14 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandPaper_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(0.95378, 0.116453, 0.277022, -0.28744, 0.622393, 0.728014, -0.0876369, -0.773993, 0.6271, -3.88677, 1.79958, 7.1729)
+visible = false
 mesh = ExtResource("15_3qpcl")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
 surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandRock_AI" type="MeshInstance3D" parent="P2HandHolder"]
-transform = Transform3D(-0.088815, -0.109855, -0.989972, 0.26383, 0.955805, -0.129733, 0.960471, -0.272707, -0.0559065, 3.39255, 6.49828, 5.3494)
+transform = Transform3D(-0.088815, -0.109855, -0.989972, 0.26383, 0.955805, -0.129733, 0.960471, -0.272707, -0.0559068, 3.39255, 6.49828, 5.3494)
 mesh = ExtResource("17_wx7nt")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -499,6 +688,7 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandSponge_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(-0.912765, -0.190316, -0.361441, -0.280615, 0.935142, 0.216252, 0.296842, 0.298814, -0.906971, 4.28827, 1.74866, -8.79648)
+visible = false
 mesh = ExtResource("31_5tbxe")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -506,6 +696,7 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandWater_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(0.724501, 0.66531, -0.180168, -0.470436, 0.66833, 0.576215, 0.503774, -0.332711, 0.797192, -11.492, 7.96309, 10.9578)
+visible = false
 mesh = ExtResource("32_cnufe")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
@@ -513,7 +704,18 @@ surface_material_override/1 = ExtResource("11_bpi8f")
 
 [node name="HandWolf_AI" type="MeshInstance3D" parent="P2HandHolder"]
 transform = Transform3D(0.945366, -0.325974, 0.0048992, 0.325048, 0.943619, 0.0626593, -0.0250483, -0.0576435, 0.998023, 4.32587, 2.22945, -1.13849)
+visible = false
 mesh = ExtResource("33_kxkhg")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_q4ov3")
 surface_material_override/1 = ExtResource("11_bpi8f")
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fj2tf")
+}
+
+[node name="PlayerSoundPlayer" parent="." instance=ExtResource("36_0ocrs")]
+
+[node name="PlayerSoundPlayer2" parent="." instance=ExtResource("36_0ocrs")]
+voice_name = "2"

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds3j0t31j5n7b"]
+
+[ext_resource type="Script" path="res://scenes/audio/player_sound_player.gd" id="1_ydpae"]
+
+[node name="PlayerSoundPlayer" type="AudioStreamPlayer"]
+max_polyphony = 3
+bus = &"Sound Effect"
+script = ExtResource("1_ydpae")

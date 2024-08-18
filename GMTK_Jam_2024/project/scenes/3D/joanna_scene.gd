@@ -5,6 +5,12 @@ extends Node3D
 @onready var p1_hands: Node3D = $P1HandHolder
 @onready var p2_hands: Node3D = $P2HandHolder
 
+@onready var sound_player1: AudioStreamPlayer = $PlayerSoundPlayer
+@onready var sound_player2: AudioStreamPlayer = $PlayerSoundPlayer2
+@onready var animator: AnimationPlayer = $Animator
+
+signal shifumi_finished
+
 func play_hand_anim(anim_name: String) -> void:
 	hand_controller.play_hand_anim(anim_name)
 
@@ -30,3 +36,15 @@ func show_idle() -> void:
 func hide_idle() -> void:
 	hand_controller.hide()
 	hand_controller2.hide()
+
+func shifumi_anim(option_list: Array[String]):
+	hide_idle()
+	show_hands("Rock", "Rock")
+	var speed: float = 1
+	print_debug(option_list)
+	for option in option_list:
+		animator.play("shifumi", -1, speed, false)
+		speed += 0.1
+		await animator.animation_finished
+	hide_hands()
+	shifumi_finished.emit()
