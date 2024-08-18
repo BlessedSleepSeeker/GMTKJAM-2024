@@ -1,9 +1,19 @@
-[gd_scene load_steps=11 format=4 uid="uid://chgfq0kn0onbo"]
+[gd_scene load_steps=21 format=4 uid="uid://chgfq0kn0onbo"]
 
 [ext_resource type="PackedScene" uid="uid://dg2lu8hd15uey" path="res://scenes/menu/main_menu_background.tscn" id="2_0xe1w"]
 [ext_resource type="Script" path="res://scenes/menu/main_menu.gd" id="2_20ujx"]
 [ext_resource type="FontFile" uid="uid://bl5lv5dwweupt" path="res://assets/font/font.ttf" id="3_gkw5p"]
 [ext_resource type="PackedScene" uid="uid://bqem1raji7acu" path="res://scenes/3D/Joanna_scene.tscn" id="4_05hb6"]
+[ext_resource type="PackedScene" uid="uid://d0jshuqi73grj" path="res://scenes/audio/random_stream_player.tscn" id="5_yuj0w"]
+[ext_resource type="AudioStream" uid="uid://dtx20q0vwdr8x" path="res://assets/sounds/ui/main_menu/bop1.mp3" id="6_uy8wy"]
+[ext_resource type="AudioStream" uid="uid://odiuve2m6knm" path="res://assets/sounds/ui/main_menu/bop2.mp3" id="7_nmqsa"]
+[ext_resource type="AudioStream" uid="uid://dygxb5p40ju4w" path="res://assets/sounds/ui/main_menu/bop3.mp3" id="8_xympc"]
+[ext_resource type="AudioStream" uid="uid://ct1fa2smva4i8" path="res://assets/sounds/ui/main_menu/bop4.mp3" id="9_qqvlo"]
+[ext_resource type="AudioStream" uid="uid://rpmjifuyyile" path="res://assets/sounds/ui/main_menu/bop5.mp3" id="10_2agcr"]
+[ext_resource type="AudioStream" uid="uid://0bx16u6wf5en" path="res://assets/sounds/ui/main_menu/bop6.mp3" id="11_0ayws"]
+[ext_resource type="AudioStream" uid="uid://buludnrudv4fe" path="res://assets/sounds/ui/main_menu/bop7.mp3" id="12_6xpro"]
+[ext_resource type="AudioStream" uid="uid://c5otx6moe5gcg" path="res://assets/sounds/ui/main_menu/bop8.mp3" id="13_dwar4"]
+[ext_resource type="AudioStream" uid="uid://bq4hy1m813ct7" path="res://assets/sounds/ui/main_menu/bop9.mp3" id="14_lpruv"]
 
 [sub_resource type="Image" id="Image_4agj1"]
 data = {
@@ -1684,7 +1694,16 @@ text = "Exit"
 transform = Transform3D(-0.111469, 0, -0.993768, 0, 1, 0, 0.993768, 0, -0.111469, 0, 96.431, 0)
 current = true
 
+[node name="RandomStreamPlayer" parent="." instance=ExtResource("5_yuj0w")]
+max_polyphony = 20
+streams = Array[AudioStream]([ExtResource("6_uy8wy"), ExtResource("7_nmqsa"), ExtResource("8_xympc"), ExtResource("9_qqvlo"), ExtResource("10_2agcr"), ExtResource("11_0ayws"), ExtResource("12_6xpro"), ExtResource("13_dwar4"), ExtResource("14_lpruv")])
+no_repeat = false
+
+[connection signal="mouse_entered" from="CanvasLayer/MainMenu/VBox/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/VBox/Play" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/MainMenu/VBox/Credits" to="." method="_on_credits_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/VBox/Credits" to="." method="_on_credits_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/MainMenu/VBox/Settings" to="." method="_on_settings_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/VBox/Settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/MainMenu/VBox/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/VBox/Exit" to="." method="_on_quit_button_pressed"]

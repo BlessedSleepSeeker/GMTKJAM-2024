@@ -25,6 +25,7 @@ func create_option(_name: String, disabled: bool, p1_or_p2: bool) -> void:
 	option.play_button_toggled.connect(_on_option_button_toggled)
 	option.option_name = _name
 	button_path.add_child(option)
+	option.load_sound(0)
 	option.disabled_toggle(disabled, p1_or_p2)
 	
 	var length = button_path.curve.get_baked_length()

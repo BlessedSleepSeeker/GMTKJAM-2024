@@ -4,15 +4,20 @@ extends PathFollow2D
 class_name ShifumiOptionButton
 
 @export var option_name: String = "Rock"
+@export var disabled: bool = false
 @export var icons_path_template: String = "res://assets/openmoji/%s.png"
+@export var sound_path_template: String = "res://assets/sounds/options/voice%d/%s.mp3"
+
 @onready var icon_filepath: String = icons_path_template % option_name
+
 @onready var button = $Button
 @onready var lineHolder = $LineHolder
 @onready var particles: GPUParticles2D = $Particles
 @onready var hexagon = $Hexagon
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var winLineScene = preload("res://scenes/game_scene/ui/choice_buttons/win_against_line.tscn")
-@export var disabled: bool = false
+@onready var sound_player: AudioStreamPlayer = $SoundPlayer
+
 
 signal play_button_toggled(toggled: bool, option_button: ShifumiOptionButton)
 
@@ -24,10 +29,16 @@ func _ready():
 	button.toggled.connect(_on_button_toggled)
 	particles.texture = icon_texture
 
+
+func load_sound(_round: int):
+	var sound: AudioStream = load(sound_path_template % [1, option_name])
+	sound_player.stream = sound
+
 func _on_button_toggled(toggled: bool):
 	play_button_toggled.emit(toggled, self)
 	particles.emitting = toggled
 	if toggled:
+		sound_player.play()
 		anim_player.play("pressed")
 	else:
 		anim_player.play_backwards("pressed")

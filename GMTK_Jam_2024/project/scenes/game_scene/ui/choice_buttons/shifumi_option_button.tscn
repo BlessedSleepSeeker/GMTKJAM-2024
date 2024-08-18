@@ -148,6 +148,7 @@ _data = {
 rotates = false
 script = ExtResource("1_rv3lt")
 disabled = null
+sound_path_template = null
 
 [node name="LineHolder" type="Node2D" parent="."]
 z_index = -1
@@ -184,3 +185,7 @@ lifetime = 5.0
 libraries = {
 "": SubResource("AnimationLibrary_6hpgh")
 }
+
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 10
+bus = &"Sound Effect"
