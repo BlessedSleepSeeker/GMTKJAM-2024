@@ -1,47 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://byyrdom0f4784"]
+[gd_scene load_steps=32 format=3 uid="uid://byyrdom0f4784"]
 
 [ext_resource type="FontFile" uid="uid://cmrl2ud2gbcsr" path="res://assets/font/sci-bi.ttf" id="1_s5gp3"]
-[ext_resource type="Texture2D" uid="uid://c73iq8u6bwdgu" path="res://assets/ui/panelcontainer.png" id="2_0vqyn"]
 [ext_resource type="Script" path="res://scenes/title_sequence/title_sequence.gd" id="3_hwnuc"]
 [ext_resource type="Texture2D" uid="uid://brn7hd6vbxh21" path="res://assets/boot_screen/bsstudio_sheet.png" id="4_axukp"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ndwxm"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rqt4n"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3v54b"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3cvge"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxhoh"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0tq4"]
-texture = ExtResource("2_0vqyn")
-texture_margin_left = 3.0
-texture_margin_top = 3.0
-texture_margin_right = 3.0
-texture_margin_bottom = 3.0
-
-[sub_resource type="Theme" id="Theme_wx2v0"]
+[sub_resource type="Theme" id="Theme_pspjv"]
 default_font = ExtResource("1_s5gp3")
-default_font_size = 20
-Button/font_sizes/font_size = 30
-Button/fonts/font = ExtResource("1_s5gp3")
-Button/styles/disabled = SubResource("StyleBoxEmpty_ndwxm")
-Button/styles/focus = SubResource("StyleBoxEmpty_rqt4n")
-Button/styles/hover = SubResource("StyleBoxEmpty_3v54b")
-Button/styles/normal = SubResource("StyleBoxEmpty_3cvge")
-Button/styles/pressed = SubResource("StyleBoxEmpty_jxhoh")
-GridContainer/constants/h_separation = 2
-GridContainer/constants/v_separation = 2
-Label/fonts/font = ExtResource("1_s5gp3")
-MarginContainer/constants/margin_bottom = 5
-MarginContainer/constants/margin_left = 5
-MarginContainer/constants/margin_right = 5
-MarginContainer/constants/margin_top = 5
-PanelContainer/styles/panel = SubResource("StyleBoxTexture_d0tq4")
-TabBar/font_sizes/font_size = 20
-TabBar/fonts/font = ExtResource("1_s5gp3")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kghf4"]
 atlas = ExtResource("4_axukp")
@@ -240,7 +204,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = SubResource("Theme_wx2v0")
+theme = SubResource("Theme_pspjv")
 color = Color(0.133333, 0.129412, 0.14902, 1)
 script = ExtResource("3_hwnuc")
 
@@ -279,5 +243,6 @@ size_flags_vertical = 3
 [node name="bss" type="Label" parent="MarginContainer/VB"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Blessed Sleep Studio"
+text = "Blessed Sleep Studio
+and friends <3"
 horizontal_alignment = 1

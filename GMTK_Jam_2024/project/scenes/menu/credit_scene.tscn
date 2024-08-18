@@ -58,9 +58,9 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "BlessedSleepSeeker : Gameplay Programmer
-Eindall : UI/UX Programmer
-Satantamere : 3D and Animations"
+text = "BlessedSleepSeeker : Gameplay, Sound Design, Voice Acting
+Eindall : UI/UX Programmer, Sound Design, Voice Acting
+Satantamere : 3D Art and Animations, Voice Acting"
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -77,7 +77,7 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Game engine : Godot Engine 4.3
 3D : Autodesk Maya / ZBrush
-Ressources : Openmoji, Google Fonts
+Ressources : Openmoji, Google Fonts, Kenney Templates
 Sound : Audacity"
 horizontal_alignment = 1
 
@@ -85,7 +85,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
-text = "Links available in this game's itch.io page"
+text = "Additional Links available in this game's itch.io page"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]

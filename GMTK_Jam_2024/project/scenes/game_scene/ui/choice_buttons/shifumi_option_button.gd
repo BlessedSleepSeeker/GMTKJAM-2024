@@ -8,7 +8,7 @@ class_name ShifumiOptionButton
 @export var icons_path_template: String = "res://assets/openmoji/%s.png"
 @export var sound_path_template: String = "res://assets/sounds/options/voice%d/%s.mp3"
 
-@onready var icon_filepath: String = icons_path_template % option_name
+@onready var icon_filepath: String = icons_path_template % option_name.to_lower()
 
 @onready var button = $Button
 @onready var lineHolder = $LineHolder
@@ -32,8 +32,7 @@ func _ready():
 
 func load_sound(_round: int):
 	var voice = int(round(randi_range(1, 2)))
-	print(voice)
-	var sound: AudioStream = load(sound_path_template % [voice, option_name])
+	var sound: AudioStream = load(sound_path_template % [voice, option_name.to_lower()])
 	sound_player.stream = sound
 	
 func _on_sound_player_finished() -> void:
