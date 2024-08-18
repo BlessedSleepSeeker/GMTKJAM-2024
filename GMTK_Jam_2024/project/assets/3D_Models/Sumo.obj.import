@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://85kms8ao6l6s"
+path="res://.godot/imported/Sumo.obj-7dee0a552c994934266e6c2086f90653.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Sumo.obj-7dee0a552c994934266e6c2086f90653.mesh"]
+
+source_file="res://assets/3D_Models/Sumo.obj"
+dest_files=["res://.godot/imported/Sumo.obj-7dee0a552c994934266e6c2086f90653.mesh", "res://.godot/imported/Sumo.obj-7dee0a552c994934266e6c2086f90653.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

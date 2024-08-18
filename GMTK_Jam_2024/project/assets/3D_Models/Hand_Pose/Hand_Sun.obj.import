@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0i12g6ggdx2m"
+path="res://.godot/imported/Hand_Sun.obj-91bac6af55762b747c22b5d763bc3e17.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hand_Sun.obj-91bac6af55762b747c22b5d763bc3e17.mesh"]
+
+source_file="res://assets/3D_Models/Hand_Pose/Hand_Sun.obj"
+dest_files=["res://.godot/imported/Hand_Sun.obj-91bac6af55762b747c22b5d763bc3e17.mesh", "res://.godot/imported/Hand_Sun.obj-91bac6af55762b747c22b5d763bc3e17.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5f228ensbdax"
+path="res://.godot/imported/Hand_Monkey.obj-4e3eadaf5cf2184251da864e0e438043.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hand_Monkey.obj-4e3eadaf5cf2184251da864e0e438043.mesh"]
+
+source_file="res://assets/3D_Models/Hand_Pose/Hand_Monkey.obj"
+dest_files=["res://.godot/imported/Hand_Monkey.obj-4e3eadaf5cf2184251da864e0e438043.mesh", "res://.godot/imported/Hand_Monkey.obj-4e3eadaf5cf2184251da864e0e438043.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://qchdgfn5775p"
+path="res://.godot/imported/Hand_Man.obj-58a14240c1737c792977d067407df45c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hand_Man.obj-58a14240c1737c792977d067407df45c.mesh"]
+
+source_file="res://assets/3D_Models/Hand_Pose/Hand_Man.obj"
+dest_files=["res://.godot/imported/Hand_Man.obj-58a14240c1737c792977d067407df45c.mesh", "res://.godot/imported/Hand_Man.obj-58a14240c1737c792977d067407df45c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

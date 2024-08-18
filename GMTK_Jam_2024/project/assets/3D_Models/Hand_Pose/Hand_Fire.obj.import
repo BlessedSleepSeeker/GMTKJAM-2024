@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5avim7ch4mvr"
+path="res://.godot/imported/Hand_Fire.obj-a7b091696c1780df5e28f16da5e20046.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hand_Fire.obj-a7b091696c1780df5e28f16da5e20046.mesh"]
+
+source_file="res://assets/3D_Models/Hand_Pose/Hand_Fire.obj"
+dest_files=["res://.godot/imported/Hand_Fire.obj-a7b091696c1780df5e28f16da5e20046.mesh", "res://.godot/imported/Hand_Fire.obj-a7b091696c1780df5e28f16da5e20046.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

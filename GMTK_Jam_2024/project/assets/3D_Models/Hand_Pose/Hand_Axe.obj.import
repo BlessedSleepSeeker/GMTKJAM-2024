@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqd6fcqe8hxtn"
+path="res://.godot/imported/Hand_Axe.obj-7496fb1b46b2332512a91ed07894812f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hand_Axe.obj-7496fb1b46b2332512a91ed07894812f.mesh"]
+
+source_file="res://assets/3D_Models/Hand_Pose/Hand_Axe.obj"
+dest_files=["res://.godot/imported/Hand_Axe.obj-7496fb1b46b2332512a91ed07894812f.mesh", "res://.godot/imported/Hand_Axe.obj-7496fb1b46b2332512a91ed07894812f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
