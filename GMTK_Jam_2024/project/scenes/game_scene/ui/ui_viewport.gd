@@ -95,3 +95,8 @@ func _process(_delta):
 	for opt_btn: ShifumiOptionButton in button_path.get_children():
 		if opt_btn.button.button_pressed:
 			i_need_win_for.emit(opt_btn.option_name)
+
+
+func round_scalling_update(_round: int, _subround: int) -> void:
+	button_path.speed = clampf(button_path.base_speed * (_round + _subround), button_path.base_speed, button_path.max_speed)
+	print_debug(button_path.speed)

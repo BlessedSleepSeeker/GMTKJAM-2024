@@ -29,7 +29,7 @@ func load_all_options() -> void:
 		remaining_options.append(option)
 	remaining_options.reverse()
 
-
+# Used to always have rock paper scissors at the begining of a game
 func set_big_three_to_current() -> void:
 	for option: ShifumiOption in remaining_options:
 		if option.name == "Rock" or option.name == "Paper" or option.name == "Scissors":
@@ -42,16 +42,6 @@ func get_options() -> Array[String]:
 		string_options.append(option.name)
 	string_options.shuffle()
 	return string_options
-
-
-func increment_round():
-	current_round += 1
-	current_subround = 0
-	add_option_for_round()
-	
-
-func increment_subround():
-	current_subround += 1
 
 
 func add_option_for_round():
@@ -77,21 +67,13 @@ func resolve_fight(player_option_name: String) -> String:
 		if p1_beat.name == p2_play.name:
 			p1_play.unlock_relation(p1_beat)
 			p1_score += 1
-			return winquote_template % [p1_play.name, p1_play.get_win_quote(p2_play.name), p2_play.name, "you :)"]
+			return winquote_template % [p1_play.name, p1_play.get_win_quote(p2_play.name), p2_play.name, "you"]
 	for p2_beat: ShifumiBeatenOption in p2_play.get_children():
 		if p2_beat.name == p1_play.name:
 			p2_play.unlock_relation(p2_beat)
 			p2_score += 1
-			return winquote_template % [p2_play.name, p2_play.get_win_quote(p1_play.name), p1_play.name, "cpu :("]
+			return winquote_template % [p2_play.name, p2_play.get_win_quote(p1_play.name), p1_play.name, "CPU"]
 	return bugquote_template
-
-
-func next() -> void:
-	if current_subround == 3:
-		increment_round()
-	else:
-		increment_subround()
-	trigger_new_round.emit()
 
 
 func pick_cpu_option() -> ShifumiOption:
@@ -128,7 +110,26 @@ func get_last_played_p2_option() -> ShifumiOption:
 		return p2_option_history[-1]
 	return null
 
+
 func get_last_played_p2_option_name() -> String:
 	if p2_option_history.size() > 0:
 		return p2_option_history[-1].name
 	return ""
+
+
+func increment_round():
+	current_round += 1
+	current_subround = 0
+	add_option_for_round()
+	
+
+func increment_subround():
+	current_subround += 1
+
+
+func next() -> void:
+	if current_subround == 3:
+		increment_round()
+	else:
+		increment_subround()
+	trigger_new_round.emit()
