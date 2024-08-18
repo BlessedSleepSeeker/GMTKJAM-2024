@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://drawgv11nu8sx"
+path="res://.godot/imported/Hand_Dynamite.obj-36963fa4467a6520a44f61e0c099d38c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hand_Dynamite.obj-36963fa4467a6520a44f61e0c099d38c.mesh"]
+
+source_file="res://assets/3D_Models/Hand_Pose/Hand_Dynamite.obj"
+dest_files=["res://.godot/imported/Hand_Dynamite.obj-36963fa4467a6520a44f61e0c099d38c.mesh", "res://.godot/imported/Hand_Dynamite.obj-36963fa4467a6520a44f61e0c099d38c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
