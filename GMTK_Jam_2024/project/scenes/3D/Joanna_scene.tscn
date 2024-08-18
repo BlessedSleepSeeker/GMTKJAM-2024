@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/3D/joanna_scene.gd" id="1_uljkf"]
 [ext_resource type="ArrayMesh" uid="uid://dq6xkt35jrc7e" path="res://assets/3D_Models/HouseAndOutline.obj" id="2_pfs4u"]
-[ext_resource type="Material" uid="uid://bhfhhr3w7gud" path="res://addons/hypercasualGradientShader/shaders/Hand_Shader.tres" id="2_q4ov3"]
+[ext_resource type="Material" path="res://addons/hypercasualGradientShader/shaders/Hand_Shader.tres" id="2_q4ov3"]
 [ext_resource type="Shader" path="res://addons/hypercasualGradientShader/shaders/hypercasual.gdshader" id="2_yj7ie"]
 [ext_resource type="ArrayMesh" uid="uid://c8ro5gjifvsgo" path="res://assets/3D_Models/Plate.obj" id="3_epvii"]
 [ext_resource type="Texture2D" uid="uid://dipgtpgp7omrb" path="res://assets/3D_Models/Textures/lambert8SG_2D_View.png" id="4_eksr0"]
@@ -13,10 +13,10 @@
 [ext_resource type="ArrayMesh" uid="uid://tp7hwo3ucwh2" path="res://assets/3D_Models/Pillow_and_outline.obj" id="7_rcxdx"]
 [ext_resource type="ArrayMesh" uid="uid://eipfsxayc056" path="res://assets/3D_Models/Cup.obj" id="8_71en0"]
 [ext_resource type="ArrayMesh" uid="uid://cf5vr1hwjmryi" path="res://assets/3D_Models/Table_and_outline.obj" id="8_qyf61"]
-[ext_resource type="Material" uid="uid://bdrj5wc882fd2" path="res://addons/hypercasualGradientShader/shaders/Outliner_shader.tres" id="11_bpi8f"]
-[ext_resource type="Material" uid="uid://w0q7lc4pbuja" path="res://addons/hypercasualGradientShader/shaders/TeaPot_shader.tres" id="12_ey283"]
+[ext_resource type="Material" path="res://addons/hypercasualGradientShader/shaders/Outliner_shader.tres" id="11_bpi8f"]
+[ext_resource type="Material" uid="uid://b8bj0jxwpkumd" path="res://addons/hypercasualGradientShader/shaders/TeaPot_shader.tres" id="12_ey283"]
 [ext_resource type="ArrayMesh" uid="uid://b44otcbdpx01y" path="res://assets/3D_Models/Hand_Pose/Hand_Paper.obj" id="15_3qpcl"]
-[ext_resource type="PackedScene" uid="uid://dk5yms4fbq5y3" path="res://scenes/3D/hand_idle.tscn" id="16_ti52s"]
+[ext_resource type="PackedScene" uid="uid://bx7v0e6ufxgl6" path="res://scenes/3D/hand_idle.tscn" id="16_ti52s"]
 [ext_resource type="ArrayMesh" uid="uid://x82jjflygdfb" path="res://assets/3D_Models/Hand_Pose/Hand_Rock.obj" id="17_wx7nt"]
 [ext_resource type="ArrayMesh" uid="uid://cgy5slhlx3egg" path="res://assets/3D_Models/Hand_Pose/Hand_Cisors.obj" id="18_bkwwc"]
 

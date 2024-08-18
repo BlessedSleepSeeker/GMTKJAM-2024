@@ -9,15 +9,19 @@ extends Node
 @onready var cpu_score_counter: Label = ui.cpu_score_counter
 @onready var win_phrase_container: Panel = ui.win_phrase_container
 @onready var win_phrase: Label = ui.win_phrase
-@onready var hand_controller: Node3D = $World/JoannaScene
+@onready var world_controller: Node3D = $World
+@onready var fader: AnimationPlayer = $Fader
 
 var current_options: Array[String] = []
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	ui.hide()
 	ui.i_need_win_for.connect(get_wins)
 	ui.player_choice.connect(process_round)
+	world_controller.play_intro()
+	await world_controller.intro_finished
 	start_turn()
 
 
@@ -36,6 +40,10 @@ func start_turn() -> void:
 			ui.create_option(option_name, true, false)
 		else:
 			ui.create_option(option_name, false, false)
+	fader.play("ui_fade_in")
+	await get_tree().create_timer(0.002).timeout
+	ui.show()
+
 
 
 func process_round(option: String) -> void:
