@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bqem1raji7acu"]
+[gd_scene load_steps=49 format=3 uid="uid://bqem1raji7acu"]
 
 [ext_resource type="Script" path="res://scenes/3D/joanna_scene.gd" id="1_uljkf"]
 [ext_resource type="ArrayMesh" uid="uid://dq6xkt35jrc7e" path="res://assets/3D_Models/HouseAndOutline.obj" id="2_pfs4u"]
@@ -19,6 +19,7 @@
 [ext_resource type="ArrayMesh" uid="uid://d2yf5mnqcgyct" path="res://assets/3D_Models/Hand_Pose/Hand_Air.obj" id="16_41oka"]
 [ext_resource type="Script" path="res://scenes/3D/hand_holder.gd" id="16_j65al"]
 [ext_resource type="PackedScene" uid="uid://bx7v0e6ufxgl6" path="res://scenes/3D/hand_idle.tscn" id="16_ti52s"]
+[ext_resource type="Script" path="res://scenes/3D/hand_idle.gd" id="16_yckgm"]
 [ext_resource type="ArrayMesh" uid="uid://x82jjflygdfb" path="res://assets/3D_Models/Hand_Pose/Hand_Rock.obj" id="17_wx7nt"]
 [ext_resource type="ArrayMesh" uid="uid://la8eaeeyxjfv" path="res://assets/3D_Models/Hand_Pose/Hand_Alien.obj" id="18_70i0y"]
 [ext_resource type="ArrayMesh" uid="uid://cgy5slhlx3egg" path="res://assets/3D_Models/Hand_Pose/Hand_Cisors.obj" id="18_bkwwc"]
@@ -265,11 +266,11 @@ surface_material_override/1 = SubResource("StandardMaterial3D_y70u5")
 
 [node name="Hand_Idle_outline" parent="." instance=ExtResource("16_ti52s")]
 transform = Transform3D(88.8801, 0, -14.1536, 0, 90, 0, 14.1536, 0, 88.8801, 10.1556, 71.7925, 121.594)
-visible = false
+script = ExtResource("16_yckgm")
 
 [node name="Hand_Idle_outline2" parent="." instance=ExtResource("16_ti52s")]
 transform = Transform3D(-59.432, 0, 67.5858, 0, 90, 0, -67.5858, 0, -59.432, 107.245, 71.7925, 64.2922)
-visible = false
+script = ExtResource("16_yckgm")
 
 [node name="P1HandHolder" type="Node3D" parent="."]
 script = ExtResource("16_j65al")

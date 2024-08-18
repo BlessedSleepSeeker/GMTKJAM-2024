@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dk5yms4fbq5y3"]
+[gd_scene load_steps=9 format=4 uid="uid://bx7v0e6ufxgl6"]
 
 [ext_resource type="PackedScene" uid="uid://cb3ljog8wt2j7" path="res://assets/3D_Models/Hand_Pose/Hand_Idle_outline.fbx" id="1_fbp6g"]
 [ext_resource type="Shader" path="res://addons/hypercasualGradientShader/shaders/hypercasual.gdshader" id="2_30ikx"]
@@ -82,24 +82,20 @@ albedo_color = Color(0, 0.0649999, 0.78, 1)
 [node name="Hand_Idle_outline" instance=ExtResource("1_fbp6g")]
 
 [node name="Skeleton3D" parent="." index="0"]
-bones/0/position = Vector3(-0.00624451, 0.090497, 0.0337099)
 bones/1/position = Vector3(0.105101, 8.67362e-18, 0)
-bones/1/rotation = Quaternion(-0.13772, 0.00961105, -0.637804, 0.757725)
+bones/1/rotation = Quaternion(-0.13742, 0.00935874, -0.637808, 0.757779)
 bones/1/scale = Vector3(1, 1, 1)
-bones/2/rotation = Quaternion(-2.3081e-05, 6.06042e-05, 0.384649, 0.923063)
+bones/2/rotation = Quaternion(0, 0, 0.384615, 0.923077)
 bones/3/position = Vector3(0.0748913, -2.08167e-17, -0.014)
-bones/3/rotation = Quaternion(-4.3998e-05, 0.000194669, 0.220454, 0.975398)
+bones/3/rotation = Quaternion(0, 0, 0.22022, 0.97545)
 bones/4/position = Vector3(0.0455491, -1.38778e-17, -0.00862057)
-bones/6/rotation = Quaternion(-0.000489541, 0.000550511, 0.664514, 0.747275)
-bones/10/rotation = Quaternion(-9.04166e-05, 9.20672e-05, 0.700682, 0.713473)
 bones/11/position = Vector3(0.0545715, -8.67362e-18, 0)
 bones/12/position = Vector3(0.0461402, 3.71925e-15, -0.011539)
 bones/13/position = Vector3(0.0449349, -9.71445e-17, -0.0216079)
 bones/13/rotation = Quaternion(-2.82138e-17, 1.31664e-16, -0.674997, 0.73782)
-bones/14/rotation = Quaternion(-0.000449521, 0.000468805, 0.692105, 0.721796)
 bones/15/position = Vector3(0.0527807, -2.08167e-17, -0.00792945)
 bones/17/position = Vector3(0.0471818, -2.22045e-16, -0.0155178)
-bones/18/rotation = Quaternion(0.642974, 0.765888, -0.000210979, 0.00025131)
+bones/18/rotation = Quaternion(0.642974, 0.765888, 4.68955e-17, 3.93695e-17)
 bones/19/position = Vector3(0.0409447, 6.93889e-18, 0.00164447)
 bones/19/rotation = Quaternion(0.992727, 0.120387, 7.37157e-18, 6.0787e-17)
 bones/20/position = Vector3(0.0395293, -1.38778e-17, -0.0092748)
@@ -114,3 +110,6 @@ surface_material_override/0 = SubResource("ShaderMaterial_s6nlc")
 [node name="hand_low" parent="Skeleton3D" index="1"]
 mesh = SubResource("ArrayMesh_yixtu")
 surface_material_override/0 = SubResource("StandardMaterial3D_wad4k")
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Take 001"

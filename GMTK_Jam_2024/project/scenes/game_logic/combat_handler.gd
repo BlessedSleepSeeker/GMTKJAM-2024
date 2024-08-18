@@ -51,7 +51,7 @@ func add_option_for_round():
 		current_options.append(remaining_options.pop_at(remaining_options.find(remaining_options.pick_random())))
 
 
-func resolve_fight(player_option_name: String) -> String:
+func resolve_fight(player_option_name: String) -> Array[String]:
 	var p1_play: ShifumiOption
 	for option: ShifumiOption in current_options:
 		if option.name == player_option_name:
@@ -61,18 +61,18 @@ func resolve_fight(player_option_name: String) -> String:
 	p2_option_history.push_back(p2_play)
 	# Same play
 	if p1_play.name == p2_play.name:
-		return drawquote_template % [p1_play.name, p2_play.name]
+		return [drawquote_template % [p1_play.name, p2_play.name], p1_play.name, p2_play.name]
 	for p1_beat: ShifumiBeatenOption in p1_play.get_children():
 		if p1_beat.name == p2_play.name:
 			p1_play.unlock_relation(p1_beat)
 			p1_score += 1
-			return winquote_template % [p1_play.name, p1_play.get_win_quote(p2_play.name), p2_play.name, "you"]
+			return [winquote_template % [p1_play.name, p1_play.get_win_quote(p2_play.name), p2_play.name, "you"], p1_play.name, p2_play.name]
 	for p2_beat: ShifumiBeatenOption in p2_play.get_children():
 		if p2_beat.name == p1_play.name:
 			p2_play.unlock_relation(p2_beat)
 			p2_score += 1
-			return winquote_template % [p2_play.name, p2_play.get_win_quote(p1_play.name), p1_play.name, "CPU"]
-	return bugquote_template
+			return [winquote_template % [p2_play.name, p2_play.get_win_quote(p1_play.name), p1_play.name, "CPU"], p1_play.name, p2_play.name]
+	return [bugquote_template, p1_play.name, p2_play.name]
 
 
 func pick_cpu_option() -> ShifumiOption:

@@ -19,6 +19,7 @@ func pause_hand_anim() -> void:
 
 func hide_hands() -> void:
 	hand_controller.hide_hands()
+	hand_controller.show_idle()
 
 func play_intro():
 	camera.make_current()
@@ -30,6 +31,7 @@ func play_intro():
 
 func play_fight(p1_play: String, p2_play: String) -> void:
 	await get_tree().create_timer(0.5).timeout
+	hand_controller.hide_idle()
 	hand_controller.show_hands(p1_play, p2_play)
 	dramatic_finish()
 

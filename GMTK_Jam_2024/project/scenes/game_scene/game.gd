@@ -50,10 +50,10 @@ func start_turn() -> void:
 
 func process_round(option: String) -> void:
 	fader.play("ui_fade_out")
-	var winphrase = combat_handler.resolve_fight(option)
-	win_phrase.set_text(winphrase)
+	var combat_result = combat_handler.resolve_fight(option)
+	win_phrase.set_text(combat_result[0])
 	await fader.animation_finished
-	world_controller.play_fight(option, option)
+	world_controller.play_fight(combat_result[1], combat_result[2])
 	await world_controller.fight_finished
 	fader.play("ui_fade_in")
 	await fader.animation_finished
