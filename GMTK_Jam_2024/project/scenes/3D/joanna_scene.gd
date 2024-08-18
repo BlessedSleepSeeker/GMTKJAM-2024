@@ -15,15 +15,6 @@ var shifumi_speed: float = 1
 
 signal shifumi_finished
 
-func play_hand_anim(anim_name: String) -> void:
-	hand_controller.play_hand_anim(anim_name)
-
-func play_hand_anim_backwards(anim_name: String) -> void:
-	hand_controller.play_hand_anim_backwards(anim_name)
-
-func pause_hand_anim() -> void:
-	hand_controller.pause_hand_anim()
-
 func hide_hands() -> void:
 	p1_hands.hide_all()
 	p2_hands.hide_all()
@@ -34,12 +25,12 @@ func show_hands(p1_play: String, p2_play: String) -> void:
 	p2_hands.show_hand(p2_play)
 
 func show_idle() -> void:
-	hand_controller.show()
-	hand_controller2.show()
+	hand_controller.show_hand()
+	hand_controller2.show_hand()
 
 func hide_idle() -> void:
-	hand_controller.hide()
-	hand_controller2.hide()
+	hand_controller.hide_hand()
+	hand_controller2.hide_hand()
 
 func shifumi_anim(option_list: Array[String]):
 	hide_idle()
@@ -53,6 +44,8 @@ func shifumi_anim(option_list: Array[String]):
 		await animator.animation_finished
 		sound_player_iterator += 1
 	hide_hands()
+	hand_controller.explode()
+	hand_controller2.explode()
 	shifumi_finished.emit()
 
 

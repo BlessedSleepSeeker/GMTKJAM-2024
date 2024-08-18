@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/game_scene/ui/choice_buttons/shifumi_option_button.gd" id="1_rv3lt"]
 [ext_resource type="Theme" uid="uid://bvbn4jo24usmb" path="res://assets/ui/shifumi_game_theme.tres" id="2_028cf"]
-[ext_resource type="Texture2D" uid="uid://bblok7tf425k4" path="res://assets/openmoji/Rock.png" id="4_a3q6i"]
+[ext_resource type="Texture2D" uid="uid://bblok7tf425k4" path="res://assets/openmoji/rock.png" id="4_a3q6i"]
 [ext_resource type="Texture2D" uid="uid://cpe0l0jw1jnqe" path="res://assets/ui/hexagon.png" id="4_sxt1s"]
 
 [sub_resource type="Gradient" id="Gradient_f2wrw"]

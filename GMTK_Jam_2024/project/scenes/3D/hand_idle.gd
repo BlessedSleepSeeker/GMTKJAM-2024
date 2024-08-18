@@ -1,12 +1,13 @@
 extends Node3D
 
-@onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var particles: GPUParticles3D = $GPUParticles3D
+@onready var hand: Skeleton3D = $Skeleton3D
 
-func play_hand_anim(anim_name: String) -> void:
-	anim_player.play(anim_name)
+func hide_hand():
+	hand.hide()
 
-func play_hand_anim_backwards(anim_name: String) -> void:
-	anim_player.play_backwards(anim_name)
+func show_hand():
+	hand.show()
 
-func pause_hand_anim() -> void:
-	anim_player.pause()
+func explode() -> void:
+	particles.emitting = true
