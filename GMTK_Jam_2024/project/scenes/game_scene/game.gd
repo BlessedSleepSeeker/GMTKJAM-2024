@@ -23,7 +23,10 @@ func _ready() -> void:
 	world_controller.play_intro()
 	await world_controller.intro_finished
 	start_turn()
-
+	fader.play("ui_fade_in")
+	#needed to avoid frame desync showing UI before fade in
+	await get_tree().create_timer(0.002).timeout
+	ui.show()
 
 func start_turn() -> void:
 	current_options = combat_handler.get_options()
@@ -40,15 +43,17 @@ func start_turn() -> void:
 			ui.create_option(option_name, true, false)
 		else:
 			ui.create_option(option_name, false, false)
-	fader.play("ui_fade_in")
-	await get_tree().create_timer(0.002).timeout
-	ui.show()
-
-
+	
 
 func process_round(option: String) -> void:
+	fader.play("ui_fade_out")
 	var winphrase = combat_handler.resolve_fight(option)
 	win_phrase.set_text(winphrase)
+	await fader.animation_finished
+	world_controller.play_fight(option, option)
+	await world_controller.fight_finished
+	fader.play("ui_fade_in")
+	await fader.animation_finished
 	win_phrase_container.visible = true
 	await get_tree().create_timer(2.5).timeout
 	win_phrase_container.visible = false
