@@ -3,6 +3,8 @@ class_name UiViewport
 
 @export var option_button_scene: PackedScene = preload("res://scenes/game_scene/ui/choice_buttons/shifumi_option_button.tscn")
 
+@export var validate_button_template: String = "Play %s !"
+
 @onready var turn_counter = $MarginContainer/Turns/HBoxContainer/Turn_counter
 @onready var round_counter = $MarginContainer/Turns/HBoxContainer2/Round_counter
 @onready var score_counter = $MarginContainer/Score/HBoxContainer/Score_counter
@@ -17,11 +19,13 @@ var toggled_options: Array[String] = []
 signal i_need_win_for(option: String)
 signal player_choice(option: String)
 
-func create_option(name: String) -> void:
-	var option = option_button_scene.instantiate()
+
+func create_option(_name: String, disabled: bool, p1_or_p2: bool) -> void:
+	var option: ShifumiOptionButton = option_button_scene.instantiate()
 	option.play_button_toggled.connect(_on_option_button_toggled)
-	option.option_name = name
+	option.option_name = _name
 	button_path.add_child(option)
+	option.disabled_toggle(disabled, p1_or_p2)
 	
 	var length = button_path.curve.get_baked_length()
 	var total_childs = button_path.get_child_count()
@@ -31,6 +35,7 @@ func create_option(name: String) -> void:
 	for child: PathFollow2D in button_path.get_children():
 		child.progress = unit * i
 		i += 1
+
 
 func _on_option_button_toggled(toggled: bool, option_button: ShifumiOptionButton):
 	if toggled:
@@ -43,6 +48,7 @@ func _on_option_button_toggled(toggled: bool, option_button: ShifumiOptionButton
 		option_button.line_toggle(toggled, [])
 	check_validation_button_status()
 
+
 func send_win_info(opt_name: String, win_info: Array[String]):
 	var win_pos: Array[Vector2] = []
 	for opt_btn: ShifumiOptionButton in button_path.get_children():
@@ -53,6 +59,7 @@ func send_win_info(opt_name: String, win_info: Array[String]):
 		if opt_btn.option_name == opt_name:
 			opt_btn.line_toggle(true, win_pos)
 
+
 func check_validation_button_status() -> void:
 	if toggled_options.size() == 0:
 		validate_button.visible = false
@@ -61,10 +68,17 @@ func check_validation_button_status() -> void:
 		
 	if toggled_options.size() > 1:
 		validate_button.disabled = true
-		validate_button.tooltip_text = 'Please choose a single action'
 	elif validate_button.disabled == true:
 		validate_button.disabled = false
-		validate_button.tooltip_text = ''
+	update_validate_button_text()
+
+
+func update_validate_button_text() -> void:
+	if toggled_options.size() == 1:
+		validate_button.text = validate_button_template % toggled_options[0]
+	elif toggled_options.size() > 1:
+		validate_button.text = 'Please choose a single handsign !'
+
 
 func _on_validate_button_pressed() -> void:
 	var selected_option = toggled_options[0]
@@ -74,6 +88,7 @@ func _on_validate_button_pressed() -> void:
 	validate_button.visible = false
 	toggled_options = []
 	player_choice.emit(selected_option)
+
 
 func _process(_delta):
 	for opt_btn: ShifumiOptionButton in button_path.get_children():

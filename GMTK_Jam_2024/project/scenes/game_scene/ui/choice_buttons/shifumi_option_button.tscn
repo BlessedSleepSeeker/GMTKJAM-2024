@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://clq4evykogynm"]
+[gd_scene load_steps=15 format=3 uid="uid://clq4evykogynm"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/ui/choice_buttons/shifumi_option_button.gd" id="1_rv3lt"]
 [ext_resource type="Theme" uid="uid://bvbn4jo24usmb" path="res://assets/ui/shifumi_game_theme.tres" id="2_028cf"]
@@ -40,18 +40,124 @@ hue_variation_min = -0.2
 hue_variation_max = -2.23517e-08
 hue_variation_curve = SubResource("CurveTexture_gq4wm")
 
+[sub_resource type="Animation" id="Animation_pp231"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hexagon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LineHolder:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qn7a8"]
+resource_name = "pressed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hexagon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.15932, 0.217638),
+"update": 0,
+"values": [0.0, 0.785398]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LineHolder:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ii8hn"]
+resource_name = "disable"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.307786, 4.43828),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.28, 0.0644, 0.0644, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_364ux"]
+resource_name = "disable_p2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.1541, 0.67, 0.188493, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6hpgh"]
+_data = {
+"RESET": SubResource("Animation_pp231"),
+"disable_p1": SubResource("Animation_ii8hn"),
+"disable_p2": SubResource("Animation_364ux"),
+"pressed": SubResource("Animation_qn7a8")
+}
+
 [node name="ShifumiOptionButton" type="PathFollow2D"]
 rotates = false
 script = ExtResource("1_rv3lt")
+disabled = null
 
 [node name="LineHolder" type="Node2D" parent="."]
 z_index = -1
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Hexagon" type="TextureRect" parent="."]
 offset_left = -49.0
 offset_top = -57.0
 offset_right = 50.0
 offset_bottom = 57.0
+pivot_offset = Vector2(49, 57)
 texture = ExtResource("4_sxt1s")
 
 [node name="Button" type="Button" parent="."]
@@ -73,3 +179,8 @@ amount = 50
 process_material = SubResource("ParticleProcessMaterial_jksyc")
 texture = ExtResource("4_a3q6i")
 lifetime = 5.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6hpgh")
+}

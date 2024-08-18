@@ -8,8 +8,11 @@ class_name ShifumiOptionButton
 @onready var icon_filepath: String = icons_path_template % option_name
 @onready var button = $Button
 @onready var lineHolder = $LineHolder
-@onready var winLineScene = preload("res://scenes/game_scene/ui/choice_buttons/win_against_line.tscn")
 @onready var particles: GPUParticles2D = $Particles
+@onready var hexagon = $Hexagon
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var winLineScene = preload("res://scenes/game_scene/ui/choice_buttons/win_against_line.tscn")
+@export var disabled: bool = false
 
 signal play_button_toggled(toggled: bool, option_button: ShifumiOptionButton)
 
@@ -24,6 +27,27 @@ func _ready():
 func _on_button_toggled(toggled: bool):
 	play_button_toggled.emit(toggled, self)
 	particles.emitting = toggled
+	if toggled:
+		anim_player.play("pressed")
+	else:
+		anim_player.play_backwards("pressed")
+
+
+func disabled_toggle(disable: bool, p1_or_p2: bool):
+	if disable:
+		particles.hide()
+		button.disabled = true
+		if p1_or_p2:
+			anim_player.play("disable_p1")
+			button.tooltip_text += "\nCan't play this round !"
+		else:
+			anim_player.play("disable_p2")
+			button.tooltip_text += "\nCPU can't play it this round !"
+	else:
+		particles.show()
+		button.disabled = false
+		button.tooltip_text = ""
+
 
 func line_toggle(toggled: bool, endPosLine: Array[Vector2]):
 	if toggled:
@@ -39,6 +63,7 @@ func line_toggle(toggled: bool, endPosLine: Array[Vector2]):
 			line.add_point(lineEnd - self.global_position)
 			lineHolder.add_child(line)
 	else:
+		await get_tree().create_timer(1000).timeout
 		for n: Node in lineHolder.get_children():
 			lineHolder.remove_child(n)
 			n.queue_free()
