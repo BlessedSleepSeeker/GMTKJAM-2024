@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmywmdt0bmod4"]
+[gd_scene load_steps=10 format=3 uid="uid://bmywmdt0bmod4"]
 
 [ext_resource type="Script" path="res://autoloads/custom_root/root.gd" id="1_0ggjb"]
 [ext_resource type="PackedScene" uid="uid://s46wqxnh4dnl" path="res://autoloads/settings/settings.tscn" id="2_022ww"]
@@ -51,9 +51,43 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(-1280, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_51gik"]
+resource_name = "intro_transition_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IntroTransitionLayer/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1280, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_recu1"]
+resource_name = "intro_transition_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IntroTransitionLayer/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1280, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yeyqi"]
 _data = {
 "RESET": SubResource("Animation_43y50"),
+"intro_transition_in": SubResource("Animation_51gik"),
+"intro_transition_out": SubResource("Animation_recu1"),
 "scene_transition_in": SubResource("Animation_k6u8f"),
 "scene_transition_out": SubResource("Animation_5nrjs")
 }
@@ -87,3 +121,21 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_etvdo")
+
+[node name="IntroTransitionLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite" type="Control" parent="IntroTransitionLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1280.0
+offset_right = -1280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="IntroTransitionLayer/Sprite"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)

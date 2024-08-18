@@ -6,7 +6,7 @@
 
 [sub_resource type="Theme" id="Theme_l8q1i"]
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
-Label/constants/outline_size = 2
+Label/constants/outline_size = 4
 Label/font_sizes/font_size = 36
 Label/fonts/font = ExtResource("1_qu8cq")
 
@@ -88,29 +88,30 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Score"]
 layout_mode = 2
 theme_override_constants/separation = 8
+alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/Score/HBoxContainer"]
 layout_mode = 2
 text = "SCORE"
 horizontal_alignment = 1
 
-[node name="Score_counter" type="Label" parent="MarginContainer/Score/HBoxContainer"]
-layout_mode = 2
-text = "X"
-
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Score"]
 layout_mode = 2
 theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Score_counter" type="Label" parent="MarginContainer/Score/HBoxContainer2"]
+layout_mode = 2
+text = "X"
 
 [node name="Label" type="Label" parent="MarginContainer/Score/HBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "CPU Score"
+text = "-"
 horizontal_alignment = 1
 
 [node name="Cpu_score_counter" type="Label" parent="MarginContainer/Score/HBoxContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
 text = "X"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -124,6 +125,7 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="ButtonPath" type="Path2D" parent="CenterContainer/Control"]
+position = Vector2(0, 48)
 script = ExtResource("4_ncdc0")
 
 [node name="ValidateButton" type="Button" parent="CenterContainer"]
