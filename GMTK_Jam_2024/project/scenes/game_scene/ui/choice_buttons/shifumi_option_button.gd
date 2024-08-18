@@ -35,11 +35,11 @@ func _on_button_toggled(toggled: bool):
 
 func disabled_toggle(disable: bool, p1_or_p2: bool):
 	if disable:
-		particles.hide()
-		button.disabled = true
 		if p1_or_p2:
 			anim_player.play("disable_p1")
 			button.tooltip_text += "\nCan't play this round !"
+			particles.hide()
+			button.disabled = true
 		else:
 			anim_player.play("disable_p2")
 			button.tooltip_text += "\nCPU can't play it this round !"
