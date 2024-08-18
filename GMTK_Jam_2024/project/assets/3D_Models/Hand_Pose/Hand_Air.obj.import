@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d2yf5mnqcgyct"
+path="res://.godot/imported/Hand_Air.obj-18d92d2fa9d8bf78ddd39a836ba80b6f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hand_Air.obj-18d92d2fa9d8bf78ddd39a836ba80b6f.mesh"]
+
+source_file="res://assets/3D_Models/Hand_Pose/Hand_Air.obj"
+dest_files=["res://.godot/imported/Hand_Air.obj-18d92d2fa9d8bf78ddd39a836ba80b6f.mesh", "res://.godot/imported/Hand_Air.obj-18d92d2fa9d8bf78ddd39a836ba80b6f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

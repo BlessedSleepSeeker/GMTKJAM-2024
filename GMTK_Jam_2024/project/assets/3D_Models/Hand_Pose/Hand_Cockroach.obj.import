@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5e6bx6gwbgc1"
+path="res://.godot/imported/Hand_Cockroach.obj-ba6a8fc00a5a3910485134d4ccb7fe6c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hand_Cockroach.obj-ba6a8fc00a5a3910485134d4ccb7fe6c.mesh"]
+
+source_file="res://assets/3D_Models/Hand_Pose/Hand_Cockroach.obj"
+dest_files=["res://.godot/imported/Hand_Cockroach.obj-ba6a8fc00a5a3910485134d4ccb7fe6c.mesh", "res://.godot/imported/Hand_Cockroach.obj-ba6a8fc00a5a3910485134d4ccb7fe6c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
