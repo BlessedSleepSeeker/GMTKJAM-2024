@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://vd1entiph7b0"]
+[gd_scene load_steps=7 format=3 uid="uid://vd1entiph7b0"]
 
 [ext_resource type="FontFile" uid="uid://bl5lv5dwweupt" path="res://assets/font/font.ttf" id="2_ilksx"]
 [ext_resource type="Texture2D" uid="uid://xhkxct8d4b88" path="res://assets/icons/gmtk2024-logo.png" id="3_1ahyq"]
 [ext_resource type="Script" path="res://scenes/menu/credit_scene.gd" id="3_fjgl6"]
 [ext_resource type="Texture2D" uid="uid://c7j6xlxsneugk" path="res://assets/icons/bsstudio_logo.png" id="4_rbfsg"]
+[ext_resource type="Texture2D" uid="uid://bs5d68sk33kn" path="res://assets/icons/logo_vertical_color_dark.png" id="5_skdml"]
 
 [sub_resource type="Theme" id="Theme_acquv"]
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
@@ -42,7 +43,7 @@ theme_override_constants/margin_bottom = 24
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 35
+theme_override_constants/separation = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -76,7 +77,15 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Game engine : Godot Engine 4.3
 3D : Autodesk Maya / ZBrush
-Ressources : Openmoji, Google Fonts"
+Ressources : Openmoji, Google Fonts
+Sound : Audacity"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+text = "Links available in this game's itch.io page"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -116,6 +125,18 @@ layout_mode = 1
 offset_right = 364.672
 offset_bottom = 200.0
 texture = ExtResource("3_1ahyq")
+expand_mode = 3
+
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Control2"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_skdml")
 expand_mode = 3
 
 [node name="M" type="MarginContainer" parent="."]
