@@ -19,11 +19,6 @@ signal trigger_new_round()
 func _ready():
 	load_all_options()
 	set_big_three_to_current()
-	#for i in range(0, 6):
-		#for j in range(0, 3):
-			#print_debug(resolve_fight(get_options().pick_random()))
-	#for i in range(0, 3):
-		#increment_round()
 
 func load_all_options() -> void:
 	for option: ShifumiOption in get_children():

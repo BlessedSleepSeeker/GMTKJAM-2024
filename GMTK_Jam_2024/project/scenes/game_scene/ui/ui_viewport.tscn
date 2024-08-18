@@ -132,31 +132,37 @@ custom_minimum_size = Vector2(100, 35)
 layout_mode = 2
 theme = SubResource("Theme_84g0t")
 disabled = true
-text = "Validate"
+text = "Play Selected Hand !"
 
 [node name="WinPhraseContainer" type="Panel" parent="CenterContainer"]
 visible = false
-custom_minimum_size = Vector2(650, 150)
+custom_minimum_size = Vector2(650, 300)
 layout_mode = 2
 theme = SubResource("Theme_0bjlu")
 theme_override_styles/panel = SubResource("StyleBoxFlat_1e6ct")
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/WinPhraseContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/WinPhraseContainer"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/WinPhraseContainer/CenterContainer"]
+custom_minimum_size = Vector2(650, 150)
+layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="WinPhrase" type="Label" parent="CenterContainer/WinPhraseContainer/MarginContainer"]
+[node name="WinPhrase" type="Label" parent="CenterContainer/WinPhraseContainer/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 text = "Uh oh, you're not supposed to see that"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="CenterContainer/ValidateButton" to="." method="_on_validate_button_pressed"]

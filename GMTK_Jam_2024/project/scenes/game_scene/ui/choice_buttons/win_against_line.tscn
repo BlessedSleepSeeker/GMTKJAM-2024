@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://sltybk88uepp"]
 
 [sub_resource type="Gradient" id="Gradient_4do03"]
-offsets = PackedFloat32Array(0.306667, 0.8)
-colors = PackedColorArray(0.37, 1, 1, 1, 0.9, 0.342, 0.3513, 1)
+offsets = PackedFloat32Array(0, 0.14, 0.84, 1)
+colors = PackedColorArray(0.22, 1, 0.324, 0, 0.22, 1, 0.324, 1, 0.22, 1, 0.324, 1, 0.22, 1, 0.324, 0)
 
 [node name="WinAgainstLine" type="Line2D"]
 gradient = SubResource("Gradient_4do03")

@@ -7,7 +7,7 @@ class_name UiViewport
 @onready var round_counter = $MarginContainer/Turns/HBoxContainer2/Round_counter
 @onready var score_counter = $MarginContainer/Score/HBoxContainer/Score_counter
 @onready var cpu_score_counter = $MarginContainer/Score/HBoxContainer2/Cpu_score_counter
-@onready var win_phrase = $CenterContainer/WinPhraseContainer/MarginContainer/WinPhrase
+@onready var win_phrase = $CenterContainer/WinPhraseContainer/CenterContainer/MarginContainer/WinPhrase
 @onready var win_phrase_container = $CenterContainer/WinPhraseContainer
 @onready var button_path = $CenterContainer/Control/ButtonPath
 @onready var validate_button = $CenterContainer/ValidateButton
