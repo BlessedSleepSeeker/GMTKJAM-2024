@@ -2,6 +2,8 @@ extends Node
 
 @onready var combat_handler: CombatHandler = $CombatHandler
 @onready var ui: UiViewport = $UiViewport
+@onready var world_controller: Node3D = $World
+@onready var fader: AnimationPlayer = $Fader
 
 @onready var turn_counter: Label = ui.turn_counter
 @onready var round_counter: Label = ui.round_counter
@@ -9,14 +11,14 @@ extends Node
 @onready var cpu_score_counter: Label = ui.cpu_score_counter
 @onready var win_phrase_container: Panel = ui.win_phrase_container
 @onready var win_phrase: Label = ui.win_phrase
-@onready var world_controller: Node3D = $World
-@onready var fader: AnimationPlayer = $Fader
+
 
 var current_options: Array[String] = []
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	world_controller.hide_hands()
 	ui.hide()
 	ui.i_need_win_for.connect(get_wins)
 	ui.player_choice.connect(process_round)
@@ -29,6 +31,7 @@ func _ready() -> void:
 	ui.show()
 
 func start_turn() -> void:
+	world_controller.hide_hands()
 	current_options = combat_handler.get_options()
 	update_score()
 	update_turns()

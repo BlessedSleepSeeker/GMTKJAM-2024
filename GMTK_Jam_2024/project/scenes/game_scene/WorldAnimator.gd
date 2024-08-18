@@ -16,6 +16,10 @@ func play_hand_anim_backwards(anim_name: String) -> void:
 func pause_hand_anim() -> void:
 	hand_controller.pause_hand_anim()
 
+
+func hide_hands() -> void:
+	hand_controller.hide_hands()
+
 func play_intro():
 	camera.make_current()
 	print_debug("play cuscene")
@@ -23,8 +27,10 @@ func play_intro():
 	await camera_anim.animation_finished
 	intro_finished.emit()
 
+
 func play_fight(p1_play: String, p2_play: String) -> void:
 	await get_tree().create_timer(0.5).timeout
+	hand_controller.show_hands(p1_play, p2_play)
 	dramatic_finish()
 
 
