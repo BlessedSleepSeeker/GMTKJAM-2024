@@ -1,9 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://bqem1raji7acu"]
+[gd_scene load_steps=33 format=3 uid="uid://bqem1raji7acu"]
 
-[ext_resource type="ArrayMesh" uid="uid://wcdxpgcgwsb6" path="res://assets/3D_Models/Hand_low_Outline.obj" id="1_gi4wv"]
 [ext_resource type="Script" path="res://scenes/3D/joanna_scene.gd" id="1_uljkf"]
 [ext_resource type="ArrayMesh" uid="uid://dq6xkt35jrc7e" path="res://assets/3D_Models/HouseAndOutline.obj" id="2_pfs4u"]
-[ext_resource type="Material" path="res://addons/hypercasualGradientShader/shaders/Hand_Shader.tres" id="2_q4ov3"]
+[ext_resource type="Material" uid="uid://bhfhhr3w7gud" path="res://addons/hypercasualGradientShader/shaders/Hand_Shader.tres" id="2_q4ov3"]
 [ext_resource type="Shader" path="res://addons/hypercasualGradientShader/shaders/hypercasual.gdshader" id="2_yj7ie"]
 [ext_resource type="ArrayMesh" uid="uid://c8ro5gjifvsgo" path="res://assets/3D_Models/Plate.obj" id="3_epvii"]
 [ext_resource type="Texture2D" uid="uid://dipgtpgp7omrb" path="res://assets/3D_Models/Textures/lambert8SG_2D_View.png" id="4_eksr0"]
@@ -14,12 +13,12 @@
 [ext_resource type="ArrayMesh" uid="uid://tp7hwo3ucwh2" path="res://assets/3D_Models/Pillow_and_outline.obj" id="7_rcxdx"]
 [ext_resource type="ArrayMesh" uid="uid://eipfsxayc056" path="res://assets/3D_Models/Cup.obj" id="8_71en0"]
 [ext_resource type="ArrayMesh" uid="uid://cf5vr1hwjmryi" path="res://assets/3D_Models/Table_and_outline.obj" id="8_qyf61"]
-[ext_resource type="Material" path="res://addons/hypercasualGradientShader/shaders/Outliner_shader.tres" id="11_bpi8f"]
-[ext_resource type="Material" path="res://addons/hypercasualGradientShader/shaders/TeaPot_shader.tres" id="12_ey283"]
-[ext_resource type="PackedScene" uid="uid://bx7v0e6ufxgl6" path="res://scenes/3D/hand_idle.tscn" id="16_ti52s"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0roiu"]
-albedo_color = Color(0, 0.0649999, 0.78, 1)
+[ext_resource type="Material" uid="uid://bdrj5wc882fd2" path="res://addons/hypercasualGradientShader/shaders/Outliner_shader.tres" id="11_bpi8f"]
+[ext_resource type="Material" uid="uid://w0q7lc4pbuja" path="res://addons/hypercasualGradientShader/shaders/TeaPot_shader.tres" id="12_ey283"]
+[ext_resource type="ArrayMesh" uid="uid://b44otcbdpx01y" path="res://assets/3D_Models/Hand_Pose/Hand_Paper.obj" id="15_3qpcl"]
+[ext_resource type="PackedScene" uid="uid://dk5yms4fbq5y3" path="res://scenes/3D/hand_idle.tscn" id="16_ti52s"]
+[ext_resource type="ArrayMesh" uid="uid://x82jjflygdfb" path="res://assets/3D_Models/Hand_Pose/Hand_Rock.obj" id="17_wx7nt"]
+[ext_resource type="ArrayMesh" uid="uid://cgy5slhlx3egg" path="res://assets/3D_Models/Hand_Pose/Hand_Cisors.obj" id="18_bkwwc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tknfi"]
 render_priority = 0
@@ -211,12 +210,6 @@ albedo_color = Color(0, 0.0649999, 0.78, 1)
 [node name="JoannaScene" type="Node3D"]
 script = ExtResource("1_uljkf")
 
-[node name="HandLowOutline" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.76455, 0.412228, -0.846433, -0.935778, -0.570381, 1.67302, 0.103438, 1.87209, 0.696109, 46.1051, 86.0536, 64.1923)
-mesh = ExtResource("1_gi4wv")
-surface_material_override/0 = SubResource("StandardMaterial3D_0roiu")
-surface_material_override/1 = ExtResource("2_q4ov3")
-
 [node name="HouseAndOutline" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_pfs4u")
 surface_material_override/0 = SubResource("ShaderMaterial_tknfi")
@@ -257,3 +250,21 @@ surface_material_override/1 = SubResource("StandardMaterial3D_y70u5")
 
 [node name="Hand_Idle_outline" parent="." instance=ExtResource("16_ti52s")]
 transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, 62.8029, 84.4136, 156.927)
+
+[node name="HandCisors" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 8, 114)
+mesh = ExtResource("18_bkwwc")
+surface_material_override/0 = ExtResource("2_q4ov3")
+surface_material_override/1 = ExtResource("11_bpi8f")
+
+[node name="HandPaper" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 8, 132.856)
+mesh = ExtResource("15_3qpcl")
+surface_material_override/0 = ExtResource("2_q4ov3")
+surface_material_override/1 = ExtResource("11_bpi8f")
+
+[node name="HandRock" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 8, 151.974)
+mesh = ExtResource("17_wx7nt")
+surface_material_override/0 = ExtResource("2_q4ov3")
+surface_material_override/1 = ExtResource("11_bpi8f")

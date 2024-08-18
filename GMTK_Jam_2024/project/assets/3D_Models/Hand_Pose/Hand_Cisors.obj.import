@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cgy5slhlx3egg"
+path="res://.godot/imported/Hand_Cisors.obj-dc934ae5aeba3d307d2e5dd7a92f74d1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hand_Cisors.obj-dc934ae5aeba3d307d2e5dd7a92f74d1.mesh"]
+
+source_file="res://assets/3D_Models/Hand_Pose/Hand_Cisors.obj"
+dest_files=["res://.godot/imported/Hand_Cisors.obj-dc934ae5aeba3d307d2e5dd7a92f74d1.mesh", "res://.godot/imported/Hand_Cisors.obj-dc934ae5aeba3d307d2e5dd7a92f74d1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
