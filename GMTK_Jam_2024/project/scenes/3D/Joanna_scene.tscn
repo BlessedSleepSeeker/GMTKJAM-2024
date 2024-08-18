@@ -1,6 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://bqem1raji7acu"]
+[gd_scene load_steps=32 format=3 uid="uid://bqem1raji7acu"]
 
 [ext_resource type="ArrayMesh" uid="uid://wcdxpgcgwsb6" path="res://assets/3D_Models/Hand_low_Outline.obj" id="1_gi4wv"]
+[ext_resource type="Script" path="res://scenes/3D/joanna_scene.gd" id="1_uljkf"]
 [ext_resource type="ArrayMesh" uid="uid://dq6xkt35jrc7e" path="res://assets/3D_Models/HouseAndOutline.obj" id="2_pfs4u"]
 [ext_resource type="Material" path="res://addons/hypercasualGradientShader/shaders/Hand_Shader.tres" id="2_q4ov3"]
 [ext_resource type="Shader" path="res://addons/hypercasualGradientShader/shaders/hypercasual.gdshader" id="2_yj7ie"]
@@ -208,6 +209,7 @@ shader_parameter/debandDepth = 256.0
 albedo_color = Color(0, 0.0649999, 0.78, 1)
 
 [node name="JoannaScene" type="Node3D"]
+script = ExtResource("1_uljkf")
 
 [node name="HandLowOutline" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.76455, 0.412228, -0.846433, -0.935778, -0.570381, 1.67302, 0.103438, 1.87209, 0.696109, 46.1051, 86.0536, 64.1923)
