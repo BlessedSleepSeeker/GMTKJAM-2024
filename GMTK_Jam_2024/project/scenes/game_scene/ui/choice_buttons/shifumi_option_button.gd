@@ -31,8 +31,13 @@ func _ready():
 
 
 func load_sound(_round: int):
-	var sound: AudioStream = load(sound_path_template % [1, option_name])
+	var voice = int(round(randi_range(1, 2)))
+	print(voice)
+	var sound: AudioStream = load(sound_path_template % [voice, option_name])
 	sound_player.stream = sound
+	
+func _on_sound_player_finished() -> void:
+	load_sound(0)
 
 func _on_button_toggled(toggled: bool):
 	play_button_toggled.emit(toggled, self)

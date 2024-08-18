@@ -187,3 +187,5 @@ libraries = {
 [node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
 max_polyphony = 10
 bus = &"Sound Effect"
+
+[connection signal="finished" from="SoundPlayer" to="." method="_on_sound_player_finished"]
