@@ -1,9 +1,104 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqc4l26ke8xg2"]
+[gd_scene load_steps=14 format=3 uid="uid://bqc4l26ke8xg2"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/game.gd" id="1_jy5kf"]
 [ext_resource type="PackedScene" uid="uid://dbcs6qnmohsgm" path="res://scenes/game_logic/combat_handler.tscn" id="2_heai2"]
+[ext_resource type="Script" path="res://scenes/game_scene/WorldAnimator.gd" id="3_1m1jm"]
 [ext_resource type="PackedScene" uid="uid://ckipeway2odv1" path="res://scenes/game_scene/ui/ui_viewport.tscn" id="3_1t86n"]
 [ext_resource type="PackedScene" uid="uid://bqem1raji7acu" path="res://scenes/3D/Joanna_scene.tscn" id="3_nqdeu"]
+
+[sub_resource type="Animation" id="Animation_dhbjk"]
+resource_name = "cutscene_intro"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 5.53333, 8),
+"transitions": PackedFloat32Array(2.07053, 0.574349, 0.574349, 0.0947324),
+"update": 0,
+"values": [Vector3(-61.2039, 282.579, -193.173), Vector3(-19.1588, 140.185, 123.378), Vector3(-19.159, 160, 123.378), Vector3(-19.1588, 140.185, 123.378)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.36667, 5, 5.53333, 7.1),
+"transitions": PackedFloat32Array(0.466516, 1.93187, 3.605, 3.605, 0.0980729),
+"update": 0,
+"values": [Vector3(0, 1.74533, 0), Vector3(0.513127, -0.872665, -0.172788), Vector3(-0.610865, -0.959931, 0), Vector3(-0.698132, -0.959931, 0), Vector3(-0.610865, -0.959931, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i26i4"]
+resource_name = "fight"
+
+[sub_resource type="Animation" id="Animation_wj8ev"]
+length = 8.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vx3gf"]
+_data = {
+"RESET": SubResource("Animation_wj8ev"),
+"cutscene_intro": SubResource("Animation_dhbjk"),
+"fight": SubResource("Animation_i26i4")
+}
+
+[sub_resource type="Animation" id="Animation_36g54"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UiViewport/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xqwd0"]
+resource_name = "ui_fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UiViewport/CanvasModulate:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2),
+"transitions": PackedFloat32Array(3.4822, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(0, 0.8, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xyifo"]
+resource_name = "ui_fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UiViewport/CanvasModulate:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.46229, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vneir"]
+_data = {
+"RESET": SubResource("Animation_36g54"),
+"ui_fade_in": SubResource("Animation_xqwd0"),
+"ui_fade_out": SubResource("Animation_xyifo")
+}
 
 [node name="Game" type="Node"]
 script = ExtResource("1_jy5kf")
@@ -11,13 +106,26 @@ script = ExtResource("1_jy5kf")
 [node name="CombatHandler" parent="." instance=ExtResource("2_heai2")]
 
 [node name="World" type="Node3D" parent="."]
+script = ExtResource("3_1m1jm")
 
-[node name="Camera3D" type="Camera3D" parent="World"]
-transform = Transform3D(0.445167, 0, -0.895448, 0, 1, 0, 0.895448, 0, 0.445167, -61.2039, 92.2586, 122.126)
+[node name="Camera" type="Camera3D" parent="World"]
+transform = Transform3D(-0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, -0.173648, -61.2039, 282.579, -193.173)
 current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Camera"]
+libraries = {
+"": SubResource("AnimationLibrary_vx3gf")
+}
 
 [node name="JoannaScene" parent="World" instance=ExtResource("3_nqdeu")]
 
 [node name="UiViewport" parent="." instance=ExtResource("3_1t86n")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="UiViewport"]
+
+[node name="Fader" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vneir")
+}
 
 [connection signal="trigger_new_round" from="CombatHandler" to="." method="_on_combat_handler_trigger_new_round"]

@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://w0q7lc4pbuja"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b8bj0jxwpkumd"]
 
 [ext_resource type="Shader" path="res://addons/hypercasualGradientShader/shaders/hypercasual.gdshader" id="1_dw254"]
 
