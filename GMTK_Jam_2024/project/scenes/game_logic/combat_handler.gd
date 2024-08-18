@@ -22,8 +22,6 @@ signal trigger_new_round()
 func _ready():
 	load_all_options()
 	set_big_three_to_current()
-	for i in range(0, 5):
-		increment_round()
 
 func load_all_options() -> void:
 	for option: ShifumiOption in get_children():
